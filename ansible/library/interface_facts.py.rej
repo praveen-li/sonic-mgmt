@@ -1,0 +1,22 @@
+diff a/ansible/library/interface_facts.py b/ansible/library/interface_facts.py	(rejected hunks)
+@@ -295,13 +295,13 @@ def main():
+     results = {}
+ 
+     down_ports = []
+-    for name in up_ports:
+-        try:
+-            if not interfaces[name]['link']:
+-                down_ports += [name]
+-        except:
+-            down_ports += [name]
+-            pass 
++    # for name in up_ports:
++    #     try:
++    #         if not interfaces[name]['link']:
++    #             down_ports += [name]
++    #     except:
++    #         down_ports += [name]
++    #         pass
+ 
+     results['ansible_interface_facts'] = interfaces
+     results['ansible_interface_ips'] = ips

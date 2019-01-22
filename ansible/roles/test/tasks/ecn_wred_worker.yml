@@ -13,3 +13,6 @@
   register: wred_objects
   failed_when: wred_objects.rc != 0
 
+- debug:
+    var=wred_objects
+

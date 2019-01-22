@@ -1,5 +1,9 @@
 Hostname,ManagementIp,HwSku,Type
-str-msn2700-01,10.251.0.188/23,Mellanox-2700,DevSonic
-str-7260-10,10.251.0.13/23,Arista-7260QX-64,FanoutLeaf
-str-7260-11,10.251.0.234/23,Arista-7260QX-64,FanoutRoot
-str-acs-serv-01,10.251.0.245/23,TestServ,Server
+str-acs-serv-01,172.25.11.16/24,TestServ,Server
+falco-test-fout00,172.25.11.84/24,Arista-7250QX-64,FanoutRoot
+falco-test-fout01,172.25.11.53/24,Arista-7250QX-64,FanoutLeaf
+falco-test-fout02,172.25.11.55/24,Arista-7250QX-64,FanoutLeaf
+falco-test-fout03,172.25.11.57/24,Arista-7250QX-64,FanoutLeaf
+falco-test-dut01,172.25.11.56/24,Seastone-DX010,DevSonic
+falco-test-dut02,172.25.11.54/24,Seastone-DX010,DevSonic
+falco-test-dut03,172.25.11.58/24,Seastone-DX010,DevSonic

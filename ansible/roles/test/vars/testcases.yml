@@ -11,6 +11,12 @@ testcases:
       topologies: [ptf32, ptf64, t1]
       required_vars:
           ptf_host: 
+
+    link_flap_working:
+      filename: link_flap_working.yml
+      topologies: [ptf32, ptf64, t1]
+      required_vars:
+          ptf_host: 
     
     bgp_gr_helper:
       filename: bgp_gr_helper.yml
@@ -112,7 +118,11 @@ testcases:
     link_flap:
       filename: link_flap.yml
       topologies: [t0, t0-64, t0-64-32, t0-116, t1, t1-lag, t1-64-lag, ptf32, ptf64]
-    
+
+    continuous_link_flap:
+      filename: continuous_link_flap.yml
+      topologies: [t0, t0-64, t0-64-32, t0-116, t1, t1-lag, t1-64-lag, ptf32, ptf64]
+ 
     mem_check:
       filename: mem_check.yml
       topologies: [t0, t0-64, t0-64-32, t0-116, t1, t1-lag, t1-64-lag, ptf32, ptf64]

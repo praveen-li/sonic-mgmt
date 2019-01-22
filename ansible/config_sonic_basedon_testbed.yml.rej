@@ -1,0 +1,9 @@
+diff a/ansible/config_sonic_basedon_testbed.yml b/ansible/config_sonic_basedon_testbed.yml	(rejected hunks)
+@@ -50,7 +50,6 @@
+       set_fact:
+         vm_base: "{{ testbed_facts['vm_base'] }}"
+       when: "testbed_facts['vm_base'] != ''"
+-    when: testbed_name is defined
+ 
+   - topo_facts: topo={{ topo }}
+     connection: local

@@ -31,6 +31,11 @@
 
 - name: Gather minigraph facts about the device
   minigraph_facts: host={{inventory_hostname}}
+  register: pcdebug_minigraph_facts
+
+- name: debug PC minigraph_facts
+  debug:
+    msg: "PC: minigraph_facts: {{ pcdebug_minigraph_facts }}" 
 
 - set_fact:
     port_list: "{{minigraph_ports.keys()}}"
@@ -38,6 +43,10 @@
 
 - set_fact:
     neighbors: "{{device_conn}}"
+
+- name: debug PC device_conn
+  debug:
+    msg: "PC: device_conn: {{device_conn}}"
 
 - set_fact:
     ansible_eth0_ipv4_addr: "{{ansible_eth0['ipv4']['address']}}"
@@ -55,6 +64,10 @@
 
 - set_fact:
     test_ports: {}
+
+- name: debug PC minigraph_interfaces
+  debug:
+    msg: "PC: minigraph_interfaces {{minigraph_interfaces}}"
 
 - name: Iterate all interfaces to get all interface ports info if exists
   include: roles/test/tasks/pfc_wd/iterate_interfaces.yml
@@ -114,6 +127,10 @@
 
 - debug: msg="{{select_test_ports}}"
 
+- name: PC Debug enabled
+  set_fact:
+    pcdebug: true
+
  #****************************************#
  #           Start tests                  #
  #****************************************#
@@ -123,6 +140,7 @@
       vars:
         pfc_wd_template: roles/test/templates/pfc_wd_config.j2
       include: roles/test/tasks/pfc_wd/config_test/config_test.yml
+      when: not pcdebug
 
     - name: Test PFC WD Functional tests.
       include: roles/test/tasks/pfc_wd/functional_test/functional_test.yml

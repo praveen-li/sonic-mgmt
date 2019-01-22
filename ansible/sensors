@@ -1,0 +1,3206 @@
+Running Test Suite sensors
+reading
+Found topology vms-celdx10-t1
+
+PLAY ***************************************************************************
+
+TASK [setup] *******************************************************************
+Wednesday 27 June 2018  19:26:40 +0000 (0:00:00.020)       0:00:00.020 ******** 
+ok: [falco-test-dut02]
+
+TASK [test : include] **********************************************************
+Wednesday 27 June 2018  19:26:45 +0000 (0:00:05.191)       0:00:05.212 ******** 
+included: /var/jenkins/sonic-mgmt/ansible/roles/test/tasks/sonic.yml for falco-test-dut02
+
+TASK [test : include_vars] *****************************************************
+Wednesday 27 June 2018  19:26:45 +0000 (0:00:00.127)       0:00:05.340 ******** 
+ok: [falco-test-dut02]
+
+TASK [test : Gathering minigraph facts about the device] ***********************
+Wednesday 27 June 2018  19:26:45 +0000 (0:00:00.160)       0:00:05.500 ******** 
+ok: [falco-test-dut02]
+
+TASK [test : Set sonic_hwsku fact] *********************************************
+Wednesday 27 June 2018  19:26:46 +0000 (0:00:00.597)       0:00:06.098 ******** 
+ok: [falco-test-dut02]
+
+TASK [test : Set sonic_asic_type fact] *****************************************
+Wednesday 27 June 2018  19:26:46 +0000 (0:00:00.097)       0:00:06.196 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : Set sonic_asic_type fact] *****************************************
+Wednesday 27 June 2018  19:26:46 +0000 (0:00:00.075)       0:00:06.271 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : fail] *************************************************************
+Wednesday 27 June 2018  19:26:46 +0000 (0:00:00.078)       0:00:06.350 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : include] **********************************************************
+Wednesday 27 June 2018  19:26:46 +0000 (0:00:00.077)       0:00:06.428 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : fail] *************************************************************
+Wednesday 27 June 2018  19:26:46 +0000 (0:00:00.072)       0:00:06.501 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : Gathering testbed information] ************************************
+Wednesday 27 June 2018  19:26:46 +0000 (0:00:00.073)       0:00:06.575 ******** 
+ok: [falco-test-dut02]
+
+TASK [test : fail] *************************************************************
+Wednesday 27 June 2018  19:26:46 +0000 (0:00:00.241)       0:00:06.816 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : set testbed_type] *************************************************
+Wednesday 27 June 2018  19:26:46 +0000 (0:00:00.079)       0:00:06.896 ******** 
+ok: [falco-test-dut02]
+
+TASK [test : set vm] ***********************************************************
+Wednesday 27 June 2018  19:26:47 +0000 (0:00:00.102)       0:00:06.998 ******** 
+ok: [falco-test-dut02]
+
+TASK [test : fail] *************************************************************
+Wednesday 27 June 2018  19:26:47 +0000 (0:00:00.097)       0:00:07.095 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : include] **********************************************************
+Wednesday 27 June 2018  19:26:47 +0000 (0:00:00.077)       0:00:07.173 ******** 
+included: /var/jenkins/sonic-mgmt/ansible/roles/test/tasks/test_sonic_by_testname.yml for falco-test-dut02
+
+TASK [test : debug] ************************************************************
+Wednesday 27 June 2018  19:26:47 +0000 (0:00:00.183)       0:00:07.356 ******** 
+ok: [falco-test-dut02] => {
+    "msg": "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+}
+
+TASK [test : debug] ************************************************************
+Wednesday 27 June 2018  19:26:47 +0000 (0:00:00.119)       0:00:07.476 ******** 
+ok: [falco-test-dut02] => {
+    "msg": "!!!!!!!!!!!!!!!!!!!! start to run test sensors !!!!!!!!!!!!!!!!!!!!"
+}
+
+TASK [test : debug] ************************************************************
+Wednesday 27 June 2018  19:26:47 +0000 (0:00:00.124)       0:00:07.600 ******** 
+ok: [falco-test-dut02] => {
+    "msg": "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+}
+
+TASK [test : set_fact] *********************************************************
+Wednesday 27 June 2018  19:26:47 +0000 (0:00:00.110)       0:00:07.711 ******** 
+ok: [falco-test-dut02]
+
+TASK [test : do basic sanity check before each test] ***************************
+Wednesday 27 June 2018  19:26:47 +0000 (0:00:00.115)       0:00:07.827 ******** 
+included: /var/jenkins/sonic-mgmt/ansible/roles/test/tasks/base_sanity.yml for falco-test-dut02
+
+TASK [test : Get process information in syncd docker] **************************
+Wednesday 27 June 2018  19:26:48 +0000 (0:00:00.386)       0:00:08.213 ******** 
+changed: [falco-test-dut02]
+
+TASK [test : debug] ************************************************************
+Wednesday 27 June 2018  19:26:48 +0000 (0:00:00.670)       0:00:08.884 ******** 
+ok: [falco-test-dut02] => {
+    "ps_out.stdout_lines": [
+        "root        19  0.0  0.0  41584  2724 ?        Sl   16:45   0:00 /usr/bin/dsserve /usr/bin/syncd --diag -p /etc/sai.d/sai.profile", 
+        "root        29 12.4  4.6 1058876 187396 ?      Sl   16:45  20:01 /usr/bin/syncd --diag -p /etc/sai.d/sai.profile", 
+        "root        50  0.0  5.0 890436 202852 ?       S    16:46   0:00 /usr/bin/syncd --diag -p /etc/sai.d/sai.profile"
+    ]
+}
+
+TASK [test : Get orchagent process information] ********************************
+Wednesday 27 June 2018  19:26:49 +0000 (0:00:00.159)       0:00:09.044 ******** 
+changed: [falco-test-dut02]
+
+TASK [test : debug] ************************************************************
+Wednesday 27 June 2018  19:26:49 +0000 (0:00:00.527)       0:00:09.571 ******** 
+ok: [falco-test-dut02] => {
+    "orch_out.stdout_lines": [
+        "4989 /usr/bin/orchagent -d /var/log/swss -b 8192 -m 00:e0:ec:5a:7c:ac"
+    ]
+}
+
+TASK [test : reboot] ***********************************************************
+Wednesday 27 June 2018  19:26:49 +0000 (0:00:00.148)       0:00:09.720 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : Get process information in syncd docker] **************************
+Wednesday 27 June 2018  19:26:49 +0000 (0:00:00.108)       0:00:09.828 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : debug] ************************************************************
+Wednesday 27 June 2018  19:26:50 +0000 (0:00:00.130)       0:00:09.958 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : Verify that syncd process is running] *****************************
+Wednesday 27 June 2018  19:26:50 +0000 (0:00:00.114)       0:00:10.073 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : Get orchagent process information] ********************************
+Wednesday 27 June 2018  19:26:50 +0000 (0:00:00.119)       0:00:10.192 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : debug] ************************************************************
+Wednesday 27 June 2018  19:26:50 +0000 (0:00:00.148)       0:00:10.341 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : Verify that orchagent process is running] *************************
+Wednesday 27 June 2018  19:26:50 +0000 (0:00:00.125)       0:00:10.466 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : Get syslog error information] *************************************
+Wednesday 27 June 2018  19:26:50 +0000 (0:00:00.123)       0:00:10.590 ******** 
+changed: [falco-test-dut02]
+
+TASK [test : debug] ************************************************************
+Wednesday 27 June 2018  19:26:51 +0000 (0:00:00.507)       0:00:11.098 ******** 
+ok: [falco-test-dut02] => {
+    "syslog_out.stdout_lines": [
+        "Jun 27 16:48:10.445436 falco-test-dut02 INFO ansible-command: Invoked with warn=True executable=None chdir=None _raw_params=cat /var/log/syslog |tail -n 5000 |grep -i error removes=None creates=None _uses_shell=True", 
+        "Jun 27 17:53:39.971579 falco-test-dut02 INFO ansible-command: Invoked with warn=True executable=None chdir=None _raw_params=cat /var/log/syslog |tail -n 5000 |grep -i error removes=None creates=None _uses_shell=True", 
+        "Jun 27 18:00:02.000812 falco-test-dut02 INFO docker[687]: time=\"2018-06-27T18:00:02.000643618Z\" level=error msg=\"Handler for POST /v1.23/exec/9c89b18d04182106d962da2fd84e6f1c1b97ba23e53ca805301e43d4b792a501/resize returned error: rpc error: code = 2 desc = \\\"containerd: processs not found for container\\\"\"", 
+        "Jun 27 18:06:04.294389 falco-test-dut02 INFO ansible-command: Invoked with warn=True executable=None chdir=None _raw_params=cat /var/log/syslog |tail -n 5000 |grep -i error removes=None creates=None _uses_shell=True", 
+        "Jun 27 18:07:37.879248 falco-test-dut02 INFO ansible-command: Invoked with warn=True executable=None chdir=None _raw_params=cat /var/log/syslog |tail -n 5000 |grep -i error removes=None creates=None _uses_shell=True", 
+        "Jun 27 19:10:08.850004 falco-test-dut02 INFO ansible-command: Invoked with warn=True executable=None chdir=None _raw_params=cat /var/log/syslog |tail -n 5000 |grep -i error removes=None creates=None _uses_shell=True", 
+        "Jun 27 19:10:22.938466 falco-test-dut02 INFO ansible-command: Invoked with warn=True executable=None chdir=None _raw_params=cat /var/log/syslog |tail -n 5000 |grep -i error removes=None creates=None _uses_shell=True", 
+        "Jun 27 19:26:48.246266 falco-test-dut02 INFO ansible-command: Invoked with warn=True executable=None chdir=None _raw_params=cat /var/log/syslog |tail -n 5000 |grep -i error removes=None creates=None _uses_shell=True"
+    ]
+}
+
+TASK [test : validate all interfaces is up] ************************************
+Wednesday 27 June 2018  19:26:51 +0000 (0:00:00.154)       0:00:11.252 ******** 
+included: /var/jenkins/sonic-mgmt/ansible/roles/test/tasks/interface.yml for falco-test-dut02
+
+TASK [test : Gather minigraph facts about the device] **************************
+Wednesday 27 June 2018  19:26:51 +0000 (0:00:00.467)       0:00:11.720 ******** 
+ok: [falco-test-dut02]
+
+TASK [test : Get interface facts] **********************************************
+Wednesday 27 June 2018  19:26:52 +0000 (0:00:00.607)       0:00:12.328 ******** 
+ok: [falco-test-dut02]
+
+TASK [test : debug] ************************************************************
+Wednesday 27 June 2018  19:26:56 +0000 (0:00:04.471)       0:00:16.800 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : reboot] ***********************************************************
+Wednesday 27 June 2018  19:26:56 +0000 (0:00:00.091)       0:00:16.891 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : figure out fanout switch port in case it was down] ****************
+Wednesday 27 June 2018  19:26:57 +0000 (0:00:00.098)       0:00:16.989 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : set_fact] *********************************************************
+Wednesday 27 June 2018  19:26:57 +0000 (0:00:00.096)       0:00:17.086 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : include] **********************************************************
+Wednesday 27 June 2018  19:26:57 +0000 (0:00:00.095)       0:00:17.181 ******** 
+
+TASK [test : pause and wait interface to be up] ********************************
+Wednesday 27 June 2018  19:26:57 +0000 (0:00:00.096)       0:00:17.277 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : Get interface facts] **********************************************
+Wednesday 27 June 2018  19:26:57 +0000 (0:00:00.099)       0:00:17.377 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : debug] ************************************************************
+Wednesday 27 June 2018  19:26:57 +0000 (0:00:00.094)       0:00:17.472 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : Verify interfaces are up correctly] *******************************
+Wednesday 27 June 2018  19:26:57 +0000 (0:00:00.099)       0:00:17.572 ******** 
+ok: [falco-test-dut02]
+
+TASK [test : Verify port channel interfaces are up correctly] ******************
+Wednesday 27 June 2018  19:26:57 +0000 (0:00:00.125)       0:00:17.698 ******** 
+
+TASK [test : Verify VLAN interfaces are up correctly] **************************
+Wednesday 27 June 2018  19:26:57 +0000 (0:00:00.093)       0:00:17.791 ******** 
+
+TASK [test : debug] ************************************************************
+Wednesday 27 June 2018  19:26:57 +0000 (0:00:00.089)       0:00:17.880 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : gather system version information] ********************************
+Wednesday 27 June 2018  19:26:58 +0000 (0:00:00.078)       0:00:17.958 ******** 
+changed: [falco-test-dut02]
+
+TASK [test : print system versions] ********************************************
+Wednesday 27 June 2018  19:26:59 +0000 (0:00:01.354)       0:00:19.313 ******** 
+ok: [falco-test-dut02] => {
+    "versions.stdout_lines": [
+        "SONiC Software Version: SONiC.lnos_v1.1.0", 
+        "Distribution: Debian 8.10", 
+        "Kernel: 3.16.0-5-amd64", 
+        "Build commit: dfde852", 
+        "Build date: Tue Jun 12 23:42:47 UTC 2018", 
+        "Built by: falco@server06", 
+        "", 
+        "Docker images:", 
+        "REPOSITORY                 TAG                 IMAGE ID            SIZE", 
+        "docker-syncd-brcm          latest              2aa7f0bde3cf        439.2 MB", 
+        "docker-syncd-brcm          lnos_v1.1.0         2aa7f0bde3cf        439.2 MB", 
+        "docker-orchagent-brcm      latest              f4230bcd764b        378.9 MB", 
+        "docker-orchagent-brcm      lnos_v1.1.0         f4230bcd764b        378.9 MB", 
+        "docker-lldp-sv2            latest              5f3c26667ae2        357.5 MB", 
+        "docker-lldp-sv2            lnos_v1.1.0         5f3c26667ae2        357.5 MB", 
+        "docker-dhcp-relay          latest              ee9bba9315fe        327.5 MB", 
+        "docker-dhcp-relay          lnos_v1.1.0         ee9bba9315fe        327.5 MB", 
+        "docker-database            latest              b1b9bf2ca92b        323.7 MB", 
+        "docker-database            lnos_v1.1.0         b1b9bf2ca92b        323.7 MB", 
+        "docker-snmp-sv2            latest              c3f47ca7aa74        397.7 MB", 
+        "docker-snmp-sv2            lnos_v1.1.0         c3f47ca7aa74        397.7 MB", 
+        "docker-teamd               latest              ff8c5aa35dbc        379.3 MB", 
+        "docker-teamd               lnos_v1.1.0         ff8c5aa35dbc        379.3 MB", 
+        "docker-sonic-telemetry     latest              a7e0ab5aae05        352.3 MB", 
+        "docker-sonic-telemetry     lnos_v1.1.0         a7e0ab5aae05        352.3 MB", 
+        "docker-router-advertiser   latest              667d9acc2e54        321.4 MB", 
+        "docker-router-advertiser   lnos_v1.1.0         667d9acc2e54        321.4 MB", 
+        "docker-platform-monitor    latest              62698e3e51c0        343.3 MB", 
+        "docker-platform-monitor    lnos_v1.1.0         62698e3e51c0        343.3 MB", 
+        "docker-fpm-frr             latest              4e61fb61cb35        398.5 MB", 
+        "docker-fpm-frr             lnos_v1.1.0         4e61fb61cb35        398.5 MB"
+    ]
+}
+
+TASK [test : run test case sensors_check.yml file] *****************************
+Wednesday 27 June 2018  19:26:59 +0000 (0:00:00.118)       0:00:19.432 ******** 
+included: /var/jenkins/sonic-mgmt/ansible/roles/test/tasks/sensors_check.yml for falco-test-dut02
+
+TASK [test : Get platform monitor docker name] *********************************
+Wednesday 27 June 2018  19:26:59 +0000 (0:00:00.289)       0:00:19.721 ******** 
+changed: [falco-test-dut02]
+
+TASK [test : debug] ************************************************************
+Wednesday 27 June 2018  19:27:00 +0000 (0:00:00.461)       0:00:20.183 ******** 
+ok: [falco-test-dut02] => {
+    "pmon_ps": {
+        "changed": true, 
+        "cmd": "docker ps -a --format '{#.Image#} {#.Names#}' | grep 'platform' | awk '{print $2}'", 
+        "delta": "0:00:00.095410", 
+        "end": "2018-06-27 19:26:57.433764", 
+        "rc": 0, 
+        "start": "2018-06-27 19:26:57.338354", 
+        "stderr": "", 
+        "stdout": "pmon", 
+        "stdout_lines": [
+            "pmon"
+        ], 
+        "warnings": []
+    }
+}
+
+TASK [test : set_fact] *********************************************************
+Wednesday 27 June 2018  19:27:00 +0000 (0:00:00.085)       0:00:20.268 ******** 
+ok: [falco-test-dut02]
+
+TASK [test : set_fact] *********************************************************
+Wednesday 27 June 2018  19:27:00 +0000 (0:00:00.105)       0:00:20.373 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : debug] ************************************************************
+Wednesday 27 June 2018  19:27:00 +0000 (0:00:00.077)       0:00:20.451 ******** 
+ok: [falco-test-dut02] => {
+    "sensors_checks": {
+        "ACS-MSN2100": {
+            "alarms": {
+                "fan": [], 
+                "power": [
+                    "ucd9200-i2c-5-27/UCD1 vin/in1_min_alarm", 
+                    "ucd9200-i2c-5-27/UCD1 vin/in1_max_alarm", 
+                    "ucd9200-i2c-5-27/UCD1 vin/in1_lcrit_alarm", 
+                    "ucd9200-i2c-5-27/UCD1 vin/in1_crit_alarm", 
+                    "ucd9200-i2c-5-27/ASIC 3.3 vout/in2_min_alarm", 
+                    "ucd9200-i2c-5-27/ASIC 3.3 vout/in2_max_alarm", 
+                    "ucd9200-i2c-5-27/ASIC 3.3 vout/in2_lcrit_alarm", 
+                    "ucd9200-i2c-5-27/ASIC 3.3 vout/in2_crit_alarm", 
+                    "ucd9200-i2c-5-27/ASIC 1.2 vout/in3_min_alarm", 
+                    "ucd9200-i2c-5-27/ASIC 1.2 vout/in3_max_alarm", 
+                    "ucd9200-i2c-5-27/ASIC 1.2 vout/in3_lcrit_alarm", 
+                    "ucd9200-i2c-5-27/ASIC 1.2 vout/in3_crit_alarm", 
+                    "ucd9200-i2c-5-27/iout1/curr2_max_alarm", 
+                    "ucd9200-i2c-5-27/iout1/curr2_lcrit_alarm", 
+                    "ucd9200-i2c-5-27/iout1/curr2_crit_alarm", 
+                    "ucd9200-i2c-5-27/iout2/curr3_max_alarm", 
+                    "ucd9200-i2c-5-27/iout2/curr3_lcrit_alarm", 
+                    "ucd9200-i2c-5-27/iout2/curr3_crit_alarm", 
+                    "ucd9200-i2c-5-41/UCD2 vin/in1_min_alarm", 
+                    "ucd9200-i2c-5-41/UCD2 vin/in1_max_alarm", 
+                    "ucd9200-i2c-5-41/UCD2 vin/in1_lcrit_alarm", 
+                    "ucd9200-i2c-5-41/UCD2 vin/in1_crit_alarm", 
+                    "ucd9200-i2c-5-41/ASIC Vcore vout/in2_min_alarm", 
+                    "ucd9200-i2c-5-41/ASIC Vcore vout/in2_max_alarm", 
+                    "ucd9200-i2c-5-41/ASIC Vcore vout/in2_lcrit_alarm", 
+                    "ucd9200-i2c-5-41/ASIC Vcore vout/in2_crit_alarm", 
+                    "ucd9200-i2c-5-41/vout2/in3_min_alarm", 
+                    "ucd9200-i2c-5-41/vout2/in3_max_alarm", 
+                    "ucd9200-i2c-5-41/vout2/in3_lcrit_alarm", 
+                    "ucd9200-i2c-5-41/vout2/in3_crit_alarm", 
+                    "ucd9200-i2c-5-41/iout1/curr2_max_alarm", 
+                    "ucd9200-i2c-5-41/iout1/curr2_lcrit_alarm", 
+                    "ucd9200-i2c-5-41/iout1/curr2_crit_alarm", 
+                    "ucd9200-i2c-5-41/iout2/curr3_max_alarm", 
+                    "ucd9200-i2c-5-41/iout2/curr3_lcrit_alarm", 
+                    "ucd9200-i2c-5-41/iout2/curr3_crit_alarm"
+                ], 
+                "temp": [
+                    "coretemp-isa-0000/Core 0/temp2_crit_alarm", 
+                    "coretemp-isa-0000/Core 1/temp3_crit_alarm", 
+                    "coretemp-isa-0000/Core 2/temp4_crit_alarm", 
+                    "coretemp-isa-0000/Core 3/temp5_crit_alarm", 
+                    "ucd9200-i2c-5-27/UCD1 Temp/temp1_max_alarm", 
+                    "ucd9200-i2c-5-27/UCD1 Temp/temp1_crit_alarm", 
+                    "ucd9200-i2c-5-27/UCD1 Temp2/temp2_max_alarm", 
+                    "ucd9200-i2c-5-27/UCD1 Temp2/temp2_crit_alarm", 
+                    "ucd9200-i2c-5-27/temp3/temp3_max_alarm", 
+                    "ucd9200-i2c-5-27/temp3/temp3_crit_alarm", 
+                    "ucd9200-i2c-5-41/UCD2 Temp1/temp1_max_alarm", 
+                    "ucd9200-i2c-5-41/UCD2 Temp1/temp1_crit_alarm", 
+                    "ucd9200-i2c-5-41/UCD2 Temp2/temp2_max_alarm", 
+                    "ucd9200-i2c-5-41/UCD2 Temp2/temp2_crit_alarm", 
+                    "ucd9200-i2c-5-41/temp3/temp3_max_alarm", 
+                    "ucd9200-i2c-5-41/temp3/temp3_crit_alarm"
+                ]
+            }, 
+            "compares": {
+                "fan": [
+                    [
+                        "spectrum-i2c-2-48/fan1/fan1_input", 
+                        "spectrum-i2c-2-48/fan1/fan1_max"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan1/fan1_min", 
+                        "spectrum-i2c-2-48/fan1/fan1_input"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan2/fan2_input", 
+                        "spectrum-i2c-2-48/fan2/fan2_max"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan2/fan2_min", 
+                        "spectrum-i2c-2-48/fan2/fan2_input"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan3/fan3_input", 
+                        "spectrum-i2c-2-48/fan3/fan3_max"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan3/fan3_min", 
+                        "spectrum-i2c-2-48/fan3/fan3_input"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan4/fan4_input", 
+                        "spectrum-i2c-2-48/fan4/fan4_max"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan4/fan4_min", 
+                        "spectrum-i2c-2-48/fan4/fan4_input"
+                    ]
+                ], 
+                "power": [
+                    [
+                        "mlnxa2dswb-i2c-5-6d/12v_1/in1_input", 
+                        "mlnxa2dswb-i2c-5-6d/12v_1/in1_max"
+                    ], 
+                    [
+                        "mlnxa2dswb-i2c-5-6d/12v_1/in1_min", 
+                        "mlnxa2dswb-i2c-5-6d/12v_1/in1_input"
+                    ], 
+                    [
+                        "mlnxa2dswb-i2c-5-6d/12v_2/in2_input", 
+                        "mlnxa2dswb-i2c-5-6d/12v_2/in2_max"
+                    ], 
+                    [
+                        "mlnxa2dswb-i2c-5-6d/12v_2/in2_min", 
+                        "mlnxa2dswb-i2c-5-6d/12v_2/in2_input"
+                    ], 
+                    [
+                        "mlnxa2dswb-i2c-5-6d/3.3v/in3_input", 
+                        "mlnxa2dswb-i2c-5-6d/3.3v/in3_max"
+                    ], 
+                    [
+                        "mlnxa2dswb-i2c-5-6d/3.3v/in3_min", 
+                        "mlnxa2dswb-i2c-5-6d/3.3v/in3_input"
+                    ], 
+                    [
+                        "mlnxa2dswb-i2c-5-6d/12v_aux/in4_input", 
+                        "mlnxa2dswb-i2c-5-6d/12v_aux/in4_max"
+                    ], 
+                    [
+                        "mlnxa2dswb-i2c-5-6d/12v_aux/in4_min", 
+                        "mlnxa2dswb-i2c-5-6d/12v_aux/in4_input"
+                    ], 
+                    [
+                        "mlnxa2dswb-i2c-5-6d/5v_usb/in5_input", 
+                        "mlnxa2dswb-i2c-5-6d/5v_usb/in5_max"
+                    ], 
+                    [
+                        "mlnxa2dswb-i2c-5-6d/5v_usb/in5_min", 
+                        "mlnxa2dswb-i2c-5-6d/5v_usb/in5_input"
+                    ], 
+                    [
+                        "mlnxa2dswb-i2c-5-6d/12v_1_curr/curr1_input", 
+                        "mlnxa2dswb-i2c-5-6d/12v_1_curr/curr1_max"
+                    ], 
+                    [
+                        "mlnxa2dswb-i2c-5-6d/12v_2_curr/curr2_input", 
+                        "mlnxa2dswb-i2c-5-6d/12v_2_curr/curr2_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/soc_core/in1_input", 
+                        "mlnxa2dmnb-i2c-15-6d/soc_core/in1_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/soc_core/in1_min", 
+                        "mlnxa2dmnb-i2c-15-6d/soc_core/in1_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/soc_vnn/in2_input", 
+                        "mlnxa2dmnb-i2c-15-6d/soc_vnn/in2_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/soc_vnn/in2_min", 
+                        "mlnxa2dmnb-i2c-15-6d/soc_vnn/in2_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/cpu_0.675v/in3_input", 
+                        "mlnxa2dmnb-i2c-15-6d/cpu_0.675v/in3_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/cpu_0.675v/in3_min", 
+                        "mlnxa2dmnb-i2c-15-6d/cpu_0.675v/in3_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/1v/in4_input", 
+                        "mlnxa2dmnb-i2c-15-6d/1v/in4_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/1v/in4_min", 
+                        "mlnxa2dmnb-i2c-15-6d/1v/in4_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/vddq/in5_input", 
+                        "mlnxa2dmnb-i2c-15-6d/vddq/in5_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/vddq/in5_min", 
+                        "mlnxa2dmnb-i2c-15-6d/vddq/in5_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/1.8v/in6_input", 
+                        "mlnxa2dmnb-i2c-15-6d/1.8v/in6_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/1.8v/in6_min", 
+                        "mlnxa2dmnb-i2c-15-6d/1.8v/in6_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/sys_3.3v/in7_input", 
+                        "mlnxa2dmnb-i2c-15-6d/sys_3.3v/in7_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/sys_3.3v/in7_min", 
+                        "mlnxa2dmnb-i2c-15-6d/sys_3.3v/in7_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/12v/in8_input", 
+                        "mlnxa2dmnb-i2c-15-6d/12v/in8_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/12v/in8_min", 
+                        "mlnxa2dmnb-i2c-15-6d/12v/in8_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/1.35v/in9_input", 
+                        "mlnxa2dmnb-i2c-15-6d/1.35v/in9_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/1.35v/in9_min", 
+                        "mlnxa2dmnb-i2c-15-6d/1.35v/in9_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/vccsram/in10_input", 
+                        "mlnxa2dmnb-i2c-15-6d/vccsram/in10_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/vccsram/in10_min", 
+                        "mlnxa2dmnb-i2c-15-6d/vccsram/in10_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/1.5v/in11_input", 
+                        "mlnxa2dmnb-i2c-15-6d/1.5v/in11_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/1.5v/in11_min", 
+                        "mlnxa2dmnb-i2c-15-6d/1.5v/in11_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/5v/in12_input", 
+                        "mlnxa2dmnb-i2c-15-6d/5v/in12_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/5v/in12_min", 
+                        "mlnxa2dmnb-i2c-15-6d/5v/in12_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/3.3v_aux/in13_input", 
+                        "mlnxa2dmnb-i2c-15-6d/3.3v_aux/in13_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/3.3v_aux/in13_min", 
+                        "mlnxa2dmnb-i2c-15-6d/3.3v_aux/in13_input"
+                    ]
+                ], 
+                "temp": [
+                    [
+                        "spectrum-i2c-2-48/temp1/temp1_input", 
+                        "spectrum-i2c-2-48/temp1/temp1_max"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/temp1/temp1_min", 
+                        "spectrum-i2c-2-48/temp1/temp1_input"
+                    ], 
+                    [
+                        "lm75-i2c-7-4a/Ambient Port Temp/temp1_input", 
+                        "lm75-i2c-7-4a/Ambient Port Temp/temp1_max_hyst"
+                    ], 
+                    [
+                        "lm75-i2c-7-4b/temp1/temp1_input", 
+                        "lm75-i2c-7-4b/temp1/temp1_max_hyst"
+                    ]
+                ]
+            }, 
+            "non_zero": {
+                "fan": [], 
+                "power": [
+                    "ucd9200-i2c-5-27/pout1/power2_input", 
+                    "ucd9200-i2c-5-27/pout2/power3_input", 
+                    "ucd9200-i2c-5-41/pout1/power2_input", 
+                    "ucd9200-i2c-5-41/pout1/power2_input"
+                ], 
+                "temp": []
+            }, 
+            "psu_skips": {}
+        }, 
+        "ACS-MSN2410": {
+            "alarms": {
+                "fan": [
+                    "dps460-i2c-10-59/fan1/fan1_alarm", 
+                    "dps460-i2c-10-58/fan1/fan1_alarm"
+                ], 
+                "power": [
+                    "dps460-i2c-10-59/vin/in1_min_alarm", 
+                    "dps460-i2c-10-59/vin/in1_max_alarm", 
+                    "dps460-i2c-10-59/vin/in1_lcrit_alarm", 
+                    "dps460-i2c-10-59/vin/in1_crit_alarm", 
+                    "dps460-i2c-10-59/vout1/in3_min_alarm", 
+                    "dps460-i2c-10-59/vout1/in3_max_alarm", 
+                    "dps460-i2c-10-59/vout1/in3_lcrit_alarm", 
+                    "dps460-i2c-10-59/vout1/in3_crit_alarm", 
+                    "dps460-i2c-10-59/pin/power1_alarm", 
+                    "dps460-i2c-10-59/pout1/power2_cap_alarm", 
+                    "dps460-i2c-10-59/pout1/power2_max_alarm", 
+                    "dps460-i2c-10-59/pout1/power2_crit_alarm", 
+                    "dps460-i2c-10-59/iin/curr1_max_alarm", 
+                    "dps460-i2c-10-59/iin/curr1_crit_alarm", 
+                    "dps460-i2c-10-59/iout1/curr2_max_alarm", 
+                    "dps460-i2c-10-59/iout1/curr2_lcrit_alarm", 
+                    "dps460-i2c-10-59/iout1/curr2_crit_alarm", 
+                    "dps460-i2c-10-58/vin/in1_min_alarm", 
+                    "dps460-i2c-10-58/vin/in1_max_alarm", 
+                    "dps460-i2c-10-58/vin/in1_lcrit_alarm", 
+                    "dps460-i2c-10-58/vin/in1_crit_alarm", 
+                    "dps460-i2c-10-58/vout1/in3_min_alarm", 
+                    "dps460-i2c-10-58/vout1/in3_max_alarm", 
+                    "dps460-i2c-10-58/vout1/in3_lcrit_alarm", 
+                    "dps460-i2c-10-58/vout1/in3_crit_alarm", 
+                    "dps460-i2c-10-58/pin/power1_alarm", 
+                    "dps460-i2c-10-58/pout1/power2_cap_alarm", 
+                    "dps460-i2c-10-58/pout1/power2_max_alarm", 
+                    "dps460-i2c-10-58/pout1/power2_crit_alarm", 
+                    "dps460-i2c-10-58/iin/curr1_max_alarm", 
+                    "dps460-i2c-10-58/iin/curr1_crit_alarm", 
+                    "dps460-i2c-10-58/iout1/curr2_max_alarm", 
+                    "dps460-i2c-10-58/iout1/curr2_lcrit_alarm", 
+                    "dps460-i2c-10-58/iout1/curr2_crit_alarm", 
+                    "ucd9200-i2c-5-27/UCD1 vin/in1_min_alarm", 
+                    "ucd9200-i2c-5-27/UCD1 vin/in1_max_alarm", 
+                    "ucd9200-i2c-5-27/UCD1 vin/in1_lcrit_alarm", 
+                    "ucd9200-i2c-5-27/UCD1 vin/in1_crit_alarm", 
+                    "ucd9200-i2c-5-27/ASIC 3.3 vout/in2_min_alarm", 
+                    "ucd9200-i2c-5-27/ASIC 3.3 vout/in2_max_alarm", 
+                    "ucd9200-i2c-5-27/ASIC 3.3 vout/in2_lcrit_alarm", 
+                    "ucd9200-i2c-5-27/ASIC 3.3 vout/in2_crit_alarm", 
+                    "ucd9200-i2c-5-27/ASIC 1.2 vout/in3_min_alarm", 
+                    "ucd9200-i2c-5-27/ASIC 1.2 vout/in3_max_alarm", 
+                    "ucd9200-i2c-5-27/ASIC 1.2 vout/in3_lcrit_alarm", 
+                    "ucd9200-i2c-5-27/ASIC 1.2 vout/in3_crit_alarm", 
+                    "ucd9200-i2c-5-27/iout1/curr2_max_alarm", 
+                    "ucd9200-i2c-5-27/iout1/curr2_lcrit_alarm", 
+                    "ucd9200-i2c-5-27/iout1/curr2_crit_alarm", 
+                    "ucd9200-i2c-5-27/iout2/curr3_max_alarm", 
+                    "ucd9200-i2c-5-27/iout2/curr3_lcrit_alarm", 
+                    "ucd9200-i2c-5-27/iout2/curr3_crit_alarm", 
+                    "ucd9200-i2c-5-41/UCD2 vin/in1_min_alarm", 
+                    "ucd9200-i2c-5-41/UCD2 vin/in1_max_alarm", 
+                    "ucd9200-i2c-5-41/UCD2 vin/in1_lcrit_alarm", 
+                    "ucd9200-i2c-5-41/UCD2 vin/in1_crit_alarm", 
+                    "ucd9200-i2c-5-41/ASIC Vcore vout/in2_min_alarm", 
+                    "ucd9200-i2c-5-41/ASIC Vcore vout/in2_max_alarm", 
+                    "ucd9200-i2c-5-41/ASIC Vcore vout/in2_lcrit_alarm", 
+                    "ucd9200-i2c-5-41/ASIC Vcore vout/in2_crit_alarm", 
+                    "ucd9200-i2c-5-41/iout1/curr2_max_alarm", 
+                    "ucd9200-i2c-5-41/iout1/curr2_lcrit_alarm", 
+                    "ucd9200-i2c-5-41/iout1/curr2_crit_alarm"
+                ], 
+                "temp": [
+                    "coretemp-isa-0000/Physical id 0/temp1_crit_alarm", 
+                    "coretemp-isa-0000/Core 0/temp2_crit_alarm", 
+                    "coretemp-isa-0000/Core 1/temp3_crit_alarm", 
+                    "dps460-i2c-10-59/temp1/temp1_max_alarm", 
+                    "dps460-i2c-10-59/temp1/temp1_min_alarm", 
+                    "dps460-i2c-10-59/temp1/temp1_crit_alarm", 
+                    "dps460-i2c-10-59/temp1/temp1_lcrit_alarm", 
+                    "dps460-i2c-10-59/temp2/temp2_max_alarm", 
+                    "dps460-i2c-10-59/temp2/temp2_min_alarm", 
+                    "dps460-i2c-10-59/temp2/temp2_crit_alarm", 
+                    "dps460-i2c-10-59/temp2/temp2_lcrit_alarm", 
+                    "dps460-i2c-10-59/temp3/temp3_max_alarm", 
+                    "dps460-i2c-10-59/temp3/temp3_min_alarm", 
+                    "dps460-i2c-10-59/temp3/temp3_crit_alarm", 
+                    "dps460-i2c-10-59/temp3/temp3_lcrit_alarm", 
+                    "dps460-i2c-10-58/temp1/temp1_max_alarm", 
+                    "dps460-i2c-10-58/temp1/temp1_min_alarm", 
+                    "dps460-i2c-10-58/temp1/temp1_crit_alarm", 
+                    "dps460-i2c-10-58/temp1/temp1_lcrit_alarm", 
+                    "dps460-i2c-10-58/temp2/temp2_max_alarm", 
+                    "dps460-i2c-10-58/temp2/temp2_min_alarm", 
+                    "dps460-i2c-10-58/temp2/temp2_crit_alarm", 
+                    "dps460-i2c-10-58/temp2/temp2_lcrit_alarm", 
+                    "dps460-i2c-10-58/temp3/temp3_max_alarm", 
+                    "dps460-i2c-10-58/temp3/temp3_min_alarm", 
+                    "dps460-i2c-10-58/temp3/temp3_crit_alarm", 
+                    "dps460-i2c-10-58/temp3/temp3_lcrit_alarm", 
+                    "ucd9200-i2c-5-27/UCD1 Temp/temp1_max_alarm", 
+                    "ucd9200-i2c-5-27/UCD1 Temp/temp1_crit_alarm", 
+                    "ucd9200-i2c-5-27/UCD1 Temp2/temp2_max_alarm", 
+                    "ucd9200-i2c-5-27/UCD1 Temp2/temp2_crit_alarm", 
+                    "ucd9200-i2c-5-27/temp3/temp3_max_alarm", 
+                    "ucd9200-i2c-5-27/temp3/temp3_crit_alarm", 
+                    "ucd9200-i2c-5-41/UCD2 Temp1/temp1_max_alarm", 
+                    "ucd9200-i2c-5-41/UCD2 Temp1/temp1_crit_alarm", 
+                    "ucd9200-i2c-5-41/UCD2 Temp2/temp2_max_alarm", 
+                    "ucd9200-i2c-5-41/UCD2 Temp2/temp2_crit_alarm"
+                ]
+            }, 
+            "compares": {
+                "fan": [
+                    [
+                        "spectrum-i2c-2-48/fan1/fan1_input", 
+                        "spectrum-i2c-2-48/fan1/fan1_max"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan1/fan1_min", 
+                        "spectrum-i2c-2-48/fan1/fan1_input"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan2/fan2_input", 
+                        "spectrum-i2c-2-48/fan2/fan2_max"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan2/fan2_min", 
+                        "spectrum-i2c-2-48/fan2/fan2_input"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan3/fan3_input", 
+                        "spectrum-i2c-2-48/fan3/fan3_max"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan3/fan3_min", 
+                        "spectrum-i2c-2-48/fan3/fan3_input"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan4/fan4_input", 
+                        "spectrum-i2c-2-48/fan4/fan4_max"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan4/fan4_min", 
+                        "spectrum-i2c-2-48/fan4/fan4_input"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan5/fan5_input", 
+                        "spectrum-i2c-2-48/fan5/fan5_max"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan5/fan5_min", 
+                        "spectrum-i2c-2-48/fan5/fan5_input"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan6/fan6_input", 
+                        "spectrum-i2c-2-48/fan6/fan6_max"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan6/fan6_min", 
+                        "spectrum-i2c-2-48/fan6/fan6_input"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan7/fan7_input", 
+                        "spectrum-i2c-2-48/fan7/fan7_max"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan7/fan7_min", 
+                        "spectrum-i2c-2-48/fan7/fan7_input"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan8/fan8_input", 
+                        "spectrum-i2c-2-48/fan8/fan8_max"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan8/fan8_min", 
+                        "spectrum-i2c-2-48/fan8/fan8_input"
+                    ]
+                ], 
+                "power": [
+                    [
+                        "mlnxa2dswb-i2c-5-6d/1.8V_sw_spc/in1_input", 
+                        "mlnxa2dswb-i2c-5-6d/1.8V_sw_spc/in1_max"
+                    ], 
+                    [
+                        "mlnxa2dswb-i2c-5-6d/1.8V_sw_spc/in1_min", 
+                        "mlnxa2dswb-i2c-5-6d/1.8V_sw_spc/in1_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/ddr3_0.675/in1_input", 
+                        "mlnxa2dmnb-i2c-15-6d/ddr3_0.675/in1_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/ddr3_0.675/in1_min", 
+                        "mlnxa2dmnb-i2c-15-6d/ddr3_0.675/in1_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/cpu_0.9/in2_input", 
+                        "mlnxa2dmnb-i2c-15-6d/cpu_0.9/in2_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/sys/in3_input", 
+                        "mlnxa2dmnb-i2c-15-6d/sys/in3_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/sys/in3_min", 
+                        "mlnxa2dmnb-i2c-15-6d/sys/in3_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/cpu_1.8/in4_input", 
+                        "mlnxa2dmnb-i2c-15-6d/cpu_1.8/in4_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/cpu_1.8/in4_min", 
+                        "mlnxa2dmnb-i2c-15-6d/cpu_1.8/in4_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/cpu_pch_1.05/in5_input", 
+                        "mlnxa2dmnb-i2c-15-6d/cpu_pch_1.05/in5_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/cpu_pch_1.05/in5_min", 
+                        "mlnxa2dmnb-i2c-15-6d/cpu_pch_1.05/in5_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/cpu_1.05/in6_input", 
+                        "mlnxa2dmnb-i2c-15-6d/cpu_1.05/in6_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/cpu_1.05/in6_min", 
+                        "mlnxa2dmnb-i2c-15-6d/cpu_1.05/in6_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/ddr3_1.35/in7_input", 
+                        "mlnxa2dmnb-i2c-15-6d/ddr3_1.35/in7_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/ddr3_1.35/in7_min", 
+                        "mlnxa2dmnb-i2c-15-6d/ddr3_1.35/in7_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/usb_5/in8_input", 
+                        "mlnxa2dmnb-i2c-15-6d/usb_5/in8_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/usb_5/in8_min", 
+                        "mlnxa2dmnb-i2c-15-6d/usb_5/in8_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/lan_1.05/in9_input", 
+                        "mlnxa2dmnb-i2c-15-6d/lan_1.05/in9_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/lan_1.05/in9_min", 
+                        "mlnxa2dmnb-i2c-15-6d/lan_1.05/in9_input"
+                    ]
+                ], 
+                "temp": [
+                    [
+                        "acpitz-virtual-0/temp1/temp1_input", 
+                        "acpitz-virtual-0/temp1/temp1_crit"
+                    ], 
+                    [
+                        "acpitz-virtual-0/temp2/temp2_input", 
+                        "acpitz-virtual-0/temp2/temp2_crit"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/temp1/temp1_input", 
+                        "spectrum-i2c-2-48/temp1/temp1_max"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/temp1/temp1_min", 
+                        "spectrum-i2c-2-48/temp1/temp1_input"
+                    ], 
+                    [
+                        "lm75-i2c-7-4a/Ambient Port Temp/temp1_input", 
+                        "lm75-i2c-7-4a/Ambient Port Temp/temp1_max_hyst"
+                    ], 
+                    [
+                        "lm75-i2c-17-49/temp1/temp1_input", 
+                        "lm75-i2c-17-49/temp1/temp1_max_hyst"
+                    ]
+                ]
+            }, 
+            "non_zero": {
+                "fan": [], 
+                "power": [
+                    "ucd9200-i2c-5-27/pout1/power2_input", 
+                    "ucd9200-i2c-5-27/pout2/power3_input", 
+                    "ucd9200-i2c-5-41/pout1/power2_input"
+                ], 
+                "temp": []
+            }, 
+            "psu_skips": {
+                "dps460-i2c-10-58": {
+                    "number": 2, 
+                    "side": "right", 
+                    "skip_list": [
+                        "dps460-i2c-10-58"
+                    ]
+                }, 
+                "dps460-i2c-10-59": {
+                    "number": 1, 
+                    "side": "left", 
+                    "skip_list": [
+                        "dps460-i2c-10-59"
+                    ]
+                }
+            }
+        }, 
+        "ACS-MSN2740": {
+            "alarms": {
+                "fan": [
+                    "dps460-i2c-4-59/fan1/fan1_alarm", 
+                    "dps460-i2c-4-58/fan1/fan1_alarm"
+                ], 
+                "power": [
+                    "dps460-i2c-4-59/vin/in1_min_alarm", 
+                    "dps460-i2c-4-59/vin/in1_max_alarm", 
+                    "dps460-i2c-4-59/vin/in1_lcrit_alarm", 
+                    "dps460-i2c-4-59/vin/in1_crit_alarm", 
+                    "dps460-i2c-4-59/vout1/in3_min_alarm", 
+                    "dps460-i2c-4-59/vout1/in3_max_alarm", 
+                    "dps460-i2c-4-59/vout1/in3_lcrit_alarm", 
+                    "dps460-i2c-4-59/vout1/in3_crit_alarm", 
+                    "dps460-i2c-4-59/pin/power1_alarm", 
+                    "dps460-i2c-4-59/pout1/power2_cap_alarm", 
+                    "dps460-i2c-4-59/pout1/power2_max_alarm", 
+                    "dps460-i2c-4-59/pout1/power2_crit_alarm", 
+                    "dps460-i2c-4-59/iin/curr1_max_alarm", 
+                    "dps460-i2c-4-59/iin/curr1_crit_alarm", 
+                    "dps460-i2c-4-59/iout1/curr2_max_alarm", 
+                    "dps460-i2c-4-59/iout1/curr2_lcrit_alarm", 
+                    "dps460-i2c-4-59/iout1/curr2_crit_alarm", 
+                    "dps460-i2c-4-58/vin/in1_min_alarm", 
+                    "dps460-i2c-4-58/vin/in1_max_alarm", 
+                    "dps460-i2c-4-58/vin/in1_lcrit_alarm", 
+                    "dps460-i2c-4-58/vin/in1_crit_alarm", 
+                    "dps460-i2c-4-58/vout1/in3_min_alarm", 
+                    "dps460-i2c-4-58/vout1/in3_max_alarm", 
+                    "dps460-i2c-4-58/vout1/in3_lcrit_alarm", 
+                    "dps460-i2c-4-58/vout1/in3_crit_alarm", 
+                    "dps460-i2c-4-58/pin/power1_alarm", 
+                    "dps460-i2c-4-58/pout1/power2_cap_alarm", 
+                    "dps460-i2c-4-58/pout1/power2_max_alarm", 
+                    "dps460-i2c-4-58/pout1/power2_crit_alarm", 
+                    "dps460-i2c-4-58/iin/curr1_max_alarm", 
+                    "dps460-i2c-4-58/iin/curr1_crit_alarm", 
+                    "dps460-i2c-4-58/iout1/curr2_max_alarm", 
+                    "dps460-i2c-4-58/iout1/curr2_lcrit_alarm", 
+                    "dps460-i2c-4-58/iout1/curr2_crit_alarm", 
+                    "ucd9200-i2c-5-27/UCD1 vin/in1_min_alarm", 
+                    "ucd9200-i2c-5-27/UCD1 vin/in1_max_alarm", 
+                    "ucd9200-i2c-5-27/UCD1 vin/in1_lcrit_alarm", 
+                    "ucd9200-i2c-5-27/UCD1 vin/in1_crit_alarm", 
+                    "ucd9200-i2c-5-27/ASIC 3.3 vout/in2_min_alarm", 
+                    "ucd9200-i2c-5-27/ASIC 3.3 vout/in2_max_alarm", 
+                    "ucd9200-i2c-5-27/ASIC 3.3 vout/in2_lcrit_alarm", 
+                    "ucd9200-i2c-5-27/ASIC 3.3 vout/in2_crit_alarm", 
+                    "ucd9200-i2c-5-27/ASIC 1.2 vout/in3_min_alarm", 
+                    "ucd9200-i2c-5-27/ASIC 1.2 vout/in3_max_alarm", 
+                    "ucd9200-i2c-5-27/ASIC 1.2 vout/in3_lcrit_alarm", 
+                    "ucd9200-i2c-5-27/ASIC 1.2 vout/in3_crit_alarm", 
+                    "ucd9200-i2c-5-27/iout1/curr2_max_alarm", 
+                    "ucd9200-i2c-5-27/iout1/curr2_lcrit_alarm", 
+                    "ucd9200-i2c-5-27/iout1/curr2_crit_alarm", 
+                    "ucd9200-i2c-5-27/iout2/curr3_max_alarm", 
+                    "ucd9200-i2c-5-27/iout2/curr3_lcrit_alarm", 
+                    "ucd9200-i2c-5-27/iout2/curr3_crit_alarm", 
+                    "ucd9200-i2c-5-41/UCD2 vin/in1_min_alarm", 
+                    "ucd9200-i2c-5-41/UCD2 vin/in1_max_alarm", 
+                    "ucd9200-i2c-5-41/UCD2 vin/in1_lcrit_alarm", 
+                    "ucd9200-i2c-5-41/UCD2 vin/in1_crit_alarm", 
+                    "ucd9200-i2c-5-41/ASIC Vcore vout/in2_min_alarm", 
+                    "ucd9200-i2c-5-41/ASIC Vcore vout/in2_max_alarm", 
+                    "ucd9200-i2c-5-41/ASIC Vcore vout/in2_lcrit_alarm", 
+                    "ucd9200-i2c-5-41/ASIC Vcore vout/in2_crit_alarm", 
+                    "ucd9200-i2c-5-41/iout1/curr2_max_alarm", 
+                    "ucd9200-i2c-5-41/iout1/curr2_lcrit_alarm", 
+                    "ucd9200-i2c-5-41/iout1/curr2_crit_alarm"
+                ], 
+                "temp": [
+                    "coretemp-isa-0000/Core 0/temp2_crit_alarm", 
+                    "coretemp-isa-0000/Core 1/temp3_crit_alarm", 
+                    "coretemp-isa-0000/Core 2/temp4_crit_alarm", 
+                    "coretemp-isa-0000/Core 3/temp5_crit_alarm", 
+                    "dps460-i2c-4-59/temp1/temp1_max_alarm", 
+                    "dps460-i2c-4-59/temp1/temp1_min_alarm", 
+                    "dps460-i2c-4-59/temp1/temp1_crit_alarm", 
+                    "dps460-i2c-4-59/temp1/temp1_lcrit_alarm", 
+                    "dps460-i2c-4-59/temp2/temp2_max_alarm", 
+                    "dps460-i2c-4-59/temp2/temp2_min_alarm", 
+                    "dps460-i2c-4-59/temp2/temp2_crit_alarm", 
+                    "dps460-i2c-4-59/temp2/temp2_lcrit_alarm", 
+                    "dps460-i2c-4-59/temp3/temp3_max_alarm", 
+                    "dps460-i2c-4-59/temp3/temp3_min_alarm", 
+                    "dps460-i2c-4-59/temp3/temp3_crit_alarm", 
+                    "dps460-i2c-4-59/temp3/temp3_lcrit_alarm", 
+                    "dps460-i2c-4-58/temp1/temp1_max_alarm", 
+                    "dps460-i2c-4-58/temp1/temp1_min_alarm", 
+                    "dps460-i2c-4-58/temp1/temp1_crit_alarm", 
+                    "dps460-i2c-4-58/temp1/temp1_lcrit_alarm", 
+                    "dps460-i2c-4-58/temp2/temp2_max_alarm", 
+                    "dps460-i2c-4-58/temp2/temp2_min_alarm", 
+                    "dps460-i2c-4-58/temp2/temp2_crit_alarm", 
+                    "dps460-i2c-4-58/temp2/temp2_lcrit_alarm", 
+                    "dps460-i2c-4-58/temp3/temp3_max_alarm", 
+                    "dps460-i2c-4-58/temp3/temp3_min_alarm", 
+                    "dps460-i2c-4-58/temp3/temp3_crit_alarm", 
+                    "dps460-i2c-4-58/temp3/temp3_lcrit_alarm", 
+                    "ucd9200-i2c-5-27/UCD1 Temp/temp1_max_alarm", 
+                    "ucd9200-i2c-5-27/UCD1 Temp/temp1_crit_alarm", 
+                    "ucd9200-i2c-5-27/UCD1 Temp2/temp2_max_alarm", 
+                    "ucd9200-i2c-5-27/UCD1 Temp2/temp2_crit_alarm", 
+                    "ucd9200-i2c-5-27/temp3/temp3_max_alarm", 
+                    "ucd9200-i2c-5-27/temp3/temp3_crit_alarm", 
+                    "ucd9200-i2c-5-41/UCD2 Temp1/temp1_max_alarm", 
+                    "ucd9200-i2c-5-41/UCD2 Temp1/temp1_crit_alarm", 
+                    "ucd9200-i2c-5-41/UCD2 Temp2/temp2_max_alarm", 
+                    "ucd9200-i2c-5-41/UCD2 Temp2/temp2_crit_alarm"
+                ]
+            }, 
+            "compares": {
+                "fan": [
+                    [
+                        "spectrum-i2c-2-48/fan1/fan1_input", 
+                        "spectrum-i2c-2-48/fan1/fan1_max"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan1/fan1_min", 
+                        "spectrum-i2c-2-48/fan1/fan1_input"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan2/fan2_input", 
+                        "spectrum-i2c-2-48/fan2/fan2_max"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan2/fan2_min", 
+                        "spectrum-i2c-2-48/fan2/fan2_input"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan3/fan3_input", 
+                        "spectrum-i2c-2-48/fan3/fan3_max"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan3/fan3_min", 
+                        "spectrum-i2c-2-48/fan3/fan3_input"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan4/fan4_input", 
+                        "spectrum-i2c-2-48/fan4/fan4_max"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan4/fan4_min", 
+                        "spectrum-i2c-2-48/fan4/fan4_input"
+                    ]
+                ], 
+                "power": [
+                    [
+                        "mlnxa2dswb-i2c-5-64/12v/in1_input", 
+                        "mlnxa2dswb-i2c-5-64/12v/in1_max"
+                    ], 
+                    [
+                        "mlnxa2dswb-i2c-5-64/12v/in1_min", 
+                        "mlnxa2dswb-i2c-5-64/12v/in1_input"
+                    ], 
+                    [
+                        "mlnxa2dswb-i2c-5-64/12v_aux/in2_input", 
+                        "mlnxa2dswb-i2c-5-64/12v_aux/in2_max"
+                    ], 
+                    [
+                        "mlnxa2dswb-i2c-5-64/12v_aux/in2_min", 
+                        "mlnxa2dswb-i2c-5-64/12v_aux/in2_input"
+                    ], 
+                    [
+                        "mlnxa2dswb-i2c-5-64/3.3v_aux/in3_input", 
+                        "mlnxa2dswb-i2c-5-64/3.3v_aux/in3_max"
+                    ], 
+                    [
+                        "mlnxa2dswb-i2c-5-64/3.3v_aux/in3_min", 
+                        "mlnxa2dswb-i2c-5-64/3.3v_aux/in3_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/soc_core/in1_input", 
+                        "mlnxa2dmnb-i2c-15-6d/soc_core/in1_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/soc_core/in1_min", 
+                        "mlnxa2dmnb-i2c-15-6d/soc_core/in1_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/soc_vnn/in2_input", 
+                        "mlnxa2dmnb-i2c-15-6d/soc_vnn/in2_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/soc_vnn/in2_min", 
+                        "mlnxa2dmnb-i2c-15-6d/soc_vnn/in2_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/cpu_0.675v/in3_input", 
+                        "mlnxa2dmnb-i2c-15-6d/cpu_0.675v/in3_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/cpu_0.675v/in3_min", 
+                        "mlnxa2dmnb-i2c-15-6d/cpu_0.675v/in3_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/1v/in4_input", 
+                        "mlnxa2dmnb-i2c-15-6d/1v/in4_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/1v/in4_min", 
+                        "mlnxa2dmnb-i2c-15-6d/1v/in4_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/vddq/in5_input", 
+                        "mlnxa2dmnb-i2c-15-6d/vddq/in5_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/vddq/in5_min", 
+                        "mlnxa2dmnb-i2c-15-6d/vddq/in5_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/1.8v/in6_input", 
+                        "mlnxa2dmnb-i2c-15-6d/1.8v/in6_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/1.8v/in6_min", 
+                        "mlnxa2dmnb-i2c-15-6d/1.8v/in6_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/sys_3.3v/in7_input", 
+                        "mlnxa2dmnb-i2c-15-6d/sys_3.3v/in7_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/sys_3.3v/in7_min", 
+                        "mlnxa2dmnb-i2c-15-6d/sys_3.3v/in7_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/12v/in8_input", 
+                        "mlnxa2dmnb-i2c-15-6d/12v/in8_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/12v/in8_min", 
+                        "mlnxa2dmnb-i2c-15-6d/12v/in8_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/1.35v/in9_input", 
+                        "mlnxa2dmnb-i2c-15-6d/1.35v/in9_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/1.35v/in9_min", 
+                        "mlnxa2dmnb-i2c-15-6d/1.35v/in9_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/vccsram/in10_input", 
+                        "mlnxa2dmnb-i2c-15-6d/vccsram/in10_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/vccsram/in10_min", 
+                        "mlnxa2dmnb-i2c-15-6d/vccsram/in10_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/1.5v/in11_input", 
+                        "mlnxa2dmnb-i2c-15-6d/1.5v/in11_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/1.5v/in11_min", 
+                        "mlnxa2dmnb-i2c-15-6d/1.5v/in11_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/5v/in12_input", 
+                        "mlnxa2dmnb-i2c-15-6d/5v/in12_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/5v/in12_min", 
+                        "mlnxa2dmnb-i2c-15-6d/5v/in12_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/3.3v_aux/in13_input", 
+                        "mlnxa2dmnb-i2c-15-6d/3.3v_aux/in13_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/3.3v_aux/in13_min", 
+                        "mlnxa2dmnb-i2c-15-6d/3.3v_aux/in13_input"
+                    ]
+                ], 
+                "temp": [
+                    [
+                        "spectrum-i2c-2-48/temp1/temp1_input", 
+                        "spectrum-i2c-2-48/temp1/temp1_max"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/temp1/temp1_min", 
+                        "spectrum-i2c-2-48/temp1/temp1_input"
+                    ], 
+                    [
+                        "tmp102-i2c-7-48/temp1/temp1_input", 
+                        "tmp102-i2c-7-48/temp1/temp1_max_hyst"
+                    ]
+                ]
+            }, 
+            "non_zero": {
+                "fan": [], 
+                "power": [
+                    "ucd9200-i2c-5-27/pout1/power2_input", 
+                    "ucd9200-i2c-5-27/pout2/power3_input", 
+                    "ucd9200-i2c-5-41/pout1/power2_input"
+                ], 
+                "temp": []
+            }, 
+            "psu_skips": {
+                "dps460-i2c-4-58": {
+                    "number": 2, 
+                    "side": "right", 
+                    "skip_list": [
+                        "dps460-i2c-4-58"
+                    ]
+                }, 
+                "dps460-i2c-4-59": {
+                    "number": 1, 
+                    "side": "left", 
+                    "skip_list": [
+                        "dps460-i2c-4-59"
+                    ]
+                }
+            }
+        }, 
+        "Accton-AS7712-32X": {
+            "alarms": {
+                "fan": [
+                    "as7712_32x_fan-i2c-2-66/fan1/fan1_fault", 
+                    "as7712_32x_fan-i2c-2-66/fan2/fan2_fault", 
+                    "as7712_32x_fan-i2c-2-66/fan3/fan3_fault", 
+                    "as7712_32x_fan-i2c-2-66/fan4/fan4_fault", 
+                    "as7712_32x_fan-i2c-2-66/fan5/fan5_fault", 
+                    "as7712_32x_fan-i2c-2-66/fan6/fan6_fault", 
+                    "as7712_32x_fan-i2c-2-66/fan11/fan11_fault", 
+                    "as7712_32x_fan-i2c-2-66/fan12/fan12_fault", 
+                    "as7712_32x_fan-i2c-2-66/fan13/fan13_fault", 
+                    "as7712_32x_fan-i2c-2-66/fan14/fan14_fault", 
+                    "as7712_32x_fan-i2c-2-66/fan15/fan15_fault", 
+                    "as7712_32x_fan-i2c-2-66/fan16/fan16_fault"
+                ], 
+                "power": [], 
+                "temp": [
+                    "coretemp-isa-0000/Core 0/temp2_crit_alarm", 
+                    "coretemp-isa-0000/Core 1/temp3_crit_alarm", 
+                    "coretemp-isa-0000/Core 2/temp4_crit_alarm", 
+                    "coretemp-isa-0000/Core 3/temp5_crit_alarm", 
+                    "ym2651-i2c-10-58/temp1/temp1_fault", 
+                    "ym2651-i2c-11-5b/temp1/temp1_fault"
+                ]
+            }, 
+            "compares": {
+                "fan": [], 
+                "power": [], 
+                "temp": [
+                    [
+                        "coretemp-isa-0000/Core 0/temp2_input", 
+                        "coretemp-isa-0000/Core 0/temp2_crit"
+                    ], 
+                    [
+                        "coretemp-isa-0000/Core 1/temp3_input", 
+                        "coretemp-isa-0000/Core 1/temp3_crit"
+                    ], 
+                    [
+                        "coretemp-isa-0000/Core 2/temp4_input", 
+                        "coretemp-isa-0000/Core 2/temp4_crit"
+                    ], 
+                    [
+                        "coretemp-isa-0000/Core 3/temp5_input", 
+                        "coretemp-isa-0000/Core 3/temp5_crit"
+                    ], 
+                    [
+                        "lm75-i2c-3-48/temp1/temp1_input", 
+                        "lm75-i2c-3-48/temp1/temp1_max"
+                    ], 
+                    [
+                        "lm75-i2c-3-49/temp1/temp1_input", 
+                        "lm75-i2c-3-49/temp1/temp1_max"
+                    ], 
+                    [
+                        "lm75-i2c-3-4a/temp1/temp1_input", 
+                        "lm75-i2c-3-4a/temp1/temp1_max"
+                    ]
+                ]
+            }, 
+            "non_zero": {
+                "fan": [
+                    "as7712_32x_fan-i2c-2-66/fan1/fan1_input", 
+                    "as7712_32x_fan-i2c-2-66/fan2/fan2_input", 
+                    "as7712_32x_fan-i2c-2-66/fan3/fan3_input", 
+                    "as7712_32x_fan-i2c-2-66/fan4/fan4_input", 
+                    "as7712_32x_fan-i2c-2-66/fan5/fan5_input", 
+                    "as7712_32x_fan-i2c-2-66/fan6/fan6_input", 
+                    "as7712_32x_fan-i2c-2-66/fan11/fan11_input", 
+                    "as7712_32x_fan-i2c-2-66/fan12/fan12_input", 
+                    "as7712_32x_fan-i2c-2-66/fan13/fan13_input", 
+                    "as7712_32x_fan-i2c-2-66/fan14/fan14_input", 
+                    "as7712_32x_fan-i2c-2-66/fan15/fan15_input", 
+                    "as7712_32x_fan-i2c-2-66/fan16/fan16_input", 
+                    "ym2651-i2c-10-58/fan1/fan1_input", 
+                    "ym2651-i2c-11-5b/fan1/fan1_input"
+                ], 
+                "power": [
+                    "ym2651-i2c-11-5b/power1/power1_input", 
+                    "ym2651-i2c-10-58/power1/power1_input"
+                ], 
+                "temp": []
+            }, 
+            "psu_skips": {
+                "ym2651-i2c-10-58": {
+                    "number": 2, 
+                    "side": "right", 
+                    "skip_list": [
+                        "ym2651-i2c-10-58"
+                    ]
+                }, 
+                "ym2651-i2c-11-5b": {
+                    "number": 1, 
+                    "side": "left", 
+                    "skip_list": [
+                        "ym2651-i2c-11-5b"
+                    ]
+                }
+            }
+        }, 
+        "Arista-7050-QX32": {
+            "alarms": {
+                "fan": [], 
+                "power": [
+                    "dps460-i2c-6-58/vin/in1_min_alarm", 
+                    "dps460-i2c-6-58/vin/in1_max_alarm", 
+                    "dps460-i2c-6-58/vin/in1_lcrit_alarm", 
+                    "dps460-i2c-6-58/vin/in1_crit_alarm", 
+                    "dps460-i2c-6-58/vout1/in3_min_alarm", 
+                    "dps460-i2c-6-58/vout1/in3_max_alarm", 
+                    "dps460-i2c-6-58/vout1/in3_lcrit_alarm", 
+                    "dps460-i2c-6-58/vout1/in3_crit_alarm", 
+                    "dps460-i2c-6-58/iin/curr1_max_alarm", 
+                    "dps460-i2c-6-58/iin/curr1_crit_alarm", 
+                    "dps460-i2c-6-58/iout1/curr2_max_alarm", 
+                    "dps460-i2c-6-58/iout1/curr2_lcrit_alarm", 
+                    "dps460-i2c-6-58/iout1/curr2_crit_alarm"
+                ], 
+                "temp": [
+                    "dps460-i2c-6-58/Power supply 2 inlet temp sensor/temp1_max_alarm", 
+                    "dps460-i2c-6-58/Power supply 2 inlet temp sensor/temp1_min_alarm", 
+                    "dps460-i2c-6-58/Power supply 2 inlet temp sensor/temp1_crit_alarm", 
+                    "dps460-i2c-6-58/Power supply 2 inlet temp sensor/temp1_lcrit_alarm", 
+                    "dps460-i2c-6-58/Power supply 2 internal sensor/temp2_max_alarm", 
+                    "dps460-i2c-6-58/Power supply 2 internal sensor/temp2_min_alarm", 
+                    "dps460-i2c-6-58/Power supply 2 internal sensor/temp2_crit_alarm", 
+                    "dps460-i2c-6-58/Power supply 2 internal sensor/temp2_lcrit_alarm"
+                ]
+            }, 
+            "compares": {
+                "fan": [], 
+                "power": [], 
+                "temp": [
+                    [
+                        "k10temp-pci-00c3/Cpu temp sensor/temp1_input", 
+                        "k10temp-pci-00c3/Cpu temp sensor/temp1_max"
+                    ], 
+                    [
+                        "lm73-i2c-3-48/Back panel temp sensor/temp1_input", 
+                        "lm73-i2c-3-48/Back panel temp sensor/temp1_max"
+                    ], 
+                    [
+                        "max6658-i2c-2-4c/Board temp sensor/temp1_input", 
+                        "max6658-i2c-2-4c/Board temp sensor/temp1_max"
+                    ], 
+                    [
+                        "max6658-i2c-2-4c/Front panel temp sensor/temp2_input", 
+                        "max6658-i2c-2-4c/Front panel temp sensor/temp2_max"
+                    ], 
+                    [
+                        "dps460-i2c-6-58/Power supply 2 inlet temp sensor/temp1_input", 
+                        "dps460-i2c-6-58/Power supply 2 inlet temp sensor/temp1_max"
+                    ], 
+                    [
+                        "dps460-i2c-6-58/Power supply 2 internal sensor/temp2_input", 
+                        "dps460-i2c-6-58/Power supply 2 internal sensor/temp2_max"
+                    ]
+                ]
+            }, 
+            "non_zero": {
+                "fan": [
+                    "dps460-i2c-6-58/fan1/fan1_input"
+                ], 
+                "power": [], 
+                "temp": []
+            }, 
+            "psu_skips": {}
+        }, 
+        "Arista-7060CX-32S-C32": {
+            "alarms": {
+                "fan": [
+                    "pmbus-i2c-5-58/fan1/fan1_alarm", 
+                    "pmbus-i2c-6-58/fan1/fan1_alarm", 
+                    "pmbus-i2c-5-58/fan1/fan1_fault", 
+                    "pmbus-i2c-6-58/fan1/fan1_fault"
+                ], 
+                "power": [
+                    "pmbus-i2c-5-58/iin/curr1_max_alarm", 
+                    "pmbus-i2c-5-58/iout1/curr2_max_alarm", 
+                    "pmbus-i2c-5-58/iout1/curr2_crit_alarm", 
+                    "pmbus-i2c-5-58/iout2/curr3_crit_alarm", 
+                    "pmbus-i2c-5-58/vin/in1_alarm", 
+                    "pmbus-i2c-5-58/vout1/in2_crit_alarm", 
+                    "pmbus-i2c-5-58/vout1/in2_lcrit_alarm", 
+                    "pmbus-i2c-6-58/iin/curr1_max_alarm", 
+                    "pmbus-i2c-6-58/iout1/curr2_max_alarm", 
+                    "pmbus-i2c-6-58/iout1/curr2_crit_alarm", 
+                    "pmbus-i2c-6-58/iout2/curr3_crit_alarm", 
+                    "pmbus-i2c-6-58/vin/in1_alarm", 
+                    "pmbus-i2c-6-58/vout1/in2_crit_alarm", 
+                    "pmbus-i2c-6-58/vout1/in2_lcrit_alarm"
+                ], 
+                "temp": [
+                    "max6658-i2c-3-4c/Cpu board temp sensor/temp1_min_alarm", 
+                    "max6658-i2c-3-4c/Cpu board temp sensor/temp1_max_alarm", 
+                    "max6658-i2c-3-4c/Cpu board temp sensor/temp1_crit_alarm", 
+                    "max6658-i2c-3-4c/Back panel temp sensor/temp2_min_alarm", 
+                    "max6658-i2c-3-4c/Back panel temp sensor/temp2_max_alarm", 
+                    "max6658-i2c-3-4c/Back panel temp sensor/temp2_crit_alarm", 
+                    "max6658-i2c-3-4c/Back panel temp sensor/temp2_fault", 
+                    "pmbus-i2c-5-58/Power supply 2 hotspot sensor/temp1_alarm", 
+                    "pmbus-i2c-5-58/Power supply 2 inlet temp sensor/temp2_alarm", 
+                    "pmbus-i2c-5-58/Power supply 2 exhaust temp sensor/temp3_alarm", 
+                    "pmbus-i2c-6-58/Power supply 1 hotspot sensor/temp1_alarm", 
+                    "pmbus-i2c-6-58/Power supply 1 inlet temp sensor/temp2_alarm", 
+                    "pmbus-i2c-6-58/Power supply 1 exhaust temp sensor/temp3_alarm"
+                ]
+            }, 
+            "compares": {
+                "fan": [], 
+                "power": [
+                    [
+                        "pmbus-i2c-5-58/iin/curr1_input", 
+                        "pmbus-i2c-5-58/iin/curr1_max"
+                    ], 
+                    [
+                        "pmbus-i2c-5-58/iout1/curr2_input", 
+                        "pmbus-i2c-5-58/iout1/curr2_max"
+                    ], 
+                    [
+                        "pmbus-i2c-6-58/iin/curr1_input", 
+                        "pmbus-i2c-6-58/iin/curr1_max"
+                    ], 
+                    [
+                        "pmbus-i2c-6-58/iout1/curr2_input", 
+                        "pmbus-i2c-6-58/iout1/curr2_max"
+                    ]
+                ], 
+                "temp": [
+                    [
+                        "k10temp-pci-00c3/Cpu temp sensor/temp1_input", 
+                        "k10temp-pci-00c3/Cpu temp sensor/temp1_max"
+                    ], 
+                    [
+                        "max6658-i2c-3-4c/Cpu board temp sensor/temp1_input", 
+                        "max6658-i2c-3-4c/Cpu board temp sensor/temp1_max"
+                    ], 
+                    [
+                        "max6658-i2c-3-4c/Back panel temp sensor/temp2_input", 
+                        "max6658-i2c-3-4c/Back panel temp sensor/temp2_max"
+                    ]
+                ]
+            }, 
+            "non_zero": {
+                "fan": [
+                    "pmbus-i2c-5-58/fan1/fan1_input", 
+                    "pmbus-i2c-6-58/fan1/fan1_input", 
+                    "crow_cpld-i2c-3-60/fan1/fan1_input", 
+                    "crow_cpld-i2c-3-60/fan2/fan2_input", 
+                    "crow_cpld-i2c-3-60/fan3/fan3_input", 
+                    "crow_cpld-i2c-3-60/fan4/fan4_input"
+                ], 
+                "power": [], 
+                "temp": []
+            }, 
+            "psu_skips": {}
+        }, 
+        "Arista-7260CX3-D108C8": {
+            "alarms": {
+                "fan": [
+                    "pmbus-i2c-3-58/fan1/fan1_alarm", 
+                    "pmbus-i2c-4-58/fan1/fan1_alarm", 
+                    "pmbus-i2c-3-58/fan1/fan1_fault", 
+                    "pmbus-i2c-4-58/fan1/fan1_fault", 
+                    "rook_cpld-i2c-85-60/fan1/fan1_fault", 
+                    "rook_cpld-i2c-85-60/fan2/fan2_fault", 
+                    "rook_cpld-i2c-85-60/fan3/fan3_fault", 
+                    "rook_cpld-i2c-85-60/fan4/fan4_fault"
+                ], 
+                "power": [
+                    "pmbus-i2c-3-58/iin/curr1_max_alarm", 
+                    "pmbus-i2c-3-58/iout1/curr2_max_alarm", 
+                    "pmbus-i2c-3-58/iout1/curr2_crit_alarm", 
+                    "pmbus-i2c-3-58/iout2/curr3_crit_alarm", 
+                    "pmbus-i2c-3-58/vin/in1_alarm", 
+                    "pmbus-i2c-3-58/vout1/in2_lcrit_alarm", 
+                    "pmbus-i2c-3-58/vout1/in2_crit_alarm", 
+                    "pmbus-i2c-4-58/iin/curr1_max_alarm", 
+                    "pmbus-i2c-4-58/iout1/curr2_max_alarm", 
+                    "pmbus-i2c-4-58/iout1/curr2_crit_alarm", 
+                    "pmbus-i2c-4-58/iout2/curr3_crit_alarm", 
+                    "pmbus-i2c-4-58/vin/in1_alarm", 
+                    "pmbus-i2c-4-58/vout1/in2_lcrit_alarm", 
+                    "pmbus-i2c-4-58/vout1/in2_crit_alarm"
+                ], 
+                "temp": [
+                    "coretemp-isa-0000/Physical id 0/temp1_crit_alarm", 
+                    "coretemp-isa-0000/Core 0/temp2_crit_alarm", 
+                    "coretemp-isa-0000/Core 1/temp3_crit_alarm", 
+                    "lm73-i2c-88-48/Front panel temp sensor/temp1_min_alarm", 
+                    "lm73-i2c-88-48/Front panel temp sensor/temp1_max_alarm", 
+                    "max6658-i2c-1-4c/Asic temp sensor/temp1_min_alarm", 
+                    "max6658-i2c-1-4c/Asic temp sensor/temp1_max_alarm", 
+                    "max6658-i2c-1-4c/Asic temp sensor/temp1_crit_alarm", 
+                    "max6658-i2c-73-4c/Back panel temp sensor 1/temp1_min_alarm", 
+                    "max6658-i2c-73-4c/Back panel temp sensor 1/temp1_max_alarm", 
+                    "max6658-i2c-73-4c/Back panel temp sensor 1/temp1_crit_alarm", 
+                    "max6658-i2c-73-4c/Back panel temp sensor 2/temp2_min_alarm", 
+                    "max6658-i2c-73-4c/Back panel temp sensor 2/temp2_max_alarm", 
+                    "max6658-i2c-73-4c/Back panel temp sensor 2/temp2_crit_alarm", 
+                    "max6658-i2c-73-4c/Back panel temp sensor 2/temp2_fault", 
+                    "pmbus-i2c-3-58/Power supply 1 exhaust temp sensor/temp3_alarm", 
+                    "pmbus-i2c-3-58/Power supply 1 inlet temp sensor/temp2_alarm", 
+                    "pmbus-i2c-3-58/Power supply 1 hotspot sensor/temp1_alarm", 
+                    "pmbus-i2c-4-58/Power supply 2 exhaust temp sensor/temp3_alarm", 
+                    "pmbus-i2c-4-58/Power supply 2 inlet temp sensor/temp2_alarm", 
+                    "pmbus-i2c-4-58/Power supply 2 hotspot sensor/temp1_alarm"
+                ]
+            }, 
+            "compares": {
+                "fan": [], 
+                "power": [
+                    [
+                        "pmbus-i2c-3-58/iin/curr1_input", 
+                        "pmbus-i2c-3-58/iin/curr1_max"
+                    ], 
+                    [
+                        "pmbus-i2c-3-58/iout1/curr2_input", 
+                        "pmbus-i2c-3-58/iout1/curr2_max"
+                    ], 
+                    [
+                        "pmbus-i2c-4-58/iin/curr1_input", 
+                        "pmbus-i2c-4-58/iin/curr1_max"
+                    ], 
+                    [
+                        "pmbus-i2c-4-58/iout1/curr2_input", 
+                        "pmbus-i2c-4-58/iout1/curr2_max"
+                    ]
+                ], 
+                "temp": [
+                    [
+                        "coretemp-isa-0000/Physical id 0/temp1_input", 
+                        "coretemp-isa-0000/Physical id 0/temp1_max"
+                    ], 
+                    [
+                        "coretemp-isa-0000/Core 0/temp2_input", 
+                        "coretemp-isa-0000/Core 0/temp2_max"
+                    ], 
+                    [
+                        "coretemp-isa-0000/Core 1/temp3_input", 
+                        "coretemp-isa-0000/Core 1/temp3_max"
+                    ], 
+                    [
+                        "lm73-i2c-88-48/Front panel temp sensor/temp1_input", 
+                        "lm73-i2c-88-48/Front panel temp sensor/temp1_max"
+                    ], 
+                    [
+                        "max6658-i2c-1-4c/Asic temp sensor/temp1_input", 
+                        "max6658-i2c-1-4c/Asic temp sensor/temp1_max"
+                    ], 
+                    [
+                        "max6658-i2c-73-4c/Back panel temp sensor 1/temp1_input", 
+                        "max6658-i2c-73-4c/Back panel temp sensor 1/temp1_max"
+                    ], 
+                    [
+                        "max6658-i2c-73-4c/Back panel temp sensor 2/temp2_input", 
+                        "max6658-i2c-73-4c/Back panel temp sensor 2/temp2_max"
+                    ]
+                ]
+            }, 
+            "non_zero": {
+                "fan": [
+                    "pmbus-i2c-3-58/fan1/fan1_input", 
+                    "pmbus-i2c-4-58/fan1/fan1_input", 
+                    "rook_cpld-i2c-85-60/fan1/fan1_input", 
+                    "rook_cpld-i2c-85-60/fan2/fan2_input", 
+                    "rook_cpld-i2c-85-60/fan3/fan3_input", 
+                    "rook_cpld-i2c-85-60/fan4/fan4_input"
+                ], 
+                "power": [], 
+                "temp": []
+            }, 
+            "psu_skips": {}
+        }, 
+        "Force10-S6000": {
+            "alarms": {
+                "fan": [
+                    "dni_dps460-i2c-1-58/fan1/fan1_alarm", 
+                    "dni_dps460-i2c-1-58/fan1/fan1_fault", 
+                    "dni_dps460-i2c-1-59/fan1/fan1_alarm", 
+                    "dni_dps460-i2c-1-59/fan1/fan1_fault"
+                ], 
+                "power": [
+                    "ltc4215-i2c-11-40/in1/in1_min_alarm", 
+                    "ltc4215-i2c-11-40/in1/in1_max_alarm", 
+                    "ltc4215-i2c-11-40/in2/in2_min_alarm", 
+                    "ltc4215-i2c-11-40/curr1/curr1_max_alarm", 
+                    "ltc4215-i2c-11-42/in1/in1_min_alarm", 
+                    "ltc4215-i2c-11-42/in1/in1_max_alarm", 
+                    "ltc4215-i2c-11-42/in2/in2_min_alarm", 
+                    "ltc4215-i2c-11-42/curr1/curr1_max_alarm"
+                ], 
+                "temp": [
+                    "coretemp-isa-0000/Core 0/temp2_crit_alarm", 
+                    "coretemp-isa-0000/Core 1/temp3_crit_alarm", 
+                    "jc42-i2c-10-18/temp1/temp1_max_alarm", 
+                    "jc42-i2c-10-18/temp1/temp1_min_alarm", 
+                    "jc42-i2c-10-18/temp1/temp1_crit_alarm", 
+                    "emc1403-i2c-10-4d/temp1/temp1_max_alarm", 
+                    "emc1403-i2c-10-4d/temp1/temp1_min_alarm", 
+                    "emc1403-i2c-10-4d/temp1/temp1_crit_alarm", 
+                    "emc1403-i2c-10-4d/temp2/temp2_max_alarm", 
+                    "emc1403-i2c-10-4d/temp2/temp2_min_alarm", 
+                    "emc1403-i2c-10-4d/temp2/temp2_crit_alarm", 
+                    "emc1403-i2c-10-4d/temp2/temp2_fault", 
+                    "emc1403-i2c-10-4d/temp3/temp3_max_alarm", 
+                    "emc1403-i2c-10-4d/temp3/temp3_min_alarm", 
+                    "emc1403-i2c-10-4d/temp3/temp3_crit_alarm", 
+                    "emc1403-i2c-10-4d/temp3/temp3_fault", 
+                    "dni_dps460-i2c-1-58/temp1/temp1_max_alarm", 
+                    "dni_dps460-i2c-1-58/temp2/temp2_max_alarm", 
+                    "dni_dps460-i2c-1-59/temp1/temp1_max_alarm", 
+                    "dni_dps460-i2c-1-59/temp2/temp2_max_alarm"
+                ]
+            }, 
+            "compares": {
+                "fan": [], 
+                "power": [], 
+                "temp": [
+                    [
+                        "acpitz-virtual-0/temp1/temp1_input", 
+                        "acpitz-virtual-0/temp1/temp1_crit"
+                    ], 
+                    [
+                        "acpitz-virtual-0/temp2/temp2_input", 
+                        "acpitz-virtual-0/temp2/temp2_crit"
+                    ], 
+                    [
+                        "tmp75-i2c-11-4c/temp1/temp1_input", 
+                        "tmp75-i2c-11-4c/temp1/temp1_max"
+                    ], 
+                    [
+                        "tmp75-i2c-11-4d/temp1/temp1_input", 
+                        "tmp75-i2c-11-4d/temp1/temp1_max"
+                    ], 
+                    [
+                        "tmp75-i2c-11-4e/temp1/temp1_input", 
+                        "tmp75-i2c-11-4e/temp1/temp1_max"
+                    ]
+                ]
+            }, 
+            "non_zero": {
+                "fan": [
+                    "max6620-i2c-11-29/fan1/fan1_input", 
+                    "max6620-i2c-11-29/fan2/fan2_input", 
+                    "max6620-i2c-11-29/fan3/fan3_input", 
+                    "max6620-i2c-11-29/fan4/fan4_input", 
+                    "max6620-i2c-11-2a/fan1/fan1_input", 
+                    "max6620-i2c-11-2a/fan2/fan2_input"
+                ], 
+                "power": [], 
+                "temp": []
+            }, 
+            "psu_skips": {
+                "dni_dps460-i2c-1-58": {
+                    "number": 2, 
+                    "side": "right", 
+                    "skip_list": [
+                        "dni_dps460-i2c-1-58", 
+                        "ltc4215-i2c-11-40"
+                    ]
+                }, 
+                "dni_dps460-i2c-1-59": {
+                    "number": 1, 
+                    "side": "left", 
+                    "skip_list": [
+                        "dni_dps460-i2c-1-59", 
+                        "ltc4215-i2c-11-42"
+                    ]
+                }
+            }
+        }, 
+        "Force10-S6100": {
+            "alarms": {
+                "fan": [
+                    "SMF_S6100_ON-isa-0000/Tray1 Fan1/fan1_alarm", 
+                    "SMF_S6100_ON-isa-0000/Tray2 Fan1/fan3_alarm", 
+                    "SMF_S6100_ON-isa-0000/Tray3 Fan1/fan5_alarm", 
+                    "SMF_S6100_ON-isa-0000/Tray4 Fan1/fan7_alarm", 
+                    "SMF_S6100_ON-isa-0000/Tray1 Fan1/fan1_fault", 
+                    "SMF_S6100_ON-isa-0000/Tray2 Fan1/fan3_fault", 
+                    "SMF_S6100_ON-isa-0000/Tray3 Fan1/fan5_fault", 
+                    "SMF_S6100_ON-isa-0000/Tray4 Fan1/fan7_fault", 
+                    "SMF_S6100_ON-isa-0000/Psu1 Fan/fan11_alarm", 
+                    "SMF_S6100_ON-isa-0000/Psu2 Fan/fan12_alarm", 
+                    "SMF_S6100_ON-isa-0000/Psu1 Fan/fan11_fault", 
+                    "SMF_S6100_ON-isa-0000/Psu2 Fan/fan12_fault"
+                ], 
+                "power": [
+                    "SMF_S6100_ON-isa-0000/CPU XP3R3V_EARLY/in1_alarm", 
+                    "SMF_S6100_ON-isa-0000/CPU XP5R0V_CP/in2_alarm", 
+                    "SMF_S6100_ON-isa-0000/CPU XP3R3V_STD/in3_alarm", 
+                    "SMF_S6100_ON-isa-0000/CPU XP3R3V_CP /in4_alarm", 
+                    "SMF_S6100_ON-isa-0000/CPU XP0R75V_VTT_A/in5_alarm", 
+                    "SMF_S6100_ON-isa-0000/CPU XP0R75V_VTT_B/in6_alarm", 
+                    "SMF_S6100_ON-isa-0000/CPU XP1R07V_CPU/in7_alarm", 
+                    "SMF_S6100_ON-isa-0000/CPU XP1R0V_CPU/in8_alarm", 
+                    "SMF_S6100_ON-isa-0000/CPU XP12R0V/in9_alarm", 
+                    "SMF_S6100_ON-isa-0000/CPU VDDR_CPU_2/in10_alarm", 
+                    "SMF_S6100_ON-isa-0000/CPU VDDR_CPU_1/in11_alarm", 
+                    "SMF_S6100_ON-isa-0000/CPU XP1R5V_CLK/in12_alarm", 
+                    "SMF_S6100_ON-isa-0000/CPU XP1R35V_CPU/in13_alarm", 
+                    "SMF_S6100_ON-isa-0000/CPU XP1R8V_CPU/in14_alarm", 
+                    "SMF_S6100_ON-isa-0000/CPU XP1R0V_CPU_VNN/in15_alarm", 
+                    "SMF_S6100_ON-isa-0000/CPU XP1R0V_CPU_VCC/in16_alarm", 
+                    "SMF_S6100_ON-isa-0000/CPU XP1R5V_EARLY/in17_alarm", 
+                    "SMF_S6100_ON-isa-0000/SW XP3R3V_MON/in19_alarm", 
+                    "SMF_S6100_ON-isa-0000/SW XP1R8V_MON/in20_alarm", 
+                    "SMF_S6100_ON-isa-0000/SW XP1R25V_MON/in21_alarm", 
+                    "SMF_S6100_ON-isa-0000/SW XP1R2V_MON/in22_alarm", 
+                    "SMF_S6100_ON-isa-0000/SW XP1R0V_SW_MON/in23_alarm", 
+                    "SMF_S6100_ON-isa-0000/SW XP1R0V_ROV_SW_MON/in24_alarm", 
+                    "SMF_S6100_ON-isa-0000/SW XP5V_MB_MON/in26_alarm", 
+                    "SMF_S6100_ON-isa-0000/SW XP1R8V_FPGA_MON/in27_alarm", 
+                    "SMF_S6100_ON-isa-0000/SW XP3R3V_FPGA_MON/in28_alarm"
+                ], 
+                "temp": [
+                    "coretemp-isa-0000/Core 0/temp2_crit_alarm", 
+                    "coretemp-isa-0000/Core 1/temp3_crit_alarm", 
+                    "coretemp-isa-0000/Core 2/temp4_crit_alarm", 
+                    "coretemp-isa-0000/Core 3/temp5_crit_alarm"
+                ]
+            }, 
+            "compares": {
+                "fan": [], 
+                "power": [
+                    [
+                        "SMF_S6100_ON-isa-0000/Psu1 Input/power1_input", 
+                        "SMF_S6100_ON-isa-0000/Psu1 Input/power1_max"
+                    ], 
+                    [
+                        "SMF_S6100_ON-isa-0000/Psu1 Output/power2_input", 
+                        "SMF_S6100_ON-isa-0000/Psu1 Output/power2_max"
+                    ], 
+                    [
+                        "SMF_S6100_ON-isa-0000/Psu2 Input/power3_input", 
+                        "SMF_S6100_ON-isa-0000/Psu2 Input/power3_max"
+                    ], 
+                    [
+                        "SMF_S6100_ON-isa-0000/Psu2 Output/power4_input", 
+                        "SMF_S6100_ON-isa-0000/Psu2 Output/power4_max"
+                    ]
+                ], 
+                "temp": [
+                    [
+                        "coretemp-isa-0000/Core 0/temp2_input", 
+                        "coretemp-isa-0000/Core 0/temp2_crit"
+                    ], 
+                    [
+                        "coretemp-isa-0000/Core 1/temp3_input", 
+                        "coretemp-isa-0000/Core 1/temp3_crit"
+                    ], 
+                    [
+                        "coretemp-isa-0000/Core 2/temp4_input", 
+                        "coretemp-isa-0000/Core 2/temp4_crit"
+                    ], 
+                    [
+                        "coretemp-isa-0000/Core 3/temp5_input", 
+                        "coretemp-isa-0000/Core 3/temp5_crit"
+                    ], 
+                    [
+                        "SMF_S6100_ON-isa-0000/CPU On-board (U2900)/temp1_input", 
+                        "SMF_S6100_ON-isa-0000/CPU On-board (U2900)/temp1_crit"
+                    ], 
+                    [
+                        "SMF_S6100_ON-isa-0000/BCM On-Board #1 (U44)/temp2_input", 
+                        "SMF_S6100_ON-isa-0000/BCM On-Board #1 (U44)/temp2_crit"
+                    ], 
+                    [
+                        "SMF_S6100_ON-isa-0000/Front BCM On-board (U4)/temp3_input", 
+                        "SMF_S6100_ON-isa-0000/Front BCM On-board (U4)/temp3_crit"
+                    ], 
+                    [
+                        "SMF_S6100_ON-isa-0000/Front BCM On-board (U2)/temp4_input", 
+                        "SMF_S6100_ON-isa-0000/Front BCM On-board (U2)/temp4_crit"
+                    ], 
+                    [
+                        "SMF_S6100_ON-isa-0000/Front GE/temp10_input", 
+                        "SMF_S6100_ON-isa-0000/Front GE/temp10_crit"
+                    ], 
+                    [
+                        "SMF_S6100_ON-isa-0000/Front SFP+/temp11_input", 
+                        "SMF_S6100_ON-isa-0000/Front SFP+/temp11_crit"
+                    ], 
+                    [
+                        "SMF_S6100_ON-isa-0000/PSU 1/temp14_input", 
+                        "SMF_S6100_ON-isa-0000/PSU 1/temp14_crit"
+                    ], 
+                    [
+                        "SMF_S6100_ON-isa-0000/PSU 2/temp15_input", 
+                        "SMF_S6100_ON-isa-0000/PSU 2/temp15_crit"
+                    ]
+                ]
+            }, 
+            "non_zero": {
+                "fan": [
+                    "SMF_S6100_ON-isa-0000/Tray1 Fan1/fan1_input", 
+                    "SMF_S6100_ON-isa-0000/Tray2 Fan1/fan3_input", 
+                    "SMF_S6100_ON-isa-0000/Tray3 Fan1/fan5_input", 
+                    "SMF_S6100_ON-isa-0000/Tray4 Fan1/fan7_input", 
+                    "SMF_S6100_ON-isa-0000/Psu1 Fan/fan11_input", 
+                    "SMF_S6100_ON-isa-0000/Psu2 Fan/fan12_input"
+                ], 
+                "power": [
+                    "SMF_S6100_ON-isa-0000/CPU XP3R3V_EARLY/in1_input", 
+                    "SMF_S6100_ON-isa-0000/CPU XP5R0V_CP/in2_input", 
+                    "SMF_S6100_ON-isa-0000/CPU XP3R3V_STD/in3_input", 
+                    "SMF_S6100_ON-isa-0000/CPU XP3R3V_CP /in4_input", 
+                    "SMF_S6100_ON-isa-0000/CPU XP0R75V_VTT_A/in5_input", 
+                    "SMF_S6100_ON-isa-0000/CPU XP0R75V_VTT_B/in6_input", 
+                    "SMF_S6100_ON-isa-0000/CPU XP1R07V_CPU/in7_input", 
+                    "SMF_S6100_ON-isa-0000/CPU XP1R0V_CPU/in8_input", 
+                    "SMF_S6100_ON-isa-0000/CPU XP12R0V/in9_input", 
+                    "SMF_S6100_ON-isa-0000/CPU VDDR_CPU_2/in10_input", 
+                    "SMF_S6100_ON-isa-0000/CPU VDDR_CPU_1/in11_input", 
+                    "SMF_S6100_ON-isa-0000/CPU XP1R5V_CLK/in12_input", 
+                    "SMF_S6100_ON-isa-0000/CPU XP1R35V_CPU/in13_input", 
+                    "SMF_S6100_ON-isa-0000/CPU XP1R8V_CPU/in14_input", 
+                    "SMF_S6100_ON-isa-0000/CPU XP1R0V_CPU_VNN/in15_input", 
+                    "SMF_S6100_ON-isa-0000/CPU XP1R0V_CPU_VCC/in16_input", 
+                    "SMF_S6100_ON-isa-0000/CPU XP1R5V_EARLY/in17_input", 
+                    "SMF_S6100_ON-isa-0000/SW XP3R3V_MON/in19_input", 
+                    "SMF_S6100_ON-isa-0000/SW XP1R8V_MON/in20_input", 
+                    "SMF_S6100_ON-isa-0000/SW XP1R25V_MON/in21_input", 
+                    "SMF_S6100_ON-isa-0000/SW XP1R2V_MON/in22_input", 
+                    "SMF_S6100_ON-isa-0000/SW XP1R0V_SW_MON/in23_input", 
+                    "SMF_S6100_ON-isa-0000/SW XP1R0V_ROV_SW_MON/in24_input", 
+                    "SMF_S6100_ON-isa-0000/SW XP5V_MB_MON/in26_input", 
+                    "SMF_S6100_ON-isa-0000/SW XP1R8V_FPGA_MON/in27_input", 
+                    "SMF_S6100_ON-isa-0000/SW XP3R3V_FPGA_MON/in28_input", 
+                    "SMF_S6100_ON-isa-0000/PSU1 VIN/in29_input", 
+                    "SMF_S6100_ON-isa-0000/PSU1 VOUT/in30_input", 
+                    "SMF_S6100_ON-isa-0000/PSU2 VIN/in31_input", 
+                    "SMF_S6100_ON-isa-0000/PSU2 VOUT/in32_input", 
+                    "SMF_S6100_ON-isa-0000/Psu1 Input/power1_input", 
+                    "SMF_S6100_ON-isa-0000/Psu1 Output/power2_input", 
+                    "SMF_S6100_ON-isa-0000/Psu2 Input/power3_input", 
+                    "SMF_S6100_ON-isa-0000/Psu2 Output/power4_input", 
+                    "SMF_S6100_ON-isa-0000/XP1R0V/curr21_input", 
+                    "SMF_S6100_ON-isa-0000/XP1R0V_ROV/curr22_input"
+                ], 
+                "temp": [
+                    "SMF_S6100_ON-isa-0000/CPU On-board (U2900)/temp1_input", 
+                    "SMF_S6100_ON-isa-0000/BCM On-Board #1 (U44)/temp2_input", 
+                    "SMF_S6100_ON-isa-0000/Front BCM On-board (U4)/temp3_input", 
+                    "SMF_S6100_ON-isa-0000/Front BCM On-board (U2)/temp4_input", 
+                    "SMF_S6100_ON-isa-0000/IOM #1/temp5_input", 
+                    "SMF_S6100_ON-isa-0000/IOM #2/temp6_input", 
+                    "SMF_S6100_ON-isa-0000/IOM #3/temp7_input", 
+                    "SMF_S6100_ON-isa-0000/IOM #4/temp8_input", 
+                    "SMF_S6100_ON-isa-0000/U2 Switch board?/temp9_input", 
+                    "SMF_S6100_ON-isa-0000/Front GE/temp10_input", 
+                    "SMF_S6100_ON-isa-0000/Front SFP+/temp11_input", 
+                    "SMF_S6100_ON-isa-0000/BCM Internal/temp12_input", 
+                    "SMF_S6100_ON-isa-0000/CPU Internal/temp13_input", 
+                    "SMF_S6100_ON-isa-0000/PSU 1/temp14_input", 
+                    "SMF_S6100_ON-isa-0000/PSU 2/temp15_input"
+                ]
+            }, 
+            "psu_skips": {}
+        }, 
+        "Force10-Z9100": {
+            "alarms": {
+                "fan": [
+                    "SMF_Z9100_ON-isa-0000/Tray1 Fan1/fan1_alarm", 
+                    "SMF_Z9100_ON-isa-0000/Tray1 Fan1/fan1_fault", 
+                    "SMF_Z9100_ON-isa-0000/Tray1 Fan2/fan2_alarm", 
+                    "SMF_Z9100_ON-isa-0000/Tray1 Fan2/fan2_fault", 
+                    "SMF_Z9100_ON-isa-0000/Tray2 Fan1/fan3_alarm", 
+                    "SMF_Z9100_ON-isa-0000/Tray2 Fan1/fan3_fault", 
+                    "SMF_Z9100_ON-isa-0000/Tray2 Fan2/fan4_alarm", 
+                    "SMF_Z9100_ON-isa-0000/Tray2 Fan2/fan4_fault", 
+                    "SMF_Z9100_ON-isa-0000/Tray3 Fan1/fan5_alarm", 
+                    "SMF_Z9100_ON-isa-0000/Tray3 Fan1/fan5_fault", 
+                    "SMF_Z9100_ON-isa-0000/Tray3 Fan2/fan6_alarm", 
+                    "SMF_Z9100_ON-isa-0000/Tray3 Fan2/fan6_fault", 
+                    "SMF_Z9100_ON-isa-0000/Tray4 Fan1/fan7_alarm", 
+                    "SMF_Z9100_ON-isa-0000/Tray4 Fan1/fan7_fault", 
+                    "SMF_Z9100_ON-isa-0000/Tray4 Fan2/fan8_alarm", 
+                    "SMF_Z9100_ON-isa-0000/Tray4 Fan2/fan8_fault", 
+                    "SMF_Z9100_ON-isa-0000/Tray5 Fan1/fan9_alarm", 
+                    "SMF_Z9100_ON-isa-0000/Tray5 Fan1/fan9_fault", 
+                    "SMF_Z9100_ON-isa-0000/Tray5 Fan2/fan10_alarm", 
+                    "SMF_Z9100_ON-isa-0000/Tray5 Fan2/fan10_fault", 
+                    "SMF_Z9100_ON-isa-0000/Psu1 Fan/fan11_alarm", 
+                    "SMF_Z9100_ON-isa-0000/Psu1 Fan/fan11_fault", 
+                    "SMF_Z9100_ON-isa-0000/Psu2 Fan/fan12_alarm", 
+                    "SMF_Z9100_ON-isa-0000/Psu2 Fan/fan12_fault"
+                ], 
+                "power": [
+                    "SMF_Z9100_ON-isa-0000/CPU XP3R3V_EARLY/in1_alarm", 
+                    "SMF_Z9100_ON-isa-0000/CPU XP5R0V_CP/in2_alarm", 
+                    "SMF_Z9100_ON-isa-0000/CPU XP3R3V_STD/in3_alarm", 
+                    "SMF_Z9100_ON-isa-0000/CPU XP3R3V_CP /in4_alarm", 
+                    "SMF_Z9100_ON-isa-0000/CPU XP0R75V_VTT_A/in5_alarm", 
+                    "SMF_Z9100_ON-isa-0000/CPU XP0R75V_VTT_B/in6_alarm", 
+                    "SMF_Z9100_ON-isa-0000/CPU XP1R07V_CPU/in7_alarm", 
+                    "SMF_Z9100_ON-isa-0000/CPU XP1R0V_CPU/in8_alarm", 
+                    "SMF_Z9100_ON-isa-0000/CPU XP12R0V/in9_alarm", 
+                    "SMF_Z9100_ON-isa-0000/CPU VDDR_CPU_2/in10_alarm", 
+                    "SMF_Z9100_ON-isa-0000/CPU VDDR_CPU_1/in11_alarm", 
+                    "SMF_Z9100_ON-isa-0000/CPU XP1R5V_CLK/in12_alarm", 
+                    "SMF_Z9100_ON-isa-0000/CPU XP1R35V_CPU/in13_alarm", 
+                    "SMF_Z9100_ON-isa-0000/CPU XP1R8V_CPU/in14_alarm", 
+                    "SMF_Z9100_ON-isa-0000/CPU XP1R0V_CPU_VNN/in15_alarm", 
+                    "SMF_Z9100_ON-isa-0000/CPU XP1R0V_CPU_VCC/in16_alarm", 
+                    "SMF_Z9100_ON-isa-0000/CPU XP1R5V_EARLY/in17_alarm", 
+                    "SMF_Z9100_ON-isa-0000/SW XP3R3V_MON/in19_alarm", 
+                    "SMF_Z9100_ON-isa-0000/SW XP1R8V_MON/in20_alarm", 
+                    "SMF_Z9100_ON-isa-0000/SW XP1R25V_MON/in21_alarm", 
+                    "SMF_Z9100_ON-isa-0000/SW XP1R2V_MON/in22_alarm", 
+                    "SMF_Z9100_ON-isa-0000/SW XP1R0V_SW_MON/in23_alarm", 
+                    "SMF_Z9100_ON-isa-0000/SW XP1R0V_ROV_SW_MON/in24_alarm", 
+                    "SMF_Z9100_ON-isa-0000/SW XP5V_MB_MON/in25_alarm", 
+                    "SMF_Z9100_ON-isa-0000/SW XP1R8V_FPGA_MON/in26_alarm", 
+                    "SMF_Z9100_ON-isa-0000/SW XP3R3V_FPGA_MON/in27_alarm", 
+                    "SMF_Z9100_ON-isa-0000/SW XP3R3V_EARLY_MON/in28_alarm"
+                ], 
+                "temp": [
+                    "coretemp-isa-0000/Core 0/temp2_crit_alarm", 
+                    "coretemp-isa-0000/Core 1/temp3_crit_alarm", 
+                    "coretemp-isa-0000/Core 2/temp4_crit_alarm", 
+                    "coretemp-isa-0000/Core 3/temp5_crit_alarm"
+                ]
+            }, 
+            "compares": {
+                "fan": [], 
+                "power": [
+                    [
+                        "SMF_Z9100_ON-isa-0000/Psu1 Input/power1_input", 
+                        "SMF_Z9100_ON-isa-0000/Psu1 Input/power1_max"
+                    ], 
+                    [
+                        "SMF_Z9100_ON-isa-0000/Psu1 Output/power2_input", 
+                        "SMF_Z9100_ON-isa-0000/Psu1 Output/power2_max"
+                    ], 
+                    [
+                        "SMF_Z9100_ON-isa-0000/Psu2 Input/power3_input", 
+                        "SMF_Z9100_ON-isa-0000/Psu2 Input/power3_max"
+                    ], 
+                    [
+                        "SMF_Z9100_ON-isa-0000/Psu2 Output/power4_input", 
+                        "SMF_Z9100_ON-isa-0000/Psu2 Output/power4_max"
+                    ]
+                ], 
+                "temp": [
+                    [
+                        "coretemp-isa-0000/Core 0/temp2_input", 
+                        "coretemp-isa-0000/Core 0/temp2_crit"
+                    ], 
+                    [
+                        "coretemp-isa-0000/Core 1/temp3_input", 
+                        "coretemp-isa-0000/Core 1/temp3_crit"
+                    ], 
+                    [
+                        "coretemp-isa-0000/Core 2/temp4_input", 
+                        "coretemp-isa-0000/Core 2/temp4_crit"
+                    ], 
+                    [
+                        "coretemp-isa-0000/Core 3/temp5_input", 
+                        "coretemp-isa-0000/Core 3/temp5_crit"
+                    ]
+                ]
+            }, 
+            "non_zero": {
+                "fan": [
+                    "SMF_Z9100_ON-isa-0000/Tray1 Fan1/fan1_input", 
+                    "SMF_Z9100_ON-isa-0000/Tray1 Fan2/fan2_input", 
+                    "SMF_Z9100_ON-isa-0000/Tray2 Fan1/fan3_input", 
+                    "SMF_Z9100_ON-isa-0000/Tray2 Fan2/fan4_input", 
+                    "SMF_Z9100_ON-isa-0000/Tray3 Fan1/fan5_input", 
+                    "SMF_Z9100_ON-isa-0000/Tray3 Fan2/fan6_input", 
+                    "SMF_Z9100_ON-isa-0000/Tray4 Fan1/fan7_input", 
+                    "SMF_Z9100_ON-isa-0000/Tray4 Fan2/fan8_input", 
+                    "SMF_Z9100_ON-isa-0000/Tray5 Fan1/fan9_input", 
+                    "SMF_Z9100_ON-isa-0000/Tray5 Fan2/fan10_input", 
+                    "SMF_Z9100_ON-isa-0000/Psu1 Fan/fan11_input", 
+                    "SMF_Z9100_ON-isa-0000/Psu2 Fan/fan12_input"
+                ], 
+                "power": [
+                    "SMF_Z9100_ON-isa-0000/Psu1 Input/power1_input", 
+                    "SMF_Z9100_ON-isa-0000/Psu1 Output/power2_input", 
+                    "SMF_Z9100_ON-isa-0000/Psu2 Input/power3_input", 
+                    "SMF_Z9100_ON-isa-0000/Psu2 Output/power4_input", 
+                    "SMF_Z9100_ON-isa-0000/PSU1 VIN/in29_input", 
+                    "SMF_Z9100_ON-isa-0000/PSU1 VOUT/in30_input", 
+                    "SMF_Z9100_ON-isa-0000/PSU2 VIN/in31_input", 
+                    "SMF_Z9100_ON-isa-0000/PSU2 VOUT/in32_input", 
+                    "SMF_Z9100_ON-isa-0000/XP1R0V/curr21_input", 
+                    "SMF_Z9100_ON-isa-0000/XP1R0V_ROV/curr22_input"
+                ], 
+                "temp": [
+                    "coretemp-isa-0000/Core 0/temp2_input", 
+                    "coretemp-isa-0000/Core 1/temp3_input", 
+                    "coretemp-isa-0000/Core 2/temp4_input", 
+                    "coretemp-isa-0000/Core 3/temp5_input", 
+                    "SMF_Z9100_ON-isa-0000/CPU On-board (U2900)/temp1_input", 
+                    "SMF_Z9100_ON-isa-0000/BCM Switch On-Board #1 (U44)/temp2_input", 
+                    "SMF_Z9100_ON-isa-0000/Front BCM On-Board (U4)/temp3_input", 
+                    "SMF_Z9100_ON-isa-0000/Front BCM On-Board (U2)/temp4_input", 
+                    "SMF_Z9100_ON-isa-0000/BCM Switch On-Board #1 (U38)/temp6_input", 
+                    "SMF_Z9100_ON-isa-0000/Rear (U2900)/temp9_input", 
+                    "SMF_Z9100_ON-isa-0000/PSU 1/temp14_input", 
+                    "SMF_Z9100_ON-isa-0000/PSU 2/temp15_input"
+                ]
+            }, 
+            "psu_skips": {}
+        }, 
+        "INGRASYS-S8810-32Q": {
+            "alarms": {
+                "fan": [
+                    "w83795adg-i2c-0-2f/FANTRAY 1-A/fan1_alarm", 
+                    "w83795adg-i2c-0-2f/FANTRAY 1-B/fan2_alarm", 
+                    "w83795adg-i2c-0-2f/FANTRAY 2-A/fan3_alarm", 
+                    "w83795adg-i2c-0-2f/FANTRAY 2-B/fan4_alarm", 
+                    "w83795adg-i2c-0-2f/FANTRAY 3-A/fan5_alarm", 
+                    "w83795adg-i2c-0-2f/FANTRAY 3-B/fan6_alarm", 
+                    "w83795adg-i2c-0-2f/FANTRAY 4-A/fan7_alarm", 
+                    "w83795adg-i2c-0-2f/FANTRAY 4-B/fan8_alarm"
+                ], 
+                "power": [
+                    "w83795adg-i2c-0-2f/ROV/in0_alarm", 
+                    "w83795adg-i2c-0-2f/1.0V/in3_alarm", 
+                    "w83795adg-i2c-0-2f/1.8V/in4_alarm", 
+                    "w83795adg-i2c-0-2f/5.0V/in6_alarm", 
+                    "w83795adg-i2c-0-2f/3.3V/in12_alarm"
+                ], 
+                "temp": [
+                    "coretemp-isa-0000/Core 0/temp2_crit_alarm", 
+                    "coretemp-isa-0000/Core 1/temp3_crit_alarm", 
+                    "coretemp-isa-0000/Core 2/temp4_crit_alarm", 
+                    "coretemp-isa-0000/Core 3/temp5_crit_alarm", 
+                    "jc42-i2c-0-18/DIMM Temp/temp1_max_alarm", 
+                    "jc42-i2c-0-18/DIMM Temp/temp1_min_alarm", 
+                    "jc42-i2c-0-18/DIMM Temp/temp1_crit_alarm", 
+                    "w83795adg-i2c-0-2f/MAC Temp/temp1_alarm", 
+                    "w83795adg-i2c-0-2f/SFP+ Port 1 Temp/temp2_alarm", 
+                    "w83795adg-i2c-0-2f/SFP+ Port 8 Temp/temp3_alarm"
+                ]
+            }, 
+            "compares": {
+                "fan": [], 
+                "power": [], 
+                "temp": [
+                    [
+                        "w83795adg-i2c-0-2f/MAC Temp/temp1_input", 
+                        "w83795adg-i2c-0-2f/MAC Temp/temp1_crit"
+                    ], 
+                    [
+                        "w83795adg-i2c-0-2f/SFP+ Port 1 Temp/temp2_input", 
+                        "w83795adg-i2c-0-2f/SFP+ Port 1 Temp/temp2_crit"
+                    ], 
+                    [
+                        "w83795adg-i2c-0-2f/SFP+ Port 8 Temp/temp3_input", 
+                        "w83795adg-i2c-0-2f/SFP+ Port 8 Temp/temp3_crit"
+                    ]
+                ]
+            }, 
+            "non_zero": {
+                "fan": [
+                    "w83795adg-i2c-0-2f/FANTRAY 1-A/fan1_input", 
+                    "w83795adg-i2c-0-2f/FANTRAY 1-B/fan2_input", 
+                    "w83795adg-i2c-0-2f/FANTRAY 2-A/fan3_input", 
+                    "w83795adg-i2c-0-2f/FANTRAY 2-B/fan4_input", 
+                    "w83795adg-i2c-0-2f/FANTRAY 3-A/fan5_input", 
+                    "w83795adg-i2c-0-2f/FANTRAY 3-B/fan6_input", 
+                    "w83795adg-i2c-0-2f/FANTRAY 4-A/fan7_input", 
+                    "w83795adg-i2c-0-2f/FANTRAY 4-B/fan8_input"
+                ], 
+                "power": [], 
+                "temp": []
+            }, 
+            "psu_skips": {}
+        }, 
+        "INGRASYS-S8900-54XC": {
+            "alarms": {
+                "fan": [
+                    "w83795adg-i2c-0-2f/FANTRAY 1-A/fan1_alarm", 
+                    "w83795adg-i2c-0-2f/FANTRAY 1-B/fan2_alarm", 
+                    "w83795adg-i2c-0-2f/FANTRAY 2-A/fan3_alarm", 
+                    "w83795adg-i2c-0-2f/FANTRAY 2-B/fan4_alarm", 
+                    "w83795adg-i2c-0-2f/FANTRAY 3-A/fan5_alarm", 
+                    "w83795adg-i2c-0-2f/FANTRAY 3-B/fan6_alarm", 
+                    "w83795adg-i2c-0-2f/FANTRAY 4-A/fan7_alarm", 
+                    "w83795adg-i2c-0-2f/FANTRAY 4-B/fan8_alarm"
+                ], 
+                "power": [
+                    "w83795adg-i2c-0-2f/1.0V/in0_alarm", 
+                    "w83795adg-i2c-0-2f/1.0V_ROV/in1_alarm", 
+                    "w83795adg-i2c-0-2f/1.25V/in2_alarm", 
+                    "w83795adg-i2c-0-2f/1.8V/in3_alarm", 
+                    "w83795adg-i2c-0-2f/+3.3V/in12_alarm"
+                ], 
+                "temp": [
+                    "coretemp-isa-0000/Core 0/temp2_crit_alarm", 
+                    "coretemp-isa-0000/Core 1/temp3_crit_alarm", 
+                    "coretemp-isa-0000/Core 2/temp4_crit_alarm", 
+                    "coretemp-isa-0000/Core 3/temp5_crit_alarm", 
+                    "jc42-i2c-0-18/DIMM Temp/temp1_max_alarm", 
+                    "jc42-i2c-0-18/DIMM Temp/temp1_min_alarm", 
+                    "jc42-i2c-0-18/DIMM Temp/temp1_crit_alarm", 
+                    "w83795adg-i2c-0-2f/Front MAC Temp/temp1_alarm", 
+                    "w83795adg-i2c-0-2f/Rear MAC Temp/temp2_alarm"
+                ]
+            }, 
+            "compares": {
+                "fan": [], 
+                "power": [], 
+                "temp": [
+                    [
+                        "w83795adg-i2c-0-2f/Front MAC Temp/temp1_input", 
+                        "w83795adg-i2c-0-2f/Front MAC Temp/temp1_crit"
+                    ], 
+                    [
+                        "w83795adg-i2c-0-2f/Rear MAC Temp/temp2_input", 
+                        "w83795adg-i2c-0-2f/Rear MAC Temp/temp2_crit"
+                    ]
+                ]
+            }, 
+            "non_zero": {
+                "fan": [
+                    "w83795adg-i2c-0-2f/FANTRAY 1-A/fan1_input", 
+                    "w83795adg-i2c-0-2f/FANTRAY 1-B/fan2_input", 
+                    "w83795adg-i2c-0-2f/FANTRAY 2-A/fan3_input", 
+                    "w83795adg-i2c-0-2f/FANTRAY 2-B/fan4_input", 
+                    "w83795adg-i2c-0-2f/FANTRAY 3-A/fan5_input", 
+                    "w83795adg-i2c-0-2f/FANTRAY 3-B/fan6_input", 
+                    "w83795adg-i2c-0-2f/FANTRAY 4-A/fan7_input", 
+                    "w83795adg-i2c-0-2f/FANTRAY 4-B/fan8_input"
+                ], 
+                "power": [], 
+                "temp": []
+            }, 
+            "psu_skips": {}
+        }, 
+        "INGRASYS-S8900-64XC": {
+            "alarms": {
+                "fan": [
+                    "w83795adg-i2c-0-2f/FANTRAY 1-A/fan1_alarm", 
+                    "w83795adg-i2c-0-2f/FANTRAY 1-B/fan2_alarm", 
+                    "w83795adg-i2c-0-2f/FANTRAY 2-A/fan3_alarm", 
+                    "w83795adg-i2c-0-2f/FANTRAY 2-B/fan4_alarm", 
+                    "w83795adg-i2c-0-2f/FANTRAY 3-A/fan5_alarm", 
+                    "w83795adg-i2c-0-2f/FANTRAY 3-B/fan6_alarm", 
+                    "w83795adg-i2c-0-2f/FANTRAY 4-A/fan7_alarm", 
+                    "w83795adg-i2c-0-2f/FANTRAY 4-B/fan8_alarm", 
+                    "w83795adg-i2c-0-2f/FANTRAY 5-A/fan9_alarm", 
+                    "w83795adg-i2c-0-2f/FANTRAY 5-B/fan10_alarm"
+                ], 
+                "power": [
+                    "w83795adg-i2c-0-2f/1.0V/in0_alarm", 
+                    "w83795adg-i2c-0-2f/1.0V_ROV/in1_alarm", 
+                    "w83795adg-i2c-0-2f/1.25V/in2_alarm", 
+                    "w83795adg-i2c-0-2f/1.8V/in3_alarm", 
+                    "w83795adg-i2c-0-2f/+3.3V/in12_alarm"
+                ], 
+                "temp": [
+                    "coretemp-isa-0000/Core 0/temp2_crit_alarm", 
+                    "coretemp-isa-0000/Core 1/temp3_crit_alarm", 
+                    "coretemp-isa-0000/Core 2/temp4_crit_alarm", 
+                    "coretemp-isa-0000/Core 3/temp5_crit_alarm", 
+                    "jc42-i2c-0-18/DIMM Temp/temp1_max_alarm", 
+                    "jc42-i2c-0-18/DIMM Temp/temp1_min_alarm", 
+                    "jc42-i2c-0-18/DIMM Temp/temp1_crit_alarm", 
+                    "w83795adg-i2c-0-2f/Front MAC Temp/temp1_alarm", 
+                    "w83795adg-i2c-0-2f/Rear MAC Temp/temp2_alarm"
+                ]
+            }, 
+            "compares": {
+                "fan": [], 
+                "power": [], 
+                "temp": [
+                    [
+                        "w83795adg-i2c-0-2f/Front MAC Temp/temp1_input", 
+                        "w83795adg-i2c-0-2f/Front MAC Temp/temp1_crit"
+                    ], 
+                    [
+                        "w83795adg-i2c-0-2f/Rear MAC Temp/temp2_input", 
+                        "w83795adg-i2c-0-2f/Rear MAC Temp/temp2_crit"
+                    ], 
+                    [
+                        "tmp75-i2c-5-48/FAN Temp1/temp1_input", 
+                        "tmp75-i2c-5-48/FAN Temp1/temp1_max"
+                    ], 
+                    [
+                        "tmp75-i2c-5-49/FAN Temp2/temp1_input", 
+                        "tmp75-i2c-5-49/FAN Temp2/temp1_max"
+                    ]
+                ]
+            }, 
+            "non_zero": {
+                "fan": [
+                    "w83795adg-i2c-0-2f/FANTRAY 1-A/fan1_input", 
+                    "w83795adg-i2c-0-2f/FANTRAY 1-B/fan2_input", 
+                    "w83795adg-i2c-0-2f/FANTRAY 2-A/fan3_input", 
+                    "w83795adg-i2c-0-2f/FANTRAY 2-B/fan4_input", 
+                    "w83795adg-i2c-0-2f/FANTRAY 3-A/fan5_input", 
+                    "w83795adg-i2c-0-2f/FANTRAY 3-B/fan6_input", 
+                    "w83795adg-i2c-0-2f/FANTRAY 4-A/fan7_input", 
+                    "w83795adg-i2c-0-2f/FANTRAY 4-B/fan8_input", 
+                    "w83795adg-i2c-0-2f/FANTRAY 5-A/fan9_input", 
+                    "w83795adg-i2c-0-2f/FANTRAY 5-B/fan10_input"
+                ], 
+                "power": [], 
+                "temp": []
+            }, 
+            "psu_skips": {}
+        }, 
+        "INGRASYS-S9100-C32": {
+            "alarms": {
+                "fan": [
+                    "w83795adg-i2c-0-2f/FANTRAY 1-A/fan1_alarm", 
+                    "w83795adg-i2c-0-2f/FANTRAY 1-B/fan2_alarm", 
+                    "w83795adg-i2c-0-2f/FANTRAY 2-A/fan3_alarm", 
+                    "w83795adg-i2c-0-2f/FANTRAY 2-B/fan4_alarm", 
+                    "w83795adg-i2c-0-2f/FANTRAY 3-A/fan5_alarm", 
+                    "w83795adg-i2c-0-2f/FANTRAY 3-B/fan6_alarm", 
+                    "w83795adg-i2c-0-2f/FANTRAY 4-A/fan7_alarm", 
+                    "w83795adg-i2c-0-2f/FANTRAY 4-B/fan8_alarm"
+                ], 
+                "power": [
+                    "w83795adg-i2c-0-2f/1.0V/in0_alarm", 
+                    "w83795adg-i2c-0-2f/1.0V_ROV/in1_alarm", 
+                    "w83795adg-i2c-0-2f/1.25V/in2_alarm", 
+                    "w83795adg-i2c-0-2f/1.8V/in3_alarm", 
+                    "w83795adg-i2c-0-2f/+3.3V/in12_alarm"
+                ], 
+                "temp": [
+                    "coretemp-isa-0000/Core 0/temp2_crit_alarm", 
+                    "coretemp-isa-0000/Core 1/temp3_crit_alarm", 
+                    "coretemp-isa-0000/Core 2/temp4_crit_alarm", 
+                    "coretemp-isa-0000/Core 3/temp5_crit_alarm", 
+                    "jc42-i2c-0-18/DIMM Temp/temp1_max_alarm", 
+                    "jc42-i2c-0-18/DIMM Temp/temp1_min_alarm", 
+                    "jc42-i2c-0-18/DIMM Temp/temp1_crit_alarm", 
+                    "w83795adg-i2c-0-2f/Front MAC Temp/temp1_alarm", 
+                    "w83795adg-i2c-0-2f/Rear MAC Temp/temp2_alarm"
+                ]
+            }, 
+            "compares": {
+                "fan": [], 
+                "power": [], 
+                "temp": [
+                    [
+                        "w83795adg-i2c-0-2f/Front MAC Temp/temp1_input", 
+                        "w83795adg-i2c-0-2f/Front MAC Temp/temp1_crit"
+                    ], 
+                    [
+                        "w83795adg-i2c-0-2f/Rear MAC Temp/temp2_input", 
+                        "w83795adg-i2c-0-2f/Rear MAC Temp/temp2_crit"
+                    ]
+                ]
+            }, 
+            "non_zero": {
+                "fan": [
+                    "w83795adg-i2c-0-2f/FANTRAY 1-A/fan1_input", 
+                    "w83795adg-i2c-0-2f/FANTRAY 1-B/fan2_input", 
+                    "w83795adg-i2c-0-2f/FANTRAY 2-A/fan3_input", 
+                    "w83795adg-i2c-0-2f/FANTRAY 2-B/fan4_input", 
+                    "w83795adg-i2c-0-2f/FANTRAY 3-A/fan5_input", 
+                    "w83795adg-i2c-0-2f/FANTRAY 3-B/fan6_input", 
+                    "w83795adg-i2c-0-2f/FANTRAY 4-A/fan7_input", 
+                    "w83795adg-i2c-0-2f/FANTRAY 4-B/fan8_input"
+                ], 
+                "power": [], 
+                "temp": []
+            }, 
+            "psu_skips": {}
+        }, 
+        "INGRASYS-S9130-32X": {
+            "alarms": {
+                "fan": [
+                    "w83795adg-i2c-8-2f/FANTRAY 1-A/fan1_alarm", 
+                    "w83795adg-i2c-8-2f/FANTRAY 1-B/fan2_alarm", 
+                    "w83795adg-i2c-8-2f/FANTRAY 2-A/fan3_alarm", 
+                    "w83795adg-i2c-8-2f/FANTRAY 2-B/fan4_alarm", 
+                    "w83795adg-i2c-8-2f/FANTRAY 3-A/fan5_alarm", 
+                    "w83795adg-i2c-8-2f/FANTRAY 3-B/fan6_alarm", 
+                    "w83795adg-i2c-8-2f/FANTRAY 4-A/fan7_alarm", 
+                    "w83795adg-i2c-8-2f/FANTRAY 4-B/fan8_alarm"
+                ], 
+                "power": [
+                    "w83795adg-i2c-8-2f/0.9V/in0_alarm", 
+                    "w83795adg-i2c-8-2f/VDD_CORE/in1_alarm", 
+                    "w83795adg-i2c-8-2f/1.2V/in2_alarm", 
+                    "w83795adg-i2c-8-2f/1.8V/in3_alarm", 
+                    "w83795adg-i2c-8-2f/1.01V/in4_alarm", 
+                    "w83795adg-i2c-8-2f/3.3VDD/in12_alarm"
+                ], 
+                "temp": [
+                    "coretemp-isa-0000/Physical id 0/temp1_crit_alarm", 
+                    "coretemp-isa-0000/Core 0/temp2_crit_alarm", 
+                    "coretemp-isa-0000/Core 1/temp3_crit_alarm", 
+                    "coretemp-isa-0000/Core 2/temp4_crit_alarm", 
+                    "coretemp-isa-0000/Core 3/temp5_crit_alarm"
+                ]
+            }, 
+            "compares": {
+                "fan": [], 
+                "power": [], 
+                "temp": [
+                    [
+                        "tmp75-i2c-12-4c/rear MAC Temp/temp1_input", 
+                        "tmp75-i2c-12-4c/rear MAC Temp/temp1_max"
+                    ], 
+                    [
+                        "tmp75-i2c-12-49/front MAC Temp/temp1_input", 
+                        "tmp75-i2c-12-49/front MAC Temp/temp1_max"
+                    ], 
+                    [
+                        "tmp75-i2c-0-4f/x86 CPU board Temp/temp1_input", 
+                        "tmp75-i2c-0-4f/x86 CPU board Temp/temp1_max"
+                    ], 
+                    [
+                        "tmp75-i2c-8-4a/BMC board Temp/temp1_input", 
+                        "tmp75-i2c-8-4a/BMC board Temp/temp1_max"
+                    ]
+                ]
+            }, 
+            "non_zero": {
+                "fan": [
+                    "w83795adg-i2c-8-2f/FANTRAY 1-A/fan1_input", 
+                    "w83795adg-i2c-8-2f/FANTRAY 1-B/fan2_input", 
+                    "w83795adg-i2c-8-2f/FANTRAY 2-A/fan3_input", 
+                    "w83795adg-i2c-8-2f/FANTRAY 2-B/fan4_input", 
+                    "w83795adg-i2c-8-2f/FANTRAY 3-A/fan5_input", 
+                    "w83795adg-i2c-8-2f/FANTRAY 3-B/fan6_input", 
+                    "w83795adg-i2c-8-2f/FANTRAY 4-A/fan7_input", 
+                    "w83795adg-i2c-8-2f/FANTRAY 4-B/fan8_input"
+                ], 
+                "power": [], 
+                "temp": []
+            }, 
+            "psu_skips": {}
+        }, 
+        "Mellanox-SN2700": {
+            "alarms": {
+                "fan": [
+                    "dps460-i2c-10-59/fan1/fan1_alarm", 
+                    "dps460-i2c-10-58/fan1/fan1_alarm"
+                ], 
+                "power": [
+                    "dps460-i2c-10-59/vin/in1_min_alarm", 
+                    "dps460-i2c-10-59/vin/in1_max_alarm", 
+                    "dps460-i2c-10-59/vin/in1_lcrit_alarm", 
+                    "dps460-i2c-10-59/vin/in1_crit_alarm", 
+                    "dps460-i2c-10-59/vout1/in3_min_alarm", 
+                    "dps460-i2c-10-59/vout1/in3_max_alarm", 
+                    "dps460-i2c-10-59/vout1/in3_lcrit_alarm", 
+                    "dps460-i2c-10-59/vout1/in3_crit_alarm", 
+                    "dps460-i2c-10-59/pin/power1_alarm", 
+                    "dps460-i2c-10-59/pout1/power2_cap_alarm", 
+                    "dps460-i2c-10-59/pout1/power2_max_alarm", 
+                    "dps460-i2c-10-59/pout1/power2_crit_alarm", 
+                    "dps460-i2c-10-59/iin/curr1_max_alarm", 
+                    "dps460-i2c-10-59/iin/curr1_crit_alarm", 
+                    "dps460-i2c-10-59/iout1/curr2_max_alarm", 
+                    "dps460-i2c-10-59/iout1/curr2_lcrit_alarm", 
+                    "dps460-i2c-10-59/iout1/curr2_crit_alarm", 
+                    "dps460-i2c-10-58/vin/in1_min_alarm", 
+                    "dps460-i2c-10-58/vin/in1_max_alarm", 
+                    "dps460-i2c-10-58/vin/in1_lcrit_alarm", 
+                    "dps460-i2c-10-58/vin/in1_crit_alarm", 
+                    "dps460-i2c-10-58/vout1/in3_min_alarm", 
+                    "dps460-i2c-10-58/vout1/in3_max_alarm", 
+                    "dps460-i2c-10-58/vout1/in3_lcrit_alarm", 
+                    "dps460-i2c-10-58/vout1/in3_crit_alarm", 
+                    "dps460-i2c-10-58/pin/power1_alarm", 
+                    "dps460-i2c-10-58/pout1/power2_cap_alarm", 
+                    "dps460-i2c-10-58/pout1/power2_max_alarm", 
+                    "dps460-i2c-10-58/pout1/power2_crit_alarm", 
+                    "dps460-i2c-10-58/iin/curr1_max_alarm", 
+                    "dps460-i2c-10-58/iin/curr1_crit_alarm", 
+                    "dps460-i2c-10-58/iout1/curr2_max_alarm", 
+                    "dps460-i2c-10-58/iout1/curr2_lcrit_alarm", 
+                    "dps460-i2c-10-58/iout1/curr2_crit_alarm", 
+                    "ucd9200-i2c-5-27/UCD1 vin/in1_min_alarm", 
+                    "ucd9200-i2c-5-27/UCD1 vin/in1_max_alarm", 
+                    "ucd9200-i2c-5-27/UCD1 vin/in1_lcrit_alarm", 
+                    "ucd9200-i2c-5-27/UCD1 vin/in1_crit_alarm", 
+                    "ucd9200-i2c-5-27/ASIC 3.3 vout/in2_min_alarm", 
+                    "ucd9200-i2c-5-27/ASIC 3.3 vout/in2_max_alarm", 
+                    "ucd9200-i2c-5-27/ASIC 3.3 vout/in2_lcrit_alarm", 
+                    "ucd9200-i2c-5-27/ASIC 3.3 vout/in2_crit_alarm", 
+                    "ucd9200-i2c-5-27/ASIC 1.2 vout/in3_min_alarm", 
+                    "ucd9200-i2c-5-27/ASIC 1.2 vout/in3_max_alarm", 
+                    "ucd9200-i2c-5-27/ASIC 1.2 vout/in3_lcrit_alarm", 
+                    "ucd9200-i2c-5-27/ASIC 1.2 vout/in3_crit_alarm", 
+                    "ucd9200-i2c-5-27/iout1/curr2_max_alarm", 
+                    "ucd9200-i2c-5-27/iout1/curr2_lcrit_alarm", 
+                    "ucd9200-i2c-5-27/iout1/curr2_crit_alarm", 
+                    "ucd9200-i2c-5-27/iout2/curr3_max_alarm", 
+                    "ucd9200-i2c-5-27/iout2/curr3_lcrit_alarm", 
+                    "ucd9200-i2c-5-27/iout2/curr3_crit_alarm", 
+                    "ucd9200-i2c-5-41/UCD2 vin/in1_min_alarm", 
+                    "ucd9200-i2c-5-41/UCD2 vin/in1_max_alarm", 
+                    "ucd9200-i2c-5-41/UCD2 vin/in1_lcrit_alarm", 
+                    "ucd9200-i2c-5-41/UCD2 vin/in1_crit_alarm", 
+                    "ucd9200-i2c-5-41/ASIC Vcore vout/in2_min_alarm", 
+                    "ucd9200-i2c-5-41/ASIC Vcore vout/in2_max_alarm", 
+                    "ucd9200-i2c-5-41/ASIC Vcore vout/in2_lcrit_alarm", 
+                    "ucd9200-i2c-5-41/ASIC Vcore vout/in2_crit_alarm", 
+                    "ucd9200-i2c-5-41/iout1/curr2_max_alarm", 
+                    "ucd9200-i2c-5-41/iout1/curr2_lcrit_alarm", 
+                    "ucd9200-i2c-5-41/iout1/curr2_crit_alarm"
+                ], 
+                "temp": [
+                    "coretemp-isa-0000/Physical id 0/temp1_crit_alarm", 
+                    "coretemp-isa-0000/Core 0/temp2_crit_alarm", 
+                    "coretemp-isa-0000/Core 1/temp3_crit_alarm", 
+                    "dps460-i2c-10-59/temp1/temp1_max_alarm", 
+                    "dps460-i2c-10-59/temp1/temp1_min_alarm", 
+                    "dps460-i2c-10-59/temp1/temp1_crit_alarm", 
+                    "dps460-i2c-10-59/temp1/temp1_lcrit_alarm", 
+                    "dps460-i2c-10-59/temp2/temp2_max_alarm", 
+                    "dps460-i2c-10-59/temp2/temp2_min_alarm", 
+                    "dps460-i2c-10-59/temp2/temp2_crit_alarm", 
+                    "dps460-i2c-10-59/temp2/temp2_lcrit_alarm", 
+                    "dps460-i2c-10-59/temp3/temp3_max_alarm", 
+                    "dps460-i2c-10-59/temp3/temp3_min_alarm", 
+                    "dps460-i2c-10-59/temp3/temp3_crit_alarm", 
+                    "dps460-i2c-10-59/temp3/temp3_lcrit_alarm", 
+                    "dps460-i2c-10-58/temp1/temp1_max_alarm", 
+                    "dps460-i2c-10-58/temp1/temp1_min_alarm", 
+                    "dps460-i2c-10-58/temp1/temp1_crit_alarm", 
+                    "dps460-i2c-10-58/temp1/temp1_lcrit_alarm", 
+                    "dps460-i2c-10-58/temp2/temp2_max_alarm", 
+                    "dps460-i2c-10-58/temp2/temp2_min_alarm", 
+                    "dps460-i2c-10-58/temp2/temp2_crit_alarm", 
+                    "dps460-i2c-10-58/temp2/temp2_lcrit_alarm", 
+                    "dps460-i2c-10-58/temp3/temp3_max_alarm", 
+                    "dps460-i2c-10-58/temp3/temp3_min_alarm", 
+                    "dps460-i2c-10-58/temp3/temp3_crit_alarm", 
+                    "dps460-i2c-10-58/temp3/temp3_lcrit_alarm", 
+                    "ucd9200-i2c-5-27/UCD1 Temp/temp1_max_alarm", 
+                    "ucd9200-i2c-5-27/UCD1 Temp/temp1_crit_alarm", 
+                    "ucd9200-i2c-5-27/UCD1 Temp2/temp2_max_alarm", 
+                    "ucd9200-i2c-5-27/UCD1 Temp2/temp2_crit_alarm", 
+                    "ucd9200-i2c-5-27/temp3/temp3_max_alarm", 
+                    "ucd9200-i2c-5-27/temp3/temp3_crit_alarm", 
+                    "ucd9200-i2c-5-41/UCD2 Temp1/temp1_max_alarm", 
+                    "ucd9200-i2c-5-41/UCD2 Temp1/temp1_crit_alarm", 
+                    "ucd9200-i2c-5-41/UCD2 Temp2/temp2_max_alarm", 
+                    "ucd9200-i2c-5-41/UCD2 Temp2/temp2_crit_alarm"
+                ]
+            }, 
+            "compares": {
+                "fan": [
+                    [
+                        "spectrum-i2c-2-48/fan1/fan1_input", 
+                        "spectrum-i2c-2-48/fan1/fan1_max"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan1/fan1_min", 
+                        "spectrum-i2c-2-48/fan1/fan1_input"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan2/fan2_input", 
+                        "spectrum-i2c-2-48/fan2/fan2_max"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan2/fan2_min", 
+                        "spectrum-i2c-2-48/fan2/fan2_input"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan3/fan3_input", 
+                        "spectrum-i2c-2-48/fan3/fan3_max"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan3/fan3_min", 
+                        "spectrum-i2c-2-48/fan3/fan3_input"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan4/fan4_input", 
+                        "spectrum-i2c-2-48/fan4/fan4_max"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan4/fan4_min", 
+                        "spectrum-i2c-2-48/fan4/fan4_input"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan5/fan5_input", 
+                        "spectrum-i2c-2-48/fan5/fan5_max"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan5/fan5_min", 
+                        "spectrum-i2c-2-48/fan5/fan5_input"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan6/fan6_input", 
+                        "spectrum-i2c-2-48/fan6/fan6_max"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan6/fan6_min", 
+                        "spectrum-i2c-2-48/fan6/fan6_input"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan7/fan7_input", 
+                        "spectrum-i2c-2-48/fan7/fan7_max"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan7/fan7_min", 
+                        "spectrum-i2c-2-48/fan7/fan7_input"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan8/fan8_input", 
+                        "spectrum-i2c-2-48/fan8/fan8_max"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/fan8/fan8_min", 
+                        "spectrum-i2c-2-48/fan8/fan8_input"
+                    ]
+                ], 
+                "power": [
+                    [
+                        "mlnxa2dswb-i2c-5-6d/1.8V_sw_spc/in1_input", 
+                        "mlnxa2dswb-i2c-5-6d/1.8V_sw_spc/in1_max"
+                    ], 
+                    [
+                        "mlnxa2dswb-i2c-5-6d/1.8V_sw_spc/in1_min", 
+                        "mlnxa2dswb-i2c-5-6d/1.8V_sw_spc/in1_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/ddr3_0.675/in1_input", 
+                        "mlnxa2dmnb-i2c-15-6d/ddr3_0.675/in1_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/ddr3_0.675/in1_min", 
+                        "mlnxa2dmnb-i2c-15-6d/ddr3_0.675/in1_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/cpu_0.9/in2_input", 
+                        "mlnxa2dmnb-i2c-15-6d/cpu_0.9/in2_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/sys/in3_input", 
+                        "mlnxa2dmnb-i2c-15-6d/sys/in3_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/sys/in3_min", 
+                        "mlnxa2dmnb-i2c-15-6d/sys/in3_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/cpu_1.8/in4_input", 
+                        "mlnxa2dmnb-i2c-15-6d/cpu_1.8/in4_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/cpu_1.8/in4_min", 
+                        "mlnxa2dmnb-i2c-15-6d/cpu_1.8/in4_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/cpu_pch_1.05/in5_input", 
+                        "mlnxa2dmnb-i2c-15-6d/cpu_pch_1.05/in5_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/cpu_pch_1.05/in5_min", 
+                        "mlnxa2dmnb-i2c-15-6d/cpu_pch_1.05/in5_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/cpu_1.05/in6_input", 
+                        "mlnxa2dmnb-i2c-15-6d/cpu_1.05/in6_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/cpu_1.05/in6_min", 
+                        "mlnxa2dmnb-i2c-15-6d/cpu_1.05/in6_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/ddr3_1.35/in7_input", 
+                        "mlnxa2dmnb-i2c-15-6d/ddr3_1.35/in7_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/ddr3_1.35/in7_min", 
+                        "mlnxa2dmnb-i2c-15-6d/ddr3_1.35/in7_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/usb_5/in8_input", 
+                        "mlnxa2dmnb-i2c-15-6d/usb_5/in8_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/usb_5/in8_min", 
+                        "mlnxa2dmnb-i2c-15-6d/usb_5/in8_input"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/lan_1.05/in9_input", 
+                        "mlnxa2dmnb-i2c-15-6d/lan_1.05/in9_max"
+                    ], 
+                    [
+                        "mlnxa2dmnb-i2c-15-6d/lan_1.05/in9_min", 
+                        "mlnxa2dmnb-i2c-15-6d/lan_1.05/in9_input"
+                    ]
+                ], 
+                "temp": [
+                    [
+                        "acpitz-virtual-0/temp1/temp1_input", 
+                        "acpitz-virtual-0/temp1/temp1_crit"
+                    ], 
+                    [
+                        "acpitz-virtual-0/temp2/temp2_input", 
+                        "acpitz-virtual-0/temp2/temp2_crit"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/temp1/temp1_input", 
+                        "spectrum-i2c-2-48/temp1/temp1_max"
+                    ], 
+                    [
+                        "spectrum-i2c-2-48/temp1/temp1_min", 
+                        "spectrum-i2c-2-48/temp1/temp1_input"
+                    ], 
+                    [
+                        "lm75-i2c-7-4a/Ambient Port Temp/temp1_input", 
+                        "lm75-i2c-7-4a/Ambient Port Temp/temp1_max_hyst"
+                    ], 
+                    [
+                        "lm75-i2c-17-49/temp1/temp1_input", 
+                        "lm75-i2c-17-49/temp1/temp1_max_hyst"
+                    ]
+                ]
+            }, 
+            "non_zero": {
+                "fan": [], 
+                "power": [
+                    "ucd9200-i2c-5-27/pout1/power2_input", 
+                    "ucd9200-i2c-5-27/pout2/power3_input", 
+                    "ucd9200-i2c-5-41/pout1/power2_input"
+                ], 
+                "temp": []
+            }, 
+            "psu_skips": {
+                "dps460-i2c-10-58": {
+                    "number": 2, 
+                    "side": "right", 
+                    "skip_list": [
+                        "dps460-i2c-10-58"
+                    ]
+                }, 
+                "dps460-i2c-10-59": {
+                    "number": 1, 
+                    "side": "left", 
+                    "skip_list": [
+                        "dps460-i2c-10-59"
+                    ]
+                }
+            }
+        }, 
+        "Seastone-DX010": {
+            "alarms": {
+                "fan": [], 
+                "power": [], 
+                "temp": []
+            }, 
+            "compares": {
+                "fan": [], 
+                "power": [], 
+                "temp": []
+            }, 
+            "non_zero": {
+                "fan": [], 
+                "power": [], 
+                "temp": []
+            }, 
+            "psu_skips": {}
+        }
+    }
+}
+
+TASK [test : Gather sensors] ***************************************************
+Wednesday 27 June 2018  19:27:00 +0000 (0:00:00.141)       0:00:20.593 ******** 
+ok: [falco-test-dut02]
+
+TASK [test : set_fact] *********************************************************
+Wednesday 27 June 2018  19:27:02 +0000 (0:00:01.381)       0:00:21.974 ******** 
+ok: [falco-test-dut02]
+
+TASK [test : Output of sensors information] ************************************
+Wednesday 27 June 2018  19:27:02 +0000 (0:00:00.104)       0:00:22.079 ******** 
+ok: [falco-test-dut02] => {
+    "vars['sensors']": {
+        "alarm": false, 
+        "alarms": {
+            "fan": false, 
+            "fan_reasons": [], 
+            "power": false, 
+            "power_reasons": [], 
+            "temp": false, 
+            "temp_reasons": []
+        }, 
+        "raw": {
+            "coretemp-isa-0000": {
+                "Core 0": {
+                    "temp2_crit": "98.000", 
+                    "temp2_crit_alarm": "0.000", 
+                    "temp2_input": "28.000", 
+                    "temp2_max": "98.000"
+                }, 
+                "Core 1": {
+                    "temp3_crit": "98.000", 
+                    "temp3_crit_alarm": "0.000", 
+                    "temp3_input": "28.000", 
+                    "temp3_max": "98.000"
+                }, 
+                "Core 2": {
+                    "temp4_crit": "98.000", 
+                    "temp4_crit_alarm": "0.000", 
+                    "temp4_input": "28.000", 
+                    "temp4_max": "98.000"
+                }, 
+                "Core 3": {
+                    "temp5_crit": "98.000", 
+                    "temp5_crit_alarm": "0.000", 
+                    "temp5_input": "28.000", 
+                    "temp5_max": "98.000"
+                }
+            }, 
+            "dps460-i2c-10-5a": {
+                "Power Supply 1 temp sensor 1": {
+                    "temp1_crit": "-0.500", 
+                    "temp1_crit_alarm": "0.000", 
+                    "temp1_input": "33.000", 
+                    "temp1_lcrit": "-0.500", 
+                    "temp1_lcrit_alarm": "0.000", 
+                    "temp1_max": "119.000", 
+                    "temp1_max_alarm": "0.000", 
+                    "temp1_min": "-0.500", 
+                    "temp1_min_alarm": "0.000"
+                }, 
+                "Power Supply 1 temp sensor 2": {
+                    "temp2_crit": "-0.500", 
+                    "temp2_crit_alarm": "0.000", 
+                    "temp2_input": "36.000", 
+                    "temp2_lcrit": "-0.500", 
+                    "temp2_lcrit_alarm": "0.000", 
+                    "temp2_max": "119.000", 
+                    "temp2_max_alarm": "0.000", 
+                    "temp2_min": "-0.500", 
+                    "temp2_min_alarm": "0.000"
+                }, 
+                "Power Supply 1 temp sensor 3": {
+                    "temp3_crit": "-0.500", 
+                    "temp3_crit_alarm": "0.000", 
+                    "temp3_input": "35.000", 
+                    "temp3_lcrit": "-0.500", 
+                    "temp3_lcrit_alarm": "0.000", 
+                    "temp3_max": "119.000", 
+                    "temp3_max_alarm": "0.000", 
+                    "temp3_min": "-0.500", 
+                    "temp3_min_alarm": "0.000"
+                }, 
+                "fan1": {
+                    "fan1_alarm": "0.000", 
+                    "fan1_fault": "0.000", 
+                    "fan1_input": "3984.000"
+                }, 
+                "iin": {
+                    "curr1_crit": "7.000", 
+                    "curr1_crit_alarm": "0.000", 
+                    "curr1_input": "0.460", 
+                    "curr1_max": "6.000", 
+                    "curr1_max_alarm": "0.000"
+                }, 
+                "iout1": {
+                    "curr2_crit": "80.000", 
+                    "curr2_crit_alarm": "0.000", 
+                    "curr2_input": "6.578", 
+                    "curr2_lcrit": "-0.500", 
+                    "curr2_lcrit_alarm": "0.000", 
+                    "curr2_max": "76.000", 
+                    "curr2_max_alarm": "0.000"
+                }, 
+                "pin": {
+                    "power1_alarm": "0.000", 
+                    "power1_input": "91.000", 
+                    "power1_max": "1148.000"
+                }, 
+                "pout1": {
+                    "power2_cap": "-0.500", 
+                    "power2_cap_alarm": "0.000", 
+                    "power2_crit": "1100.000", 
+                    "power2_crit_alarm": "0.000", 
+                    "power2_input": "79.500", 
+                    "power2_max": "900.000", 
+                    "power2_max_alarm": "0.000"
+                }, 
+                "vin": {
+                    "in1_crit": "-0.500", 
+                    "in1_crit_alarm": "0.000", 
+                    "in1_input": "209.500", 
+                    "in1_lcrit": "-0.500", 
+                    "in1_lcrit_alarm": "0.000", 
+                    "in1_max": "-0.500", 
+                    "in1_max_alarm": "0.000", 
+                    "in1_min": "-0.500", 
+                    "in1_min_alarm": "0.000"
+                }, 
+                "vout1": {
+                    "in3_crit": "14.199", 
+                    "in3_crit_alarm": "0.000", 
+                    "in3_input": "12.175", 
+                    "in3_lcrit": "10.400", 
+                    "in3_lcrit_alarm": "0.000", 
+                    "in3_max": "127.998", 
+                    "in3_max_alarm": "0.000", 
+                    "in3_min": "127.998", 
+                    "in3_min_alarm": "0.000"
+                }
+            }, 
+            "dps460-i2c-11-5b": {
+                "Power Supply 2 temp sensor 1": {
+                    "temp1_crit": "-0.500", 
+                    "temp1_crit_alarm": "0.000", 
+                    "temp1_input": "38.000", 
+                    "temp1_lcrit": "-0.500", 
+                    "temp1_lcrit_alarm": "0.000", 
+                    "temp1_max": "119.000", 
+                    "temp1_max_alarm": "0.000", 
+                    "temp1_min": "-0.500", 
+                    "temp1_min_alarm": "0.000"
+                }, 
+                "Power Supply 2 temp sensor 2": {
+                    "temp2_crit": "-0.500", 
+                    "temp2_crit_alarm": "0.000", 
+                    "temp2_input": "40.000", 
+                    "temp2_lcrit": "-0.500", 
+                    "temp2_lcrit_alarm": "0.000", 
+                    "temp2_max": "119.000", 
+                    "temp2_max_alarm": "0.000", 
+                    "temp2_min": "-0.500", 
+                    "temp2_min_alarm": "0.000"
+                }, 
+                "Power Supply 2 temp sensor 3": {
+                    "temp3_crit": "-0.500", 
+                    "temp3_crit_alarm": "0.000", 
+                    "temp3_input": "39.000", 
+                    "temp3_lcrit": "-0.500", 
+                    "temp3_lcrit_alarm": "0.000", 
+                    "temp3_max": "119.000", 
+                    "temp3_max_alarm": "0.000", 
+                    "temp3_min": "-0.500", 
+                    "temp3_min_alarm": "0.000"
+                }, 
+                "fan1": {
+                    "fan1_alarm": "0.000", 
+                    "fan1_fault": "0.000", 
+                    "fan1_input": "5536.000"
+                }, 
+                "iin": {
+                    "curr1_crit": "7.000", 
+                    "curr1_crit_alarm": "0.000", 
+                    "curr1_input": "0.439", 
+                    "curr1_max": "6.000", 
+                    "curr1_max_alarm": "0.000"
+                }, 
+                "iout1": {
+                    "curr2_crit": "80.000", 
+                    "curr2_crit_alarm": "0.000", 
+                    "curr2_input": "6.312", 
+                    "curr2_lcrit": "-0.500", 
+                    "curr2_lcrit_alarm": "0.000", 
+                    "curr2_max": "76.000", 
+                    "curr2_max_alarm": "0.000"
+                }, 
+                "pin": {
+                    "power1_alarm": "0.000", 
+                    "power1_input": "86.750", 
+                    "power1_max": "1148.000"
+                }, 
+                "pout1": {
+                    "power2_cap": "-0.500", 
+                    "power2_cap_alarm": "0.000", 
+                    "power2_crit": "1100.000", 
+                    "power2_crit_alarm": "0.000", 
+                    "power2_input": "76.625", 
+                    "power2_max": "900.000", 
+                    "power2_max_alarm": "0.000"
+                }, 
+                "vin": {
+                    "in1_crit": "-0.500", 
+                    "in1_crit_alarm": "0.000", 
+                    "in1_input": "210.000", 
+                    "in1_lcrit": "-0.500", 
+                    "in1_lcrit_alarm": "0.000", 
+                    "in1_max": "-0.500", 
+                    "in1_max_alarm": "0.000", 
+                    "in1_min": "-0.500", 
+                    "in1_min_alarm": "0.000"
+                }, 
+                "vout1": {
+                    "in3_crit": "14.199", 
+                    "in3_crit_alarm": "0.000", 
+                    "in3_input": "12.160", 
+                    "in3_lcrit": "10.400", 
+                    "in3_lcrit_alarm": "0.000", 
+                    "in3_max": "127.998", 
+                    "in3_max_alarm": "0.000", 
+                    "in3_min": "127.998", 
+                    "in3_min_alarm": "0.000"
+                }
+            }, 
+            "dx010_lm75b-i2c-14-48": {
+                "Rear-panel temp sensor 1": {
+                    "temp1_input": "37.000", 
+                    "temp1_max": "43.000", 
+                    "temp1_max_hyst": "28.000"
+                }
+            }, 
+            "dx010_lm75b-i2c-15-4e": {
+                "Rear-panel temp sensor 2": {
+                    "temp1_input": "35.250", 
+                    "temp1_max": "43.000", 
+                    "temp1_max_hyst": "28.000"
+                }
+            }, 
+            "dx010_lm75b-i2c-5-48": {
+                "Rear-panel temp sensor 1": {
+                    "temp1_input": "32.875", 
+                    "temp1_max": "43.000", 
+                    "temp1_max_hyst": "28.000"
+                }
+            }, 
+            "dx010_lm75b-i2c-6-49": {
+                "Front-panel temp sensor 2": {
+                    "temp1_input": "39.375", 
+                    "temp1_max": "43.000", 
+                    "temp1_max_hyst": "28.000"
+                }
+            }, 
+            "dx010_lm75b-i2c-7-4a": {
+                "ASIC temp sensor": {
+                    "temp1_input": "40.375", 
+                    "temp1_max": "43.000", 
+                    "temp1_max_hyst": "28.000"
+                }
+            }, 
+            "emc2305-i2c-13-2e": {
+                "fan1": {
+                    "fan2_alarm": "0.000", 
+                    "fan2_div": "4.000", 
+                    "fan2_fault": "0.000", 
+                    "fan2_input": "16316.000"
+                }, 
+                "fan2": {
+                    "fan1_alarm": "0.000", 
+                    "fan1_div": "4.000", 
+                    "fan1_fault": "0.000", 
+                    "fan1_input": "16384.000"
+                }, 
+                "fan3": {
+                    "fan4_alarm": "0.000", 
+                    "fan4_div": "4.000", 
+                    "fan4_fault": "0.000", 
+                    "fan4_input": "16316.000"
+                }, 
+                "fan4": {
+                    "fan5_alarm": "0.000", 
+                    "fan5_div": "4.000", 
+                    "fan5_fault": "0.000", 
+                    "fan5_input": "16248.000"
+                }, 
+                "fan5": {
+                    "fan3_alarm": "0.000", 
+                    "fan3_div": "4.000", 
+                    "fan3_fault": "0.000", 
+                    "fan3_input": "16384.000"
+                }
+            }, 
+            "emc2305-i2c-13-4d": {
+                "fan1": {
+                    "fan2_alarm": "0.000", 
+                    "fan2_div": "4.000", 
+                    "fan2_fault": "0.000", 
+                    "fan2_input": "15919.000"
+                }, 
+                "fan2": {
+                    "fan4_alarm": "0.000", 
+                    "fan4_div": "4.000", 
+                    "fan4_fault": "0.000", 
+                    "fan4_input": "15919.000"
+                }, 
+                "fan3": {
+                    "fan5_alarm": "0.000", 
+                    "fan5_div": "4.000", 
+                    "fan5_fault": "0.000", 
+                    "fan5_input": "15984.000"
+                }, 
+                "fan4": {
+                    "fan3_alarm": "0.000", 
+                    "fan3_div": "4.000", 
+                    "fan3_fault": "0.000", 
+                    "fan3_input": "15855.000"
+                }, 
+                "fan5": {
+                    "fan1_alarm": "0.000", 
+                    "fan1_div": "4.000", 
+                    "fan1_fault": "0.000", 
+                    "fan1_input": "15855.000"
+                }
+            }
+        }, 
+        "warning": false, 
+        "warnings": []
+    }
+}
+
+TASK [test : Assert no alarm] **************************************************
+Wednesday 27 June 2018  19:27:02 +0000 (0:00:00.101)       0:00:22.180 ******** 
+ok: [falco-test-dut02]
+
+TASK [test : Show warnings] ****************************************************
+Wednesday 27 June 2018  19:27:02 +0000 (0:00:00.104)       0:00:22.285 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : do basic sanity check after each test] ****************************
+Wednesday 27 June 2018  19:27:02 +0000 (0:00:00.076)       0:00:22.361 ******** 
+included: /var/jenkins/sonic-mgmt/ansible/roles/test/tasks/base_sanity.yml for falco-test-dut02
+
+TASK [test : Get process information in syncd docker] **************************
+Wednesday 27 June 2018  19:27:02 +0000 (0:00:00.553)       0:00:22.915 ******** 
+changed: [falco-test-dut02]
+
+TASK [test : debug] ************************************************************
+Wednesday 27 June 2018  19:27:03 +0000 (0:00:00.628)       0:00:23.544 ******** 
+ok: [falco-test-dut02] => {
+    "ps_out.stdout_lines": [
+        "root        19  0.0  0.0  41584  2724 ?        Sl   16:45   0:00 /usr/bin/dsserve /usr/bin/syncd --diag -p /etc/sai.d/sai.profile", 
+        "root        29 12.4  4.6 1058876 187396 ?      Sl   16:45  20:03 /usr/bin/syncd --diag -p /etc/sai.d/sai.profile", 
+        "root        50  0.0  5.0 890436 202852 ?       S    16:46   0:00 /usr/bin/syncd --diag -p /etc/sai.d/sai.profile"
+    ]
+}
+
+TASK [test : Get orchagent process information] ********************************
+Wednesday 27 June 2018  19:27:03 +0000 (0:00:00.078)       0:00:23.622 ******** 
+changed: [falco-test-dut02]
+
+TASK [test : debug] ************************************************************
+Wednesday 27 June 2018  19:27:04 +0000 (0:00:00.408)       0:00:24.031 ******** 
+ok: [falco-test-dut02] => {
+    "orch_out.stdout_lines": [
+        "4989 /usr/bin/orchagent -d /var/log/swss -b 8192 -m 00:e0:ec:5a:7c:ac"
+    ]
+}
+
+TASK [test : reboot] ***********************************************************
+Wednesday 27 June 2018  19:27:04 +0000 (0:00:00.078)       0:00:24.109 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : Get process information in syncd docker] **************************
+Wednesday 27 June 2018  19:27:04 +0000 (0:00:00.067)       0:00:24.176 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : debug] ************************************************************
+Wednesday 27 June 2018  19:27:04 +0000 (0:00:00.073)       0:00:24.250 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : Verify that syncd process is running] *****************************
+Wednesday 27 June 2018  19:27:04 +0000 (0:00:00.073)       0:00:24.324 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : Get orchagent process information] ********************************
+Wednesday 27 June 2018  19:27:04 +0000 (0:00:00.075)       0:00:24.400 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : debug] ************************************************************
+Wednesday 27 June 2018  19:27:04 +0000 (0:00:00.077)       0:00:24.478 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : Verify that orchagent process is running] *************************
+Wednesday 27 June 2018  19:27:04 +0000 (0:00:00.071)       0:00:24.549 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : Get syslog error information] *************************************
+Wednesday 27 June 2018  19:27:04 +0000 (0:00:00.069)       0:00:24.619 ******** 
+changed: [falco-test-dut02]
+
+TASK [test : debug] ************************************************************
+Wednesday 27 June 2018  19:27:05 +0000 (0:00:00.455)       0:00:25.074 ******** 
+ok: [falco-test-dut02] => {
+    "syslog_out.stdout_lines": [
+        "Jun 27 16:48:10.445436 falco-test-dut02 INFO ansible-command: Invoked with warn=True executable=None chdir=None _raw_params=cat /var/log/syslog |tail -n 5000 |grep -i error removes=None creates=None _uses_shell=True", 
+        "Jun 27 17:53:39.971579 falco-test-dut02 INFO ansible-command: Invoked with warn=True executable=None chdir=None _raw_params=cat /var/log/syslog |tail -n 5000 |grep -i error removes=None creates=None _uses_shell=True", 
+        "Jun 27 18:00:02.000812 falco-test-dut02 INFO docker[687]: time=\"2018-06-27T18:00:02.000643618Z\" level=error msg=\"Handler for POST /v1.23/exec/9c89b18d04182106d962da2fd84e6f1c1b97ba23e53ca805301e43d4b792a501/resize returned error: rpc error: code = 2 desc = \\\"containerd: processs not found for container\\\"\"", 
+        "Jun 27 18:06:04.294389 falco-test-dut02 INFO ansible-command: Invoked with warn=True executable=None chdir=None _raw_params=cat /var/log/syslog |tail -n 5000 |grep -i error removes=None creates=None _uses_shell=True", 
+        "Jun 27 18:07:37.879248 falco-test-dut02 INFO ansible-command: Invoked with warn=True executable=None chdir=None _raw_params=cat /var/log/syslog |tail -n 5000 |grep -i error removes=None creates=None _uses_shell=True", 
+        "Jun 27 19:10:08.850004 falco-test-dut02 INFO ansible-command: Invoked with warn=True executable=None chdir=None _raw_params=cat /var/log/syslog |tail -n 5000 |grep -i error removes=None creates=None _uses_shell=True", 
+        "Jun 27 19:10:22.938466 falco-test-dut02 INFO ansible-command: Invoked with warn=True executable=None chdir=None _raw_params=cat /var/log/syslog |tail -n 5000 |grep -i error removes=None creates=None _uses_shell=True", 
+        "Jun 27 19:26:48.246266 falco-test-dut02 INFO ansible-command: Invoked with warn=True executable=None chdir=None _raw_params=cat /var/log/syslog |tail -n 5000 |grep -i error removes=None creates=None _uses_shell=True", 
+        "Jun 27 19:27:02.256449 falco-test-dut02 INFO ansible-command: Invoked with warn=True executable=None chdir=None _raw_params=cat /var/log/syslog |tail -n 5000 |grep -i error removes=None creates=None _uses_shell=True"
+    ]
+}
+
+TASK [test : validate all interfaces are up after test] ************************
+Wednesday 27 June 2018  19:27:05 +0000 (0:00:00.098)       0:00:25.173 ******** 
+included: /var/jenkins/sonic-mgmt/ansible/roles/test/tasks/interface.yml for falco-test-dut02
+
+TASK [test : Gather minigraph facts about the device] **************************
+Wednesday 27 June 2018  19:27:05 +0000 (0:00:00.682)       0:00:25.856 ******** 
+ok: [falco-test-dut02]
+
+TASK [test : Get interface facts] **********************************************
+Wednesday 27 June 2018  19:27:06 +0000 (0:00:00.597)       0:00:26.453 ******** 
+ok: [falco-test-dut02]
+
+TASK [test : debug] ************************************************************
+Wednesday 27 June 2018  19:27:11 +0000 (0:00:04.584)       0:00:31.038 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : reboot] ***********************************************************
+Wednesday 27 June 2018  19:27:11 +0000 (0:00:00.060)       0:00:31.098 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : figure out fanout switch port in case it was down] ****************
+Wednesday 27 June 2018  19:27:11 +0000 (0:00:00.063)       0:00:31.162 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : set_fact] *********************************************************
+Wednesday 27 June 2018  19:27:11 +0000 (0:00:00.076)       0:00:31.238 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : include] **********************************************************
+Wednesday 27 June 2018  19:27:11 +0000 (0:00:00.077)       0:00:31.316 ******** 
+
+TASK [test : pause and wait interface to be up] ********************************
+Wednesday 27 June 2018  19:27:11 +0000 (0:00:00.068)       0:00:31.384 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : Get interface facts] **********************************************
+Wednesday 27 June 2018  19:27:11 +0000 (0:00:00.075)       0:00:31.459 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : debug] ************************************************************
+Wednesday 27 June 2018  19:27:11 +0000 (0:00:00.073)       0:00:31.532 ******** 
+skipping: [falco-test-dut02]
+
+TASK [test : Verify interfaces are up correctly] *******************************
+Wednesday 27 June 2018  19:27:11 +0000 (0:00:00.076)       0:00:31.609 ******** 
+ok: [falco-test-dut02]
+
+TASK [test : Verify port channel interfaces are up correctly] ******************
+Wednesday 27 June 2018  19:27:11 +0000 (0:00:00.096)       0:00:31.705 ******** 
+
+TASK [test : Verify VLAN interfaces are up correctly] **************************
+Wednesday 27 June 2018  19:27:11 +0000 (0:00:00.061)       0:00:31.767 ******** 
+
+TASK [test : debug] ************************************************************
+Wednesday 27 June 2018  19:27:11 +0000 (0:00:00.071)       0:00:31.839 ******** 
+ok: [falco-test-dut02] => {
+    "msg": "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+}
+
+TASK [test : debug] ************************************************************
+Wednesday 27 June 2018  19:27:11 +0000 (0:00:00.076)       0:00:31.916 ******** 
+ok: [falco-test-dut02] => {
+    "msg": "!!!!!!!!!!!!!!!!!!!! end running test sensors !!!!!!!!!!!!!!!!!!!!"
+}
+
+TASK [test : debug] ************************************************************
+Wednesday 27 June 2018  19:27:12 +0000 (0:00:00.075)       0:00:31.992 ******** 
+ok: [falco-test-dut02] => {
+    "msg": "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+}
+
+TASK [test : include] **********************************************************
+Wednesday 27 June 2018  19:27:12 +0000 (0:00:00.074)       0:00:32.066 ******** 
+skipping: [falco-test-dut02]
+
+PLAY ***************************************************************************
+skipping: no hosts matched
+
+PLAY RECAP *********************************************************************
+falco-test-dut02           : ok=49   changed=8    unreachable=0    failed=0   
+
+Wednesday 27 June 2018  19:27:12 +0000 (0:00:00.062)       0:00:32.129 ******** 
+=============================================================================== 
+TASK: setup ------------------------------------------------------------- 5.19s
+TASK: test : Get interface facts ---------------------------------------- 4.58s
+TASK: test : Get interface facts ---------------------------------------- 4.47s
+TASK: test : Gather sensors --------------------------------------------- 1.38s
+TASK: test : gather system version information -------------------------- 1.35s
+TASK: test : validate all interfaces are up after test ------------------ 0.68s
+TASK: test : Get process information in syncd docker -------------------- 0.67s
+TASK: test : Get process information in syncd docker -------------------- 0.63s
+TASK: test : Gather minigraph facts about the device -------------------- 0.61s
+TASK: test : Gathering minigraph facts about the device ----------------- 0.60s
+TASK: test : Gather minigraph facts about the device -------------------- 0.60s
+TASK: test : do basic sanity check after each test ---------------------- 0.55s
+TASK: test : Get orchagent process information -------------------------- 0.53s
+TASK: test : Get syslog error information ------------------------------- 0.51s
+TASK: test : validate all interfaces is up ------------------------------ 0.47s
+TASK: test : Get platform monitor docker name --------------------------- 0.46s
+TASK: test : Get syslog error information ------------------------------- 0.46s
+TASK: test : Get orchagent process information -------------------------- 0.41s
+TASK: test : do basic sanity check before each test --------------------- 0.39s
+TASK: test : run test case {{ testcases[testcase_name]['filename'] }} file --- 0.29s
+Done

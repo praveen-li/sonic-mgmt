@@ -29,12 +29,13 @@ class MtuTest(BaseTest):
     
     For the device configured with IP-MTU=9100, PHY-MTU=9114,
      - ICMP/IP frame, the packet-len is 9114 (This includes the 14 bytes Layer 2 Ethernet header)
+    [For Linkedin NSG LAB]: For Test Server: IP-MTU=9000, PHY-MTU=9014
     '''
 
     #---------------------------------------------------------------------
     # Class variables
     #---------------------------------------------------------------------
-    DEFAULT_PACKET_LEN = 9114
+    DEFAULT_PACKET_LEN = 9014
     ICMP_HDR_LEN = 8
 
     def __init__(self):

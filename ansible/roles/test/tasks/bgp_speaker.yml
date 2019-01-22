@@ -26,6 +26,10 @@
     - set_fact: addr_family='ipv4'
       when: addr_family is not defined
 
+    - debug: msg="PC {{minigraph_portchannel_interfaces}}"
+    
+    - debug: msg="PC {{minigraph_vlan_interfaces}}"
+
     - set_fact: portchannel_name="{{minigraph_portchannel_interfaces[0].attachto}}"
       when: addr_family == 'ipv6'
 
@@ -85,6 +89,8 @@
       set_fact:
          helper_dir="/root/helpers"
 
+    - debug: msg="PC {{minigraph_lo_interfaces}}"
+
     - name: Generate configurations for exabgp instances
       template: src=roles/test/templates/exabgp/config.j2 dest={{exabgp_dir}}/{{item.file_name}}
       with_items:
@@ -128,6 +134,10 @@
            mux_ip_2: "{{mux_ip_2}}"}
       delegate_to: "{{ptf_host}}"
 
+    - name: pause now
+      pause:
+        prompt: "Enter: "
+
     - name: Kill exabgp instances if existing
       shell: pkill exabgp
       delegate_to: "{{ptf_host}}"
@@ -148,12 +158,16 @@
     - pause:
         seconds: 30
         prompt: "make sure routes announced to dynamic bgp neighbors"
+    
+    - name: pause now
+      pause:
+        prompt: "Enter: "
 
     - name: Gather bgp facts from bgp container
       bgp_facts:
 
     - debug: msg="{{bgp_neighbors}}"
-
+    
     - name: Verify bgp sessions are established
       assert: {that: "'{{ bgp_neighbors[item]['state'] }}' == 'established'"}
       with_items: "{{ bgp_neighbors.keys() }}"
@@ -199,10 +213,16 @@
           - ipv4={{ ipv4|default(false) }}
           - ipv6={{ ipv6|default(false) }}
         ptf_extra_options: "--relax --debug info --log-file /tmp/bgp_speaker_test.FibTest.log"
+    
+    - name: pause now
+      pause:
+        prompt: "Enter: "
+
   always:
     - name: Kill exabgp instances
       shell: pkill exabgp
       delegate_to: "{{ptf_host}}"
+      ignore_errors: yes
 
     - name: Flush vlan ips route
       command: ip route flush {{item.split('/')[0]}}/32

@@ -1,0 +1,544 @@
+diff --git a/ansible/files/lab_connection_graph.xml b/ansible/files/lab_connection_graph.xml
+index 885b21a..2b7cd84 100644
+--- a/ansible/files/lab_connection_graph.xml
++++ b/ansible/files/lab_connection_graph.xml
+@@ -1,93 +1,105 @@
+ <LabConnectionGraph>
+   <PhysicalNetworkGraphDeclaration>
+     <Devices>
+-      <Device Hostname="str-msn2700-01" HwSku="Mellanox-2700" Type="DevSonic"/>
+-      <Device Hostname="str-7260-10" HwSku="Arista-7260QX-64" Type="FanoutLeaf"/>
+-      <Device Hostname="str-7260-11" HwSku="Arista-7260QX-64" Type="FanoutRoot"/>
+       <Device Hostname="str-acs-serv-01" HwSku="TestServ" Type="Server"/>
++      <Device Hostname="falco-test-fout00" HwSku="Arista-7250QX-64" Type="FanoutRoot"/>
++      <Device Hostname="falco-test-fout01" HwSku="Arista-7250QX-64" Type="FanoutLeaf"/>
++      <Device Hostname="falco-test-fout02" HwSku="Arista-7250QX-64" Type="FanoutLeaf"/>
++      <Device Hostname="falco-test-fout03" HwSku="Arista-7250QX-64" Type="FanoutLeaf"/>
++      <Device Hostname="falco-test-dut02" HwSku="Seastone-DX010" Type="DevSonic"/>
++      <Device Hostname="falco-test-dut02" HwSku="Seastone-DX010" Type="DevSonic"/>
++      <Device Hostname="falco-test-dut03" HwSku="Seastone-DX010" Type="DevSonic"/>
+     </Devices>
+     <DeviceInterfaceLinks>
+-      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-7260-10" EndPort="Ethernet1" StartDevice="str-msn2700-01" StartPort="Ethernet0"/>
+-      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-7260-10" EndPort="Ethernet2" StartDevice="str-msn2700-01" StartPort="Ethernet4"/>
+-      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-7260-10" EndPort="Ethernet3" StartDevice="str-msn2700-01" StartPort="Ethernet8"/>
+-      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-7260-10" EndPort="Ethernet4" StartDevice="str-msn2700-01" StartPort="Ethernet12"/>
+-      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-7260-10" EndPort="Ethernet5" StartDevice="str-msn2700-01" StartPort="Ethernet16"/>
+-      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-7260-10" EndPort="Ethernet6" StartDevice="str-msn2700-01" StartPort="Ethernet20"/>
+-      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-7260-10" EndPort="Ethernet7" StartDevice="str-msn2700-01" StartPort="Ethernet24"/>
+-      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-7260-10" EndPort="Ethernet8" StartDevice="str-msn2700-01" StartPort="Ethernet28"/>
+-      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-7260-10" EndPort="Ethernet9" StartDevice="str-msn2700-01" StartPort="Ethernet32"/>
+-      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-7260-10" EndPort="Ethernet10" StartDevice="str-msn2700-01" StartPort="Ethernet36"/>
+-      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-7260-10" EndPort="Ethernet11" StartDevice="str-msn2700-01" StartPort="Ethernet40"/>
+-      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-7260-10" EndPort="Ethernet12" StartDevice="str-msn2700-01" StartPort="Ethernet44"/>
+-      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-7260-10" EndPort="Ethernet13" StartDevice="str-msn2700-01" StartPort="Ethernet48"/>
+-      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-7260-10" EndPort="Ethernet14" StartDevice="str-msn2700-01" StartPort="Ethernet52"/>
+-      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-7260-10" EndPort="Ethernet15" StartDevice="str-msn2700-01" StartPort="Ethernet56"/>
+-      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-7260-10" EndPort="Ethernet16" StartDevice="str-msn2700-01" StartPort="Ethernet60"/>
+-      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-7260-10" EndPort="Ethernet17" StartDevice="str-msn2700-01" StartPort="Ethernet64"/>
+-      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-7260-10" EndPort="Ethernet18" StartDevice="str-msn2700-01" StartPort="Ethernet68"/>
+-      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-7260-10" EndPort="Ethernet19" StartDevice="str-msn2700-01" StartPort="Ethernet72"/>
+-      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-7260-10" EndPort="Ethernet20" StartDevice="str-msn2700-01" StartPort="Ethernet76"/>
+-      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-7260-10" EndPort="Ethernet21" StartDevice="str-msn2700-01" StartPort="Ethernet80"/>
+-      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-7260-10" EndPort="Ethernet22" StartDevice="str-msn2700-01" StartPort="Ethernet84"/>
+-      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-7260-10" EndPort="Ethernet23" StartDevice="str-msn2700-01" StartPort="Ethernet88"/>
+-      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-7260-10" EndPort="Ethernet24" StartDevice="str-msn2700-01" StartPort="Ethernet92"/>
+-      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-7260-10" EndPort="Ethernet25" StartDevice="str-msn2700-01" StartPort="Ethernet96"/>
+-      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-7260-10" EndPort="Ethernet26" StartDevice="str-msn2700-01" StartPort="Ethernet100"/>
+-      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-7260-10" EndPort="Ethernet27" StartDevice="str-msn2700-01" StartPort="Ethernet104"/>
+-      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-7260-10" EndPort="Ethernet28" StartDevice="str-msn2700-01" StartPort="Ethernet108"/>
+-      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-7260-10" EndPort="Ethernet29" StartDevice="str-msn2700-01" StartPort="Ethernet112"/>
+-      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-7260-10" EndPort="Ethernet30" StartDevice="str-msn2700-01" StartPort="Ethernet116"/>
+-      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-7260-10" EndPort="Ethernet31" StartDevice="str-msn2700-01" StartPort="Ethernet120"/>
+-      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-7260-10" EndPort="Ethernet32" StartDevice="str-msn2700-01" StartPort="Ethernet124"/>
+-      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-acs-serv-01" EndPort="p4p1" StartDevice="str-7260-11" StartPort="Ethernet19"/>
+-      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-7260-10" EndPort="Ethernet64" StartDevice="str-7260-11" StartPort="Ethernet30"/>
++      <DeviceInterfaceLink BandWidth="40000" EndDevice="falco-test-fout01" EndPort="Ethernet1/1" StartDevice="falco-test-dut02" StartPort="Ethernet0"/>
++      <DeviceInterfaceLink BandWidth="40000" EndDevice="falco-test-fout01" EndPort="Ethernet2/1" StartDevice="falco-test-dut02" StartPort="Ethernet4"/>
++      <DeviceInterfaceLink BandWidth="40000" EndDevice="falco-test-fout01" EndPort="Ethernet3/1" StartDevice="falco-test-dut02" StartPort="Ethernet8"/>
++      <DeviceInterfaceLink BandWidth="40000" EndDevice="falco-test-fout01" EndPort="Ethernet4/1" StartDevice="falco-test-dut02" StartPort="Ethernet12"/>
++      <DeviceInterfaceLink BandWidth="40000" EndDevice="falco-test-fout01" EndPort="Ethernet5/1" StartDevice="falco-test-dut02" StartPort="Ethernet16"/>
++      <DeviceInterfaceLink BandWidth="40000" EndDevice="falco-test-fout01" EndPort="Ethernet6/1" StartDevice="falco-test-dut02" StartPort="Ethernet20"/>
++      <DeviceInterfaceLink BandWidth="40000" EndDevice="falco-test-fout01" EndPort="Ethernet7/1" StartDevice="falco-test-dut02" StartPort="Ethernet24"/>
++      <DeviceInterfaceLink BandWidth="40000" EndDevice="falco-test-fout01" EndPort="Ethernet8/1" StartDevice="falco-test-dut02" StartPort="Ethernet28"/>
++      <DeviceInterfaceLink BandWidth="40000" EndDevice="falco-test-fout01" EndPort="Ethernet9/1" StartDevice="falco-test-dut02" StartPort="Ethernet32"/>
++      <DeviceInterfaceLink BandWidth="40000" EndDevice="falco-test-fout01" EndPort="Ethernet10/1" StartDevice="falco-test-dut02" StartPort="Ethernet36"/>
++      <DeviceInterfaceLink BandWidth="40000" EndDevice="falco-test-fout01" EndPort="Ethernet11/1" StartDevice="falco-test-dut02" StartPort="Ethernet40"/>
++      <DeviceInterfaceLink BandWidth="40000" EndDevice="falco-test-fout01" EndPort="Ethernet12/1" StartDevice="falco-test-dut02" StartPort="Ethernet44"/>
++      <DeviceInterfaceLink BandWidth="40000" EndDevice="falco-test-fout01" EndPort="Ethernet13/1" StartDevice="falco-test-dut02" StartPort="Ethernet48"/>
++      <DeviceInterfaceLink BandWidth="40000" EndDevice="falco-test-fout01" EndPort="Ethernet14/1" StartDevice="falco-test-dut02" StartPort="Ethernet52"/>
++      <DeviceInterfaceLink BandWidth="40000" EndDevice="falco-test-fout01" EndPort="Ethernet15/1" StartDevice="falco-test-dut02" StartPort="Ethernet56"/>
++      <DeviceInterfaceLink BandWidth="40000" EndDevice="falco-test-fout01" EndPort="Ethernet16/1" StartDevice="falco-test-dut02" StartPort="Ethernet60"/>
++      <DeviceInterfaceLink BandWidth="40000" EndDevice="falco-test-fout01" EndPort="Ethernet17/1" StartDevice="falco-test-dut02" StartPort="Ethernet64"/>
++      <DeviceInterfaceLink BandWidth="40000" EndDevice="falco-test-fout01" EndPort="Ethernet18/1" StartDevice="falco-test-dut02" StartPort="Ethernet68"/>
++      <DeviceInterfaceLink BandWidth="40000" EndDevice="falco-test-fout01" EndPort="Ethernet19/1" StartDevice="falco-test-dut02" StartPort="Ethernet72"/>
++      <DeviceInterfaceLink BandWidth="40000" EndDevice="falco-test-fout01" EndPort="Ethernet20/1" StartDevice="falco-test-dut02" StartPort="Ethernet76"/>
++      <DeviceInterfaceLink BandWidth="40000" EndDevice="falco-test-fout01" EndPort="Ethernet21/1" StartDevice="falco-test-dut02" StartPort="Ethernet80"/>
++      <DeviceInterfaceLink BandWidth="40000" EndDevice="falco-test-fout01" EndPort="Ethernet22/1" StartDevice="falco-test-dut02" StartPort="Ethernet84"/>
++      <DeviceInterfaceLink BandWidth="40000" EndDevice="falco-test-fout01" EndPort="Ethernet23/1" StartDevice="falco-test-dut02" StartPort="Ethernet88"/>
++      <DeviceInterfaceLink BandWidth="40000" EndDevice="falco-test-fout01" EndPort="Ethernet24/1" StartDevice="falco-test-dut02" StartPort="Ethernet92"/>
++      <DeviceInterfaceLink BandWidth="40000" EndDevice="falco-test-fout01" EndPort="Ethernet25/1" StartDevice="falco-test-dut02" StartPort="Ethernet96"/>
++      <DeviceInterfaceLink BandWidth="40000" EndDevice="falco-test-fout01" EndPort="Ethernet26/1" StartDevice="falco-test-dut02" StartPort="Ethernet100"/>
++      <DeviceInterfaceLink BandWidth="40000" EndDevice="falco-test-fout01" EndPort="Ethernet27/1" StartDevice="falco-test-dut02" StartPort="Ethernet104"/>
++      <DeviceInterfaceLink BandWidth="40000" EndDevice="falco-test-fout01" EndPort="Ethernet28/1" StartDevice="falco-test-dut02" StartPort="Ethernet108"/>
++      <DeviceInterfaceLink BandWidth="40000" EndDevice="falco-test-fout01" EndPort="Ethernet29/1" StartDevice="falco-test-dut02" StartPort="Ethernet112"/>
++      <DeviceInterfaceLink BandWidth="40000" EndDevice="falco-test-fout01" EndPort="Ethernet30/1" StartDevice="falco-test-dut02" StartPort="Ethernet116"/>
++      <DeviceInterfaceLink BandWidth="40000" EndDevice="falco-test-fout01" EndPort="Ethernet31/1" StartDevice="falco-test-dut02" StartPort="Ethernet120"/>
++      <DeviceInterfaceLink BandWidth="40000" EndDevice="falco-test-fout01" EndPort="Ethernet32/1" StartDevice="falco-test-dut02" StartPort="Ethernet124"/>
++      <DeviceInterfaceLink BandWidth="40000" EndDevice="str-acs-serv-01" EndPort="eth0" StartDevice="falco-test-fout00" StartPort="Ethernet0"/>
++      <DeviceInterfaceLink BandWidth="40000" EndDevice="falco-test-fout01" EndPort="Ethernet64/1" StartDevice="falco-test-fout00" StartPort="Ethernet124"/>
+     </DeviceInterfaceLinks>
+   </PhysicalNetworkGraphDeclaration>
+   <DataPlaneGraph>
+-    <DevicesL3Info Hostname="str-7260-10">
+-      <ManagementIPInterface Name="ManagementIp" Prefix="10.251.0.13/23"/>
++    <DevicesL3Info Hostname="falco-test-fout00">
++      <ManagementIPInterface Name="ManagementIp" Prefix="172.25.11.52/24"/>
+     </DevicesL3Info>
+-    <DevicesL2Info Hostname="str-7260-10">
+-      <InterfaceVlan mode="Access" portname="Ethernet1" vlanids="1681"/>
+-      <InterfaceVlan mode="Access" portname="Ethernet2" vlanids="1682"/>
+-      <InterfaceVlan mode="Access" portname="Ethernet3" vlanids="1683"/>
+-      <InterfaceVlan mode="Access" portname="Ethernet4" vlanids="1684"/>
+-      <InterfaceVlan mode="Access" portname="Ethernet5" vlanids="1685"/>
+-      <InterfaceVlan mode="Access" portname="Ethernet6" vlanids="1686"/>
+-      <InterfaceVlan mode="Access" portname="Ethernet7" vlanids="1687"/>
+-      <InterfaceVlan mode="Access" portname="Ethernet8" vlanids="1688"/>
+-      <InterfaceVlan mode="Access" portname="Ethernet9" vlanids="1689"/>
+-      <InterfaceVlan mode="Access" portname="Ethernet10" vlanids="1690"/>
+-      <InterfaceVlan mode="Access" portname="Ethernet11" vlanids="1691"/>
+-      <InterfaceVlan mode="Access" portname="Ethernet12" vlanids="1692"/>
+-      <InterfaceVlan mode="Access" portname="Ethernet13" vlanids="1693"/>
+-      <InterfaceVlan mode="Access" portname="Ethernet14" vlanids="1694"/>
+-      <InterfaceVlan mode="Access" portname="Ethernet15" vlanids="1695"/>
+-      <InterfaceVlan mode="Access" portname="Ethernet16" vlanids="1696"/>
+-      <InterfaceVlan mode="Access" portname="Ethernet17" vlanids="1697"/>
+-      <InterfaceVlan mode="Access" portname="Ethernet18" vlanids="1698"/>
+-      <InterfaceVlan mode="Access" portname="Ethernet19" vlanids="1699"/>
+-      <InterfaceVlan mode="Access" portname="Ethernet20" vlanids="1700"/>
+-      <InterfaceVlan mode="Access" portname="Ethernet21" vlanids="1701"/>
+-      <InterfaceVlan mode="Access" portname="Ethernet22" vlanids="1702"/>
+-      <InterfaceVlan mode="Access" portname="Ethernet23" vlanids="1703"/>
+-      <InterfaceVlan mode="Access" portname="Ethernet24" vlanids="1704"/>
+-      <InterfaceVlan mode="Access" portname="Ethernet25" vlanids="1705"/>
+-      <InterfaceVlan mode="Access" portname="Ethernet26" vlanids="1706"/>
+-      <InterfaceVlan mode="Access" portname="Ethernet27" vlanids="1707"/>
+-      <InterfaceVlan mode="Access" portname="Ethernet28" vlanids="1708"/>
+-      <InterfaceVlan mode="Access" portname="Ethernet29" vlanids="1709"/>
+-      <InterfaceVlan mode="Access" portname="Ethernet30" vlanids="1710"/>
+-      <InterfaceVlan mode="Access" portname="Ethernet31" vlanids="1711"/>
+-      <InterfaceVlan mode="Access" portname="Ethernet32" vlanids="1712"/>
+-      <InterfaceVlan mode="Trunk" portname="Ethernet64" vlanids="1681-1712"/>
++    <DevicesL2Info Hostname="falco-test-fout00">
++      <InterfaceVlan mode="Trunk" portname="Ethernet0" vlanids=""/>
++      <InterfaceVlan mode="Trunk" portname="Ethernet124" vlanids="1681-1712"/>
+     </DevicesL2Info>
+-    <DevicesL3Info Hostname="str-7260-11">
+-      <ManagementIPInterface Name="ManagementIp" Prefix="10.251.0.234/23"/>
++    <DevicesL3Info Hostname="falco-test-fout01">
++      <ManagementIPInterface Name="ManagementIp" Prefix="172.25.11.53/24"/>
+     </DevicesL3Info>
+-    <DevicesL2Info Hostname="str-7260-11">
+-      <InterfaceVlan mode="Trunk" portname="Ethernet19" vlanids=""/>
+-      <InterfaceVlan mode="Trunk" portname="Ethernet30" vlanids="1681-1712"/>
++    <DevicesL2Info Hostname="falco-test-fout01">
++      <InterfaceVlan mode="Access" portname="Ethernet1/1" vlanids="1681"/>
++      <InterfaceVlan mode="Access" portname="Ethernet2/1" vlanids="1682"/>
++      <InterfaceVlan mode="Access" portname="Ethernet3/1" vlanids="1683"/>
++      <InterfaceVlan mode="Access" portname="Ethernet4/1" vlanids="1684"/>
++      <InterfaceVlan mode="Access" portname="Ethernet5/1" vlanids="1685"/>
++      <InterfaceVlan mode="Access" portname="Ethernet6/1" vlanids="1686"/>
++      <InterfaceVlan mode="Access" portname="Ethernet7/1" vlanids="1687"/>
++      <InterfaceVlan mode="Access" portname="Ethernet8/1" vlanids="1688"/>
++      <InterfaceVlan mode="Access" portname="Ethernet9/1" vlanids="1689"/>
++      <InterfaceVlan mode="Access" portname="Ethernet10/1" vlanids="1690"/>
++      <InterfaceVlan mode="Access" portname="Ethernet11/1" vlanids="1691"/>
++      <InterfaceVlan mode="Access" portname="Ethernet12/1" vlanids="1692"/>
++      <InterfaceVlan mode="Access" portname="Ethernet13/1" vlanids="1693"/>
++      <InterfaceVlan mode="Access" portname="Ethernet14/1" vlanids="1694"/>
++      <InterfaceVlan mode="Access" portname="Ethernet15/1" vlanids="1695"/>
++      <InterfaceVlan mode="Access" portname="Ethernet16/1" vlanids="1696"/>
++      <InterfaceVlan mode="Access" portname="Ethernet17/1" vlanids="1697"/>
++      <InterfaceVlan mode="Access" portname="Ethernet18/1" vlanids="1698"/>
++      <InterfaceVlan mode="Access" portname="Ethernet19/1" vlanids="1699"/>
++      <InterfaceVlan mode="Access" portname="Ethernet20/1" vlanids="1700"/>
++      <InterfaceVlan mode="Access" portname="Ethernet21/1" vlanids="1701"/>
++      <InterfaceVlan mode="Access" portname="Ethernet22/1" vlanids="1702"/>
++      <InterfaceVlan mode="Access" portname="Ethernet23/1" vlanids="1703"/>
++      <InterfaceVlan mode="Access" portname="Ethernet24/1" vlanids="1704"/>
++      <InterfaceVlan mode="Access" portname="Ethernet25/1" vlanids="1705"/>
++      <InterfaceVlan mode="Access" portname="Ethernet26/1" vlanids="1706"/>
++      <InterfaceVlan mode="Access" portname="Ethernet27/1" vlanids="1707"/>
++      <InterfaceVlan mode="Access" portname="Ethernet28/1" vlanids="1708"/>
++      <InterfaceVlan mode="Access" portname="Ethernet29/1" vlanids="1709"/>
++      <InterfaceVlan mode="Access" portname="Ethernet30/1" vlanids="1710"/>
++      <InterfaceVlan mode="Access" portname="Ethernet31/1" vlanids="1711"/>
++      <InterfaceVlan mode="Access" portname="Ethernet32/1" vlanids="1712"/>
++      <InterfaceVlan mode="Trunk" portname="Ethernet64/1" vlanids="1681-1712"/>
+     </DevicesL2Info>
++    <DevicesL3Info Hostname="falco-test-fout02">
++      <ManagementIPInterface Name="ManagementIp" Prefix="172.25.11.55/24"/>
++    </DevicesL3Info>
++    <DevicesL2Info Hostname="falco-test-fout02"/>
++    <DevicesL3Info Hostname="falco-test-fout03">
++      <ManagementIPInterface Name="ManagementIp" Prefix="172.25.11.57/24"/>
++    </DevicesL3Info>
++    <DevicesL2Info Hostname="falco-test-fout03"/>
+   </DataPlaneGraph>
+ </LabConnectionGraph>
+diff --git a/ansible/files/sonic_lab_devices.csv b/ansible/files/sonic_lab_devices.csv
+index b11a58d..2aa3f54 100644
+--- a/ansible/files/sonic_lab_devices.csv
++++ b/ansible/files/sonic_lab_devices.csv
+@@ -1,5 +1,9 @@
+ Hostname,ManagementIp,HwSku,Type
+-str-msn2700-01,10.251.0.188/23,Mellanox-2700,DevSonic
+-str-7260-10,10.251.0.13/23,Arista-7260QX-64,FanoutLeaf
+-str-7260-11,10.251.0.234/23,Arista-7260QX-64,FanoutRoot
+-str-acs-serv-01,10.251.0.245/23,TestServ,Server
++str-acs-serv-01,172.25.11.16/24,TestServ,Server
++falco-test-fout00,172.25.11.52/24,Arista-7250QX-64,FanoutRoot
++falco-test-fout01,172.25.11.53/24,Arista-7250QX-64,FanoutLeaf
++falco-test-fout02,172.25.11.55/24,Arista-7250QX-64,FanoutLeaf
++falco-test-fout03,172.25.11.57/24,Arista-7250QX-64,FanoutLeaf
++falco-test-dut01,172.25.11.54/24,Seastone-DX010,DevSonic
++falco-test-dut02,172.25.11.56/24,Seastone-DX010,DevSonic
++falco-test-dut03,172.25.11.58/24,Seastone-DX010,DevSonic
+\ No newline at end of file
+diff --git a/ansible/files/sonic_lab_links.csv b/ansible/files/sonic_lab_links.csv
+index f82e968..e286c62 100644
+--- a/ansible/files/sonic_lab_links.csv
++++ b/ansible/files/sonic_lab_links.csv
+@@ -1,35 +1,35 @@
+ StartDevice,StartPort,EndDevice,EndPort,BandWidth,VlanID,VlanMode
+-str-msn2700-01,Ethernet0,str-7260-10,Ethernet1,40000,1681,Access
+-str-msn2700-01,Ethernet4,str-7260-10,Ethernet2,40000,1682,Access
+-str-msn2700-01,Ethernet8,str-7260-10,Ethernet3,40000,1683,Access
+-str-msn2700-01,Ethernet12,str-7260-10,Ethernet4,40000,1684,Access
+-str-msn2700-01,Ethernet16,str-7260-10,Ethernet5,40000,1685,Access
+-str-msn2700-01,Ethernet20,str-7260-10,Ethernet6,40000,1686,Access
+-str-msn2700-01,Ethernet24,str-7260-10,Ethernet7,40000,1687,Access
+-str-msn2700-01,Ethernet28,str-7260-10,Ethernet8,40000,1688,Access
+-str-msn2700-01,Ethernet32,str-7260-10,Ethernet9,40000,1689,Access
+-str-msn2700-01,Ethernet36,str-7260-10,Ethernet10,40000,1690,Access
+-str-msn2700-01,Ethernet40,str-7260-10,Ethernet11,40000,1691,Access
+-str-msn2700-01,Ethernet44,str-7260-10,Ethernet12,40000,1692,Access
+-str-msn2700-01,Ethernet48,str-7260-10,Ethernet13,40000,1693,Access
+-str-msn2700-01,Ethernet52,str-7260-10,Ethernet14,40000,1694,Access
+-str-msn2700-01,Ethernet56,str-7260-10,Ethernet15,40000,1695,Access
+-str-msn2700-01,Ethernet60,str-7260-10,Ethernet16,40000,1696,Access
+-str-msn2700-01,Ethernet64,str-7260-10,Ethernet17,40000,1697,Access
+-str-msn2700-01,Ethernet68,str-7260-10,Ethernet18,40000,1698,Access
+-str-msn2700-01,Ethernet72,str-7260-10,Ethernet19,40000,1699,Access
+-str-msn2700-01,Ethernet76,str-7260-10,Ethernet20,40000,1700,Access
+-str-msn2700-01,Ethernet80,str-7260-10,Ethernet21,40000,1701,Access
+-str-msn2700-01,Ethernet84,str-7260-10,Ethernet22,40000,1702,Access
+-str-msn2700-01,Ethernet88,str-7260-10,Ethernet23,40000,1703,Access
+-str-msn2700-01,Ethernet92,str-7260-10,Ethernet24,40000,1704,Access
+-str-msn2700-01,Ethernet96,str-7260-10,Ethernet25,40000,1705,Access
+-str-msn2700-01,Ethernet100,str-7260-10,Ethernet26,40000,1706,Access
+-str-msn2700-01,Ethernet104,str-7260-10,Ethernet27,40000,1707,Access
+-str-msn2700-01,Ethernet108,str-7260-10,Ethernet28,40000,1708,Access
+-str-msn2700-01,Ethernet112,str-7260-10,Ethernet29,40000,1709,Access
+-str-msn2700-01,Ethernet116,str-7260-10,Ethernet30,40000,1710,Access
+-str-msn2700-01,Ethernet120,str-7260-10,Ethernet31,40000,1711,Access
+-str-msn2700-01,Ethernet124,str-7260-10,Ethernet32,40000,1712,Access
+-str-7260-11,Ethernet19,str-acs-serv-01,p4p1,40000,,Trunk
+-str-7260-11,Ethernet30,str-7260-10,Ethernet64,40000,1681-1712,Trunk
++falco-test-dut01,Ethernet0,falco-test-fout01,Ethernet1/1,40000,1681,Access
++falco-test-dut01,Ethernet4,falco-test-fout01,Ethernet2/1,40000,1682,Access
++falco-test-dut01,Ethernet8,falco-test-fout01,Ethernet3/1,40000,1683,Access
++falco-test-dut01,Ethernet12,falco-test-fout01,Ethernet4/1,40000,1684,Access
++falco-test-dut01,Ethernet16,falco-test-fout01,Ethernet5/1,40000,1685,Access
++falco-test-dut01,Ethernet20,falco-test-fout01,Ethernet6/1,40000,1686,Access
++falco-test-dut01,Ethernet24,falco-test-fout01,Ethernet7/1,40000,1687,Access
++falco-test-dut01,Ethernet28,falco-test-fout01,Ethernet8/1,40000,1688,Access
++falco-test-dut01,Ethernet32,falco-test-fout01,Ethernet9/1,40000,1689,Access
++falco-test-dut01,Ethernet36,falco-test-fout01,Ethernet10/1,40000,1690,Access
++falco-test-dut01,Ethernet40,falco-test-fout01,Ethernet11/1,40000,1691,Access
++falco-test-dut01,Ethernet44,falco-test-fout01,Ethernet12/1,40000,1692,Access
++falco-test-dut01,Ethernet48,falco-test-fout01,Ethernet13/1,40000,1693,Access
++falco-test-dut01,Ethernet52,falco-test-fout01,Ethernet14/1,40000,1694,Access
++falco-test-dut01,Ethernet56,falco-test-fout01,Ethernet15/1,40000,1695,Access
++falco-test-dut01,Ethernet60,falco-test-fout01,Ethernet16/1,40000,1696,Access
++falco-test-dut01,Ethernet64,falco-test-fout01,Ethernet17/1,40000,1697,Access
++falco-test-dut01,Ethernet68,falco-test-fout01,Ethernet18/1,40000,1698,Access
++falco-test-dut01,Ethernet72,falco-test-fout01,Ethernet19/1,40000,1699,Access
++falco-test-dut01,Ethernet76,falco-test-fout01,Ethernet20/1,40000,1700,Access
++falco-test-dut01,Ethernet80,falco-test-fout01,Ethernet21/1,40000,1701,Access
++falco-test-dut01,Ethernet84,falco-test-fout01,Ethernet22/1,40000,1702,Access
++falco-test-dut01,Ethernet88,falco-test-fout01,Ethernet23/1,40000,1703,Access
++falco-test-dut01,Ethernet92,falco-test-fout01,Ethernet24/1,40000,1704,Access
++falco-test-dut01,Ethernet96,falco-test-fout01,Ethernet25/1,40000,1705,Access
++falco-test-dut01,Ethernet100,falco-test-fout01,Ethernet26/1,40000,1706,Access
++falco-test-dut01,Ethernet104,falco-test-fout01,Ethernet27/1,40000,1707,Access
++falco-test-dut01,Ethernet108,falco-test-fout01,Ethernet28/1,40000,1708,Access
++falco-test-dut01,Ethernet112,falco-test-fout01,Ethernet29/1,40000,1709,Access
++falco-test-dut01,Ethernet116,falco-test-fout01,Ethernet30/1,40000,1710,Access
++falco-test-dut01,Ethernet120,falco-test-fout01,Ethernet31/1,40000,1711,Access
++falco-test-dut01,Ethernet124,falco-test-fout01,Ethernet32/1,40000,1712,Access
++falco-test-fout00,Ethernet0,str-acs-serv-01,eth0,40000,,Trunk
++falco-test-fout00,Ethernet124,falco-test-fout01,Ethernet64/1,40000,1681-1712,Trunk
+\ No newline at end of file
+diff --git a/ansible/group_vars/eos/creds.yml b/ansible/group_vars/eos/creds.yml
+index 3cd1daa..34fab00 100644
+--- a/ansible/group_vars/eos/creds.yml
++++ b/ansible/group_vars/eos/creds.yml
+@@ -1,4 +1,4 @@
+ ---
+-ansible_user: use_own_value
+-ansible_password: use_own_value
++ansible_user: root
++ansible_password: 123456
+ 
+diff --git a/ansible/group_vars/lab/lab.yml b/ansible/group_vars/lab/lab.yml
+index 034ebe8..2bcdf85 100644
+--- a/ansible/group_vars/lab/lab.yml
++++ b/ansible/group_vars/lab/lab.yml
+@@ -35,5 +35,5 @@ snmp_rocommunity: public
+ snmp_location: testlab
+ 
+ #For Arista fanout switch deployment only
+-fanout_admin_user: "fanoutadminuser"
+-fanout_admin_password: "fanoutadminpassword"
++fanout_admin_user: "admin"
++fanout_admin_password: "admin123"
+diff --git a/ansible/group_vars/vm_host/creds.yml b/ansible/group_vars/vm_host/creds.yml
+index cfda73c..5b1a69d 100644
+--- a/ansible/group_vars/vm_host/creds.yml
++++ b/ansible/group_vars/vm_host/creds.yml
+@@ -1,5 +1,5 @@
+ ---
+-ansible_user: use_own_value
+-ansible_password: use_own_value
+-ansible_sudo_pass: use_own_value
++ansible_user: falco
++ansible_password: falco
++ansible_sudo_pass: falco
+ 
+diff --git a/ansible/group_vars/vm_host/main.yml b/ansible/group_vars/vm_host/main.yml
+index a343549..1e9d58a 100644
+--- a/ansible/group_vars/vm_host/main.yml
++++ b/ansible/group_vars/vm_host/main.yml
+@@ -1,4 +1,4 @@
+-root_path: /home/azure/veos-vm
++root_path: /home/falco/veos-vm
+ vm_images_url: https://acsbe.blob.core.windows.net/vmimages
+ cd_image_filename: Aboot-veos-serial-8.0.0.iso
+ hdd_image_filename: vEOS-lab-4.15.9M.vmdk
+diff --git a/ansible/host_vars/STR-ACS-SERV-01.yml b/ansible/host_vars/STR-ACS-SERV-01.yml
+index a2b4478..1abb3e1 100644
+--- a/ansible/host_vars/STR-ACS-SERV-01.yml
++++ b/ansible/host_vars/STR-ACS-SERV-01.yml
+@@ -1,6 +1,6 @@
+ mgmt_bridge: br1
+-mgmt_prefixlen: 23
+-mgmt_gw: 10.255.0.1
+-vm_mgmt_gw: 10.254.0.1
+-external_iface: p4p1
++mgmt_prefixlen: 24
++mgmt_gw: 172.25.11.1
++vm_mgmt_gw: 172.25.11.1
++external_iface: eth0
+ 
+diff --git a/ansible/inventory b/ansible/inventory
+index d0f58bb..0366154 100644
+--- a/ansible/inventory
++++ b/ansible/inventory
+@@ -1,9 +1,13 @@
+ [sonic_latest]
+ switch1  ansible_host=10.0.0.100  sonic_version=v2  sonic_hwsku=Force10-S6000
+-switch2  ansible_host=10.0.0.101  sonic_version=v2  sonic_hwsku=ACS-MSN2700 
++switch2  ansible_host=10.0.0.101  sonic_version=v2  sonic_hwsku=ACS-MSN2700
+ switch3  ansible_host=10.0.0.102  sonic_version=v2  sonic_hwsku=Force10-S6000   # LAG topo: 8 LAGs x 2 members/lag to spines; 16 ports to Tors
+ switch4  ansible_host=10.0.0.103  sonic_version=v2  sonic_hwsku=AS7512 sonic_portsku=32x40
+ switch5  ansible_host=10.0.0.104  sonic_version=v2  sonic_hwsku=ACS-MSN2700 # LAG topo: 8 LAGs x 2 members/lag to spines; 16 ports to Tors
++switch-t0  ansible_host=172.25.11.54 sonic_version=v2  sonic_hwsku=Force10-Z9100
++falco-test-dut01 ansible_host=172.25.11.54 sonic_version=v2  sonic_hwsku=Force10-Z9100
++falco-test-dut02 ansible_host=172.25.11.56 sonic_version=v2  sonic_hwsku=Seastone-DX010
++falco_test_dut02 ansible_host=172.25.11.56 sonic_version=v2  sonic_hwsku=Seastone-DX010
+ 
+ [sonic:children]
+ sonic_latest
+@@ -13,4 +17,4 @@ switch1
+ switch5
+ 
+ [ptf]
+-ptf-1 ansible_host=10.0.0.200 ansible_ssh_user=root ansible_ssh_pass=password
++ptf-1 ansible_host=172.25.11.190 ansible_ssh_user=root ansible_ssh_pass=password
+\ No newline at end of file
+diff --git a/ansible/library/interface_facts.py b/ansible/library/interface_facts.py
+index 83729d8..9cefb3f 100644
+--- a/ansible/library/interface_facts.py
++++ b/ansible/library/interface_facts.py
+@@ -295,13 +295,13 @@ def main():
+     results = {}
+ 
+     down_ports = []
+-    for name in up_ports:
+-        try:
+-            if not interfaces[name]['link']:
+-                down_ports += [name]
+-        except:
+-            down_ports += [name]
+-            pass 
++    # for name in up_ports:
++    #     try:
++    #         if not interfaces[name]['link']:
++    #             down_ports += [name]
++    #     except:
++    #         down_ports += [name]
++    #         pass
+ 
+     results['ansible_interface_facts'] = interfaces
+     results['ansible_interface_ips'] = ips
+diff --git a/ansible/roles/vm_set/tasks/add_topo.yml b/ansible/roles/vm_set/tasks/add_topo.yml
+index 5fd2d07..5e6dedc 100644
+--- a/ansible/roles/vm_set/tasks/add_topo.yml
++++ b/ansible/roles/vm_set/tasks/add_topo.yml
+@@ -4,8 +4,9 @@
+     username: "{{ docker_registry_username }}"
+     password: "{{ docker_registry_password }}"
+     name: ptf_{{ vm_set_name }}
+-    image: "{{ docker_registry_host }}/{{ ptf_imagename }}"
+-    pull: always
++#    image: "{{ docker_registry_host }}/{{ ptf_imagename }}"
++#    pull: always
++    image: "{{ ptf_imagename }}"
+     state: reloaded
+     net: none
+     detach: True
+diff --git a/ansible/testbed-cli.sh b/ansible/testbed-cli.sh
+index dbfb748..c33f08e 100755
+--- a/ansible/testbed-cli.sh
++++ b/ansible/testbed-cli.sh
+@@ -80,7 +80,7 @@ function add_topo
+ 
+   read_file $1
+ 
+-  ANSIBLE_SCP_IF_SSH=y ansible-playbook -i veos testbed_add_vm_topology.yml --vault-password-file="$2" -l "$server" -e topo_name="$topo_name" -e dut_name="$dut" -e VM_base="$vm_base" -e ptf_ip="$ptf_ip" -e topo="$topo" -e vm_set_name="$testbed_name" -e ptf_imagename="$ptf_imagename"
++  ANSIBLE_SCP_IF_SSH=y ansible-playbook -i veos testbed_add_vm_topology.yml --vault-password-file="$2" -l "$server" -e topo_name="$topo_name" -e dut_name="$dut" -e VM_base="$vm_base" -e ptf_ip="$ptf_ip" -e topo="$topo" -e vm_set_name="$testbed_name" -e ptf_imagename="$ptf_imagename" -vvvv
+ 
+   ansible-playbook fanout_connect.yml -i veos --limit "$server" --vault-password-file="$2" -e "dut=$dut"
+ 
+diff --git a/ansible/veos b/ansible/veos
+index 62879dc..2de105a 100644
+--- a/ansible/veos
++++ b/ansible/veos
+@@ -1,82 +1,46 @@
+ [vm_host_1]
+-STR-ACS-SERV-01 ansible_host=10.251.0.245
++STR-ACS-SERV-01 ansible_host=172.25.11.16
+ 
+ [vm_host_2]
+-STR-ACS-SERV-02 ansible_host=10.251.0.192
++STR-ACS-SERV-02 ansible_host=172.25.11.18
+ 
+ [vm_host:children]
+ vm_host_1
+ vm_host_2
+ 
+ [vms_1]
+-VM0100 ansible_host=10.250.0.2
+-VM0101 ansible_host=10.250.0.3
+-VM0102 ansible_host=10.250.0.4
+-VM0103 ansible_host=10.250.0.5
+-VM0104 ansible_host=10.250.0.6
+-VM0105 ansible_host=10.250.0.7
+-VM0106 ansible_host=10.250.0.8
+-VM0107 ansible_host=10.250.0.9
+-VM0108 ansible_host=10.250.0.10
+-VM0109 ansible_host=10.250.0.11
+-VM0110 ansible_host=10.250.0.12
+-VM0111 ansible_host=10.250.0.13
+-VM0112 ansible_host=10.250.0.14
+-VM0113 ansible_host=10.250.0.15
+-VM0114 ansible_host=10.250.0.16
+-VM0115 ansible_host=10.250.0.17
+-VM0116 ansible_host=10.250.0.18
+-VM0117 ansible_host=10.250.0.19
+-VM0118 ansible_host=10.250.0.20
+-VM0119 ansible_host=10.250.0.21
+-VM0120 ansible_host=10.250.0.22
+-VM0121 ansible_host=10.250.0.23
+-VM0122 ansible_host=10.250.0.24
+-VM0123 ansible_host=10.250.0.25
+-VM0124 ansible_host=10.250.0.26
+-VM0125 ansible_host=10.250.0.27
+-VM0126 ansible_host=10.250.0.28
+-VM0127 ansible_host=10.250.0.29
+-VM0128 ansible_host=10.250.0.30
+-VM0129 ansible_host=10.250.0.31
+-VM0130 ansible_host=10.250.0.32
+-VM0131 ansible_host=10.250.0.33
+-VM0132 ansible_host=10.250.0.34
+-VM0133 ansible_host=10.250.0.35
+-VM0134 ansible_host=10.250.0.36
+-VM0135 ansible_host=10.250.0.37
+-VM0136 ansible_host=10.250.0.38
+-VM0137 ansible_host=10.250.0.39
+-VM0138 ansible_host=10.250.0.40
+-VM0139 ansible_host=10.250.0.41
+-VM0140 ansible_host=10.250.0.42
+-VM0141 ansible_host=10.250.0.43
+-VM0142 ansible_host=10.250.0.44
+-VM0143 ansible_host=10.250.0.45
+-VM0144 ansible_host=10.250.0.46
+-VM0145 ansible_host=10.250.0.47
+-VM0146 ansible_host=10.250.0.48
+-VM0147 ansible_host=10.250.0.49
+-VM0148 ansible_host=10.250.0.50
+-VM0149 ansible_host=10.250.0.51
+-VM0150 ansible_host=10.250.0.52
+-VM0151 ansible_host=10.250.0.53
+-VM0152 ansible_host=10.250.0.54
+-VM0153 ansible_host=10.250.0.55
+-VM0154 ansible_host=10.250.0.56
+-VM0155 ansible_host=10.250.0.57
+-VM0156 ansible_host=10.250.0.58
+-VM0157 ansible_host=10.250.0.59
+-VM0158 ansible_host=10.250.0.60
+-VM0159 ansible_host=10.250.0.61
+-VM0160 ansible_host=10.250.0.62
+-VM0161 ansible_host=10.250.0.63
+-VM0162 ansible_host=10.250.0.64
+-VM0163 ansible_host=10.250.0.65
+-VM0164 ansible_host=10.250.0.66
+-VM0165 ansible_host=10.250.0.67
+-VM0166 ansible_host=10.250.0.68
+-VM0167 ansible_host=10.250.0.69
++VM0100 ansible_host=172.25.11.191
++VM0101 ansible_host=172.25.11.192
++VM0102 ansible_host=172.25.11.193
++VM0103 ansible_host=172.25.11.194
++VM0104 ansible_host=172.25.11.195
++VM0105 ansible_host=172.25.11.196
++VM0106 ansible_host=172.25.11.197
++VM0107 ansible_host=172.25.11.198
++VM0108 ansible_host=172.25.11.199
++VM0109 ansible_host=172.25.11.200
++VM0110 ansible_host=172.25.11.201
++VM0111 ansible_host=172.25.11.202
++VM0112 ansible_host=172.25.11.203
++VM0113 ansible_host=172.25.11.204
++VM0114 ansible_host=172.25.11.205
++VM0115 ansible_host=172.25.11.206
++VM0116 ansible_host=172.25.11.207
++VM0117 ansible_host=172.25.11.208
++VM0118 ansible_host=172.25.11.209
++VM0119 ansible_host=172.25.11.210
++VM0120 ansible_host=172.25.11.211
++VM0121 ansible_host=172.25.11.212
++VM0122 ansible_host=172.25.11.213
++VM0123 ansible_host=172.25.11.214
++VM0124 ansible_host=172.25.11.215
++VM0125 ansible_host=172.25.11.216
++VM0126 ansible_host=172.25.11.217
++VM0127 ansible_host=172.25.11.218
++VM0128 ansible_host=172.25.11.219
++VM0129 ansible_host=172.25.11.220
++VM0130 ansible_host=172.25.11.221
++VM0131 ansible_host=172.25.11.222
+ 
+ [vms_2]
+ VM0200 ansible_host=10.250.0.51

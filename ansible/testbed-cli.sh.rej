@@ -1,0 +1,66 @@
+diff a/ansible/testbed-cli.sh b/ansible/testbed-cli.sh	(rejected hunks)
+@@ -20,6 +20,7 @@ function usage
+   echo "To configure a VM on a server: $0 config-vm 'topo-name' 'vm-name' ~/.password"
+   echo "To generate minigraph for DUT in a topology: $0 gen-mg 'topo-name' ~/.password"
+   echo "To deploy minigraph to DUT in a topology: $0 deploy-mg 'topo-name' ~/.password"
++  echo "To run test case on DUT in a topology: $0 run_tests 'topo-name' 'invetory' ~/.password 'test-suite"
+   echo
+   echo "You should define your topology in testbed.csv file"
+   echo
+@@ -80,9 +81,9 @@ function add_topo
+ 
+   read_file $1
+ 
+-  ANSIBLE_SCP_IF_SSH=y ansible-playbook -i veos testbed_add_vm_topology.yml --vault-password-file="$2" -l "$server" -e topo_name="$topo_name" -e dut_name="$dut" -e VM_base="$vm_base" -e ptf_ip="$ptf_ip" -e topo="$topo" -e vm_set_name="$testbed_name" -e ptf_imagename="$ptf_imagename"
++  ANSIBLE_SCP_IF_SSH=y ansible-playbook -i veos testbed_add_vm_topology.yml --vault-password-file="$2" -l "$server" -e topo_name="$topo_name" -e dut_name="$dut" -e VM_base="$vm_base" -e ptf_ip="$ptf_ip" -e topo="$topo" -e vm_set_name="$testbed_name" -e ptf_imagename="$ptf_imagename" -vvvv
+ 
+-  ansible-playbook fanout_connect.yml -i veos --limit "$server" --vault-password-file="$2" -e "dut=$dut"
++  ANSIBLE_KEEP_REMOTE_FILES=1 ansible-playbook fanout_connect.yml -i veos --limit "$server" --vault-password-file="$2" -e "dut=$dut"
+ 
+   echo Done
+ }
+@@ -104,7 +105,7 @@ function renumber_topo
+ 
+   read_file $1
+ 
+-  ANSIBLE_SCP_IF_SSH=y ansible-playbook -i veos testbed_renumber_vm_topology.yml --vault-password-file="$2" -l "$server" -e topo_name="$topo_name" -e dut_name="$dut" -e VM_base="$vm_base" -e ptf_ip="$ptf_ip" -e topo="$topo" -e vm_set_name="$testbed_name" -e ptf_imagename="$ptf_imagename"
++  ANSIBLE_SCP_IF_SSH=y ANSIBLE_ENABLE_TASK_DEBUGGER=True ansible-playbook -i veos testbed_renumber_vm_topology.yml --vault-password-file="$2" -l "$server" -e topo_name="$topo_name" -e dut_name="$dut" -e VM_base="$vm_base" -e ptf_ip="$ptf_ip" -e topo="$topo" -e vm_set_name="$testbed_name" -e ptf_imagename="$ptf_imagename"
+ 
+   ansible-playbook fanout_connect.yml -i veos --limit "$server" --vault-password-file="$2" -e "dut=$dut"
+ 
+@@ -140,7 +141,7 @@ function generate_minigraph
+ 
+   read_file $1
+ 
+-  ansible-playbook -i "$2" config_sonic_basedon_testbed.yml --vault-password-file="$3" -l "$dut" -e testbed_name="$1" -v
++  ANSIBLE_ENABLE_TASK_DEBUGGER=True ansible-playbook -i "$2" config_sonic_basedon_testbed.yml --vault-password-file="$3" -l "$dut" -e testbed_name="$1" -e inventory_hostname="$dut" -v
+ 
+   echo Done
+ }
+@@ -187,6 +188,17 @@ function connect_topo
+   ansible-playbook fanout_connect.yml -i veos --limit "$server" --vault-password-file="$2" -e "dut=$dut"
+ }
+ 
++function run_tests
++{
++  echo "Running Test Suite $4"
++
++  read_file $1
++
++  ansible-playbook -i "$2" test_sonic.yml -e testbed_name="$1" -e testcase_name="$3" -e inventory_hostname="$dut"
++
++  echo Done
++}
++
+ if [ $# -lt 3 ]
+ then
+  usage
+@@ -217,6 +229,8 @@ case "$1" in
+                ;;
+   test-mg)     test_minigraph $2 $3 $4
+                ;;
++  run_tests)   run_tests $2 $3 $4
++               ;;
+   *)           usage
+                ;;
+ esac

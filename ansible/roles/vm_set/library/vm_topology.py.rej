@@ -1,0 +1,21 @@
+diff a/ansible/roles/vm_set/library/vm_topology.py b/ansible/roles/vm_set/library/vm_topology.py	(rejected hunks)
+@@ -404,9 +404,17 @@ class VMTopology(object):
+ 
+         if vlan_iface not in ports:
+             VMTopology.cmd('ovs-vsctl add-port %s %s' % (br_name, vlan_iface))
++        
++        #Since vlan interface addition may take some time, let`s try 3 times
++        retry = 0
++        while retry < 3:
++            bindings = VMTopology.get_ovs_port_bindings(br_name)
++            vlan_iface_id = bindings[vlan_iface]
++            if vlan_iface_id is not None:
++                break
++            time.sleep(1)
++            retry += 1
+ 
+-        bindings = VMTopology.get_ovs_port_bindings(br_name)
+-        vlan_iface_id = bindings[vlan_iface]
+         injected_iface_id = bindings[injected_iface]
+         vm_iface_id = bindings[vm_iface]
+ 

@@ -1,0 +1,9 @@
+
+LOG ANALYSIS SUMMARY
+FILE:    /var/log/syslog    MATCHES    1
+FILE:    /var/log/syslog    EXPECTED MATCHES    0
+-----------------------------------
+TOTAL MATCHES:                  1
+TOTAL EXPECTED MATCHES:         0
+TOTAL EXPECTED MISSING MATCHES: 0
+-----------------------------------

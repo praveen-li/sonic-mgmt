@@ -1,3 +1,5 @@
+- debug: msg="PC {{peer_mgmt}}"
+
 - name: Create pfc generater file in case it doesn't exist.
   file: path=/mnt/flash/{{pfc_gen_file}} state=touch
   delegate_to: "{{peer_mgmt}}"

@@ -1,5 +1,9 @@
 - debug: msg="running interface"
 
+- name: PC interface we are working on
+  debug: 
+    msg: "PC: interface iterate {{item}}"
+
 - set_fact:
     rx_port: "{{item['attachto']}}"
     used: true
@@ -39,6 +43,11 @@
 - set_fact:
     test_ports: "{{ test_ports | combine( {pfc_wd_rx_port:{'test_neighbor_addr':pfc_wd_rx_neighbor_addr, 'rx_port': [pfc_wd_test_port], 'rx_neighbor_addr': pfc_wd_test_neighbor_addr, 'peer_device':neighbors[pfc_wd_rx_port]['peerdevice'], 'test_port_id': pfc_wd_rx_port_id, 'rx_port_id':[pfc_wd_test_port_id], 'test_port_type':'interface' }})  }}"
   when: first_pair
+
+- name: PC interface after output
+  debug: 
+    msg: "PC: raddr: {{pfc_wd_rx_port_addr}} taddr:{{pfc_wd_test_port_addr}} rneigh:{{pfc_wd_rx_neighbor_addr}} tneigh:{{pfc_wd_test_neighbor_addr}} rporti={{pfc_wd_rx_port_id}} tporti={{pfc_wd_test_port_id}}"
+  ignore_errors: true 
 
 - set_fact:
     used: false

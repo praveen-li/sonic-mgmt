@@ -1,0 +1,19 @@
+- hosts: sonic
+  remote_user: admin
+
+- hosts: VM0101
+  remote_user: root
+  
+  tasks:
+  - debug: msg="{{hostvars['VM0101']}}"
+
+  - name: get ip addr of VM
+    set_fact:
+        vm_ip4_addr: "{{hostvars['VM0101']['ansible_host']}}"
+        vm_pwd: "{{hostvars['VM0101']['ansible_password']}}"
+
+  - debug: msg="{{vm_ip4_addr}}"
+
+  - name: copy ssh keys to 2nd VM
+    shell: sshpass -p {{vm_pwd}} ssh-copy-id -i ~/.ssh/id_rsa.pub root@{{vm_ip4_addr}}
+    connection: local 

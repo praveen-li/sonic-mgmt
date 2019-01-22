@@ -1,0 +1,624 @@
+{
+    "VLAN_INTERFACE": {
+        "Vlan1000|192.168.0.1/24": {}
+    }, 
+    "NTP_SERVER": {
+        "10.0.0.1": {}, 
+        "10.0.0.2": {}
+    }, 
+    "BGP_NEIGHBOR": {
+        "10.0.0.57": {
+            "rrclient": "0", 
+            "name": "ARISTA01T1", 
+            "local_addr": "10.0.0.56", 
+            "nhopself": "0", 
+            "admin_status": "up", 
+            "holdtime": "10", 
+            "asn": "64600", 
+            "keepalive": "3"
+        }, 
+        "10.0.0.59": {
+            "rrclient": "0", 
+            "name": "ARISTA02T1", 
+            "local_addr": "10.0.0.58", 
+            "nhopself": "0", 
+            "admin_status": "up", 
+            "holdtime": "10", 
+            "asn": "64600", 
+            "keepalive": "3"
+        }, 
+        "10.0.0.61": {
+            "rrclient": "0", 
+            "name": "ARISTA03T1", 
+            "local_addr": "10.0.0.60", 
+            "nhopself": "0", 
+            "admin_status": "up", 
+            "holdtime": "10", 
+            "asn": "64600", 
+            "keepalive": "3"
+        }, 
+        "10.0.0.63": {
+            "rrclient": "0", 
+            "name": "ARISTA04T1", 
+            "local_addr": "10.0.0.62", 
+            "nhopself": "0", 
+            "admin_status": "up", 
+            "holdtime": "10", 
+            "asn": "64600", 
+            "keepalive": "3"
+        }, 
+        "fc00::7a": {
+            "rrclient": "0", 
+            "name": "ARISTA03T1", 
+            "local_addr": "fc00::79", 
+            "nhopself": "0", 
+            "admin_status": "up", 
+            "holdtime": "10", 
+            "asn": "64600", 
+            "keepalive": "3"
+        }, 
+        "fc00::7e": {
+            "rrclient": "0", 
+            "name": "ARISTA04T1", 
+            "local_addr": "fc00::7d", 
+            "nhopself": "0", 
+            "admin_status": "up", 
+            "holdtime": "10", 
+            "asn": "64600", 
+            "keepalive": "3"
+        }, 
+        "fc00::72": {
+            "rrclient": "0", 
+            "name": "ARISTA01T1", 
+            "local_addr": "fc00::71", 
+            "nhopself": "0", 
+            "admin_status": "up", 
+            "holdtime": "10", 
+            "asn": "64600", 
+            "keepalive": "3"
+        }, 
+        "fc00::76": {
+            "rrclient": "0", 
+            "name": "ARISTA02T1", 
+            "local_addr": "fc00::75", 
+            "nhopself": "0", 
+            "admin_status": "up", 
+            "holdtime": "10", 
+            "asn": "64600", 
+            "keepalive": "3"
+        }
+    }, 
+    "DEVICE_NEIGHBOR_METADATA": {
+        "ARISTA01T1": {
+            "lo_addr": "None", 
+            "mgmt_addr": "172.25.11.191", 
+            "hwsku": "Arista-VM", 
+            "type": "LeafRouter"
+        }, 
+        "ARISTA02T1": {
+            "lo_addr": "None", 
+            "mgmt_addr": "172.25.11.192", 
+            "hwsku": "Arista-VM", 
+            "type": "LeafRouter"
+        }, 
+        "ARISTA03T1": {
+            "lo_addr": "None", 
+            "mgmt_addr": "172.25.11.193", 
+            "hwsku": "Arista-VM", 
+            "type": "LeafRouter"
+        }, 
+        "ARISTA04T1": {
+            "lo_addr": "None", 
+            "mgmt_addr": "172.25.11.194", 
+            "hwsku": "Arista-VM", 
+            "type": "LeafRouter"
+        }
+    }, 
+    "PORTCHANNEL_INTERFACE": {
+        "PortChannel0001|10.0.0.56/31": {}, 
+        "PortChannel0001|FC00::71/126": {}, 
+        "PortChannel0002|10.0.0.58/31": {}, 
+        "PortChannel0002|FC00::75/126": {}, 
+        "PortChannel0003|10.0.0.60/31": {}, 
+        "PortChannel0003|FC00::79/126": {}, 
+        "PortChannel0004|10.0.0.62/31": {}, 
+        "PortChannel0004|FC00::7D/126": {}
+    }, 
+    "DEVICE_METADATA": {
+        "localhost": {
+            "hwsku": "Seastone-DX010", 
+            "default_bgp_status": "up", 
+            "hostname": "falco-test-dut01", 
+            "platform": "x86_64-cel_seastone-r0", 
+            "mac": "00:e0:ec:5a:7c:ac", 
+            "default_pfcwd_status": "disable", 
+            "bgp_asn": "65100", 
+            "deployment_id": "1", 
+            "type": "ToRRouter"
+        }
+    }, 
+    "BGP_PEER_RANGE": {
+        "BGPSLBPassive": {
+            "name": "BGPSLBPassive", 
+            "ip_range": [
+                "10.255.0.0/25"
+            ]
+        }, 
+        "BGPVac": {
+            "name": "BGPVac", 
+            "ip_range": [
+                "192.168.0.0/24"
+            ]
+        }
+    }, 
+    "VLAN": {
+        "Vlan1000": {
+            "dhcp_servers": [
+                "192.0.0.1", 
+                "192.0.0.2", 
+                "192.0.0.3", 
+                "192.0.0.4"
+            ], 
+            "vlanid": "1000"
+        }
+    }, 
+    "DEVICE_NEIGHBOR": {
+        "Ethernet112": {
+            "name": "ARISTA01T1", 
+            "port": "Ethernet1"
+        }, 
+        "Ethernet116": {
+            "name": "ARISTA02T1", 
+            "port": "Ethernet1"
+        }, 
+        "Ethernet120": {
+            "name": "ARISTA03T1", 
+            "port": "Ethernet1"
+        }, 
+        "Ethernet124": {
+            "name": "ARISTA04T1", 
+            "port": "Ethernet1"
+        }
+    }, 
+    "PORTCHANNEL": {
+        "PortChannel0001": {
+            "members": [
+                "Ethernet112"
+            ]
+        }, 
+        "PortChannel0002": {
+            "members": [
+                "Ethernet116"
+            ]
+        }, 
+        "PortChannel0003": {
+            "members": [
+                "Ethernet120"
+            ]
+        }, 
+        "PortChannel0004": {
+            "members": [
+                "Ethernet124"
+            ]
+        }
+    }, 
+    "LOOPBACK_INTERFACE": {
+        "Loopback0|10.1.0.32/32": {}, 
+        "Loopback0|FC00:1::32/128": {}
+    }, 
+    "ACL_TABLE": {
+        "DATAACL": {
+            "type": "L3", 
+            "policy_desc": "DATAACL", 
+            "ports": [
+                "Ethernet112", 
+                "Ethernet116", 
+                "Ethernet120", 
+                "Ethernet124"
+            ]
+        }, 
+        "EVERFLOW": {
+            "type": "MIRROR", 
+            "policy_desc": "EVERFLOW", 
+            "ports": [
+                "Ethernet108", 
+                "Ethernet112", 
+                "Ethernet100", 
+                "Ethernet104", 
+                "Ethernet92", 
+                "Ethernet96", 
+                "Ethernet84", 
+                "Ethernet88", 
+                "Ethernet76", 
+                "Ethernet80", 
+                "Ethernet64", 
+                "Ethernet60", 
+                "Ethernet52", 
+                "Ethernet72", 
+                "Ethernet68", 
+                "Ethernet48", 
+                "Ethernet44", 
+                "Ethernet40", 
+                "Ethernet36", 
+                "Ethernet120", 
+                "Ethernet116", 
+                "Ethernet56", 
+                "Ethernet124", 
+                "Ethernet32", 
+                "Ethernet28", 
+                "Ethernet24", 
+                "Ethernet20", 
+                "Ethernet16", 
+                "Ethernet12", 
+                "Ethernet8", 
+                "Ethernet4", 
+                "Ethernet0"
+            ]
+        }, 
+        "SNMP_ACL": {
+            "services": [
+                "SNMP"
+            ], 
+            "type": "CTRLPLANE", 
+            "policy_desc": "SNMP_ACL"
+        }, 
+        "SSH_ONLY": {
+            "services": [
+                "SSH"
+            ], 
+            "type": "CTRLPLANE", 
+            "policy_desc": "SSH_ONLY"
+        }
+    }, 
+    "MGMT_INTERFACE": {
+        "eth0|172.25.11.56/24": {
+            "forced_mgmt_routes": [
+                "10.0.0.100/31", 
+                "10.250.0.8", 
+                "10.255.0.0/28"
+            ], 
+            "gwaddr": "172.25.11.1"
+        }, 
+        "eth0|FC00:2::32/64": {
+            "gwaddr": "fc00:2::1"
+        }
+    }, 
+    "SYSLOG_SERVER": {
+        "10.0.0.5": {}, 
+        "10.0.0.6": {}
+    }, 
+    "TACPLUS_SERVER": {
+        "10.0.0.8": {
+            "priority": "1", 
+            "tcp_port": "49"
+        }, 
+        "10.0.0.9": {
+            "priority": "1", 
+            "tcp_port": "49"
+        }
+    }, 
+    "DHCP_SERVER": {
+        "192.0.0.1": {}, 
+        "192.0.0.2": {}, 
+        "192.0.0.3": {}, 
+        "192.0.0.4": {}
+    }, 
+    "VLAN_MEMBER": {
+        "Vlan1000|Ethernet4": {
+            "tagging_mode": "untagged"
+        }, 
+        "Vlan1000|Ethernet8": {
+            "tagging_mode": "untagged"
+        }, 
+        "Vlan1000|Ethernet12": {
+            "tagging_mode": "untagged"
+        }, 
+        "Vlan1000|Ethernet16": {
+            "tagging_mode": "untagged"
+        }, 
+        "Vlan1000|Ethernet20": {
+            "tagging_mode": "untagged"
+        }, 
+        "Vlan1000|Ethernet24": {
+            "tagging_mode": "untagged"
+        }, 
+        "Vlan1000|Ethernet28": {
+            "tagging_mode": "untagged"
+        }, 
+        "Vlan1000|Ethernet32": {
+            "tagging_mode": "untagged"
+        }, 
+        "Vlan1000|Ethernet36": {
+            "tagging_mode": "untagged"
+        }, 
+        "Vlan1000|Ethernet40": {
+            "tagging_mode": "untagged"
+        }, 
+        "Vlan1000|Ethernet44": {
+            "tagging_mode": "untagged"
+        }, 
+        "Vlan1000|Ethernet48": {
+            "tagging_mode": "untagged"
+        }, 
+        "Vlan1000|Ethernet52": {
+            "tagging_mode": "untagged"
+        }, 
+        "Vlan1000|Ethernet56": {
+            "tagging_mode": "untagged"
+        }, 
+        "Vlan1000|Ethernet60": {
+            "tagging_mode": "untagged"
+        }, 
+        "Vlan1000|Ethernet64": {
+            "tagging_mode": "untagged"
+        }, 
+        "Vlan1000|Ethernet68": {
+            "tagging_mode": "untagged"
+        }, 
+        "Vlan1000|Ethernet72": {
+            "tagging_mode": "untagged"
+        }, 
+        "Vlan1000|Ethernet76": {
+            "tagging_mode": "untagged"
+        }, 
+        "Vlan1000|Ethernet80": {
+            "tagging_mode": "untagged"
+        }, 
+        "Vlan1000|Ethernet84": {
+            "tagging_mode": "untagged"
+        }, 
+        "Vlan1000|Ethernet88": {
+            "tagging_mode": "untagged"
+        }, 
+        "Vlan1000|Ethernet92": {
+            "tagging_mode": "untagged"
+        }, 
+        "Vlan1000|Ethernet96": {
+            "tagging_mode": "untagged"
+        }
+    }, 
+    "PORT": {
+        "Ethernet0": {
+            "alias": "Eth1", 
+            "lanes": "65,66,67,68", 
+            "speed": "40000", 
+            "index": "0"
+        }, 
+        "Ethernet4": {
+            "alias": "Eth2", 
+            "lanes": "69,70,71,72", 
+            "speed": "40000", 
+            "index": "1"
+        }, 
+        "Ethernet8": {
+            "alias": "Eth3", 
+            "lanes": "73,74,75,76", 
+            "speed": "40000", 
+            "index": "2"
+        }, 
+        "Ethernet12": {
+            "alias": "Eth4", 
+            "lanes": "77,78,79,80", 
+            "speed": "40000", 
+            "index": "3"
+        }, 
+        "Ethernet16": {
+            "alias": "Eth5", 
+            "lanes": "33,34,35,36", 
+            "speed": "40000", 
+            "index": "4"
+        }, 
+        "Ethernet20": {
+            "alias": "Eth6", 
+            "lanes": "37,38,39,40", 
+            "speed": "40000", 
+            "index": "5"
+        }, 
+        "Ethernet24": {
+            "alias": "Eth7", 
+            "lanes": "41,42,43,44", 
+            "speed": "40000", 
+            "index": "6"
+        }, 
+        "Ethernet28": {
+            "alias": "Eth8", 
+            "lanes": "45,46,47,48", 
+            "speed": "40000", 
+            "index": "7"
+        }, 
+        "Ethernet32": {
+            "alias": "Eth9", 
+            "lanes": "49,50,51,52", 
+            "speed": "40000", 
+            "index": "8"
+        }, 
+        "Ethernet36": {
+            "alias": "Eth10", 
+            "lanes": "53,54,55,56", 
+            "speed": "40000", 
+            "index": "9"
+        }, 
+        "Ethernet40": {
+            "alias": "Eth11", 
+            "lanes": "57,58,59,60", 
+            "speed": "40000", 
+            "index": "10"
+        }, 
+        "Ethernet44": {
+            "alias": "Eth12", 
+            "lanes": "61,62,63,64", 
+            "speed": "40000", 
+            "index": "11"
+        }, 
+        "Ethernet48": {
+            "alias": "Eth13", 
+            "lanes": "81,82,83,84", 
+            "speed": "40000", 
+            "index": "12"
+        }, 
+        "Ethernet52": {
+            "alias": "Eth14", 
+            "lanes": "85,86,87,88", 
+            "speed": "40000", 
+            "index": "13"
+        }, 
+        "Ethernet56": {
+            "alias": "Eth15", 
+            "lanes": "89,90,91,92", 
+            "speed": "40000", 
+            "index": "14"
+        }, 
+        "Ethernet60": {
+            "alias": "Eth16", 
+            "lanes": "93,94,95,96", 
+            "speed": "40000", 
+            "index": "15"
+        }, 
+        "Ethernet64": {
+            "alias": "Eth17", 
+            "lanes": "97,98,99,100", 
+            "speed": "40000", 
+            "index": "16"
+        }, 
+        "Ethernet68": {
+            "alias": "Eth18", 
+            "lanes": "101,102,103,104", 
+            "speed": "40000", 
+            "index": "17"
+        }, 
+        "Ethernet72": {
+            "alias": "Eth19", 
+            "lanes": "105,106,107,108", 
+            "speed": "40000", 
+            "index": "18"
+        }, 
+        "Ethernet76": {
+            "alias": "Eth20", 
+            "lanes": "109,110,111,112", 
+            "speed": "40000", 
+            "index": "19"
+        }, 
+        "Ethernet80": {
+            "alias": "Eth21", 
+            "lanes": "1,2,3,4", 
+            "speed": "40000", 
+            "index": "20"
+        }, 
+        "Ethernet84": {
+            "alias": "Eth22", 
+            "lanes": "5,6,7,8", 
+            "speed": "40000", 
+            "index": "21"
+        }, 
+        "Ethernet88": {
+            "alias": "Eth23", 
+            "lanes": "9,10,11,12", 
+            "speed": "40000", 
+            "index": "22"
+        }, 
+        "Ethernet92": {
+            "alias": "Eth24", 
+            "lanes": "13,14,15,16", 
+            "speed": "40000", 
+            "index": "23"
+        }, 
+        "Ethernet96": {
+            "alias": "Eth25", 
+            "lanes": "17,18,19,20", 
+            "speed": "40000", 
+            "index": "24"
+        }, 
+        "Ethernet100": {
+            "alias": "Eth26", 
+            "lanes": "21,22,23,24", 
+            "speed": "40000", 
+            "index": "25"
+        }, 
+        "Ethernet104": {
+            "alias": "Eth27", 
+            "lanes": "25,26,27,28", 
+            "speed": "40000", 
+            "index": "26"
+        }, 
+        "Ethernet108": {
+            "alias": "Eth28", 
+            "lanes": "29,30,31,32", 
+            "speed": "40000", 
+            "index": "27"
+        }, 
+        "Ethernet112": {
+            "alias": "Eth29", 
+            "lanes": "113,114,115,116", 
+            "speed": "40000", 
+            "index": "28"
+        }, 
+        "Ethernet116": {
+            "alias": "Eth30", 
+            "lanes": "117,118,119,120", 
+            "speed": "40000", 
+            "index": "29"
+        }, 
+        "Ethernet120": {
+            "alias": "Eth31", 
+            "lanes": "121,122,123,124", 
+            "speed": "40000", 
+            "index": "30"
+        }, 
+        "Ethernet124": {
+            "alias": "Eth32", 
+            "lanes": "125,126,127,128", 
+            "speed": "40000", 
+            "index": "31"
+        }
+    }, 
+    "MIRROR_SESSION": {
+        "everflow0": {
+            "src_ip": "10.1.0.32", 
+            "dst_ip": "10.0.0.7"
+        }
+    }, 
+    "CRM": {
+        "Config": {
+            "acl_table_threshold_type": "percentage", 
+            "nexthop_group_threshold_type": "percentage", 
+            "fdb_entry_high_threshold": "85", 
+            "acl_entry_threshold_type": "percentage", 
+            "ipv6_neighbor_low_threshold": "70", 
+            "nexthop_group_member_low_threshold": "70", 
+            "acl_group_high_threshold": "85", 
+            "ipv4_route_high_threshold": "85", 
+            "acl_counter_high_threshold": "85", 
+            "ipv4_route_low_threshold": "70", 
+            "ipv4_route_threshold_type": "percentage", 
+            "ipv4_neighbor_low_threshold": "70", 
+            "acl_group_threshold_type": "percentage", 
+            "ipv4_nexthop_high_threshold": "85", 
+            "ipv6_route_threshold_type": "percentage", 
+            "nexthop_group_low_threshold": "70", 
+            "ipv4_neighbor_high_threshold": "85", 
+            "ipv6_route_high_threshold": "85", 
+            "ipv6_nexthop_threshold_type": "percentage", 
+            "polling_interval": "300", 
+            "ipv4_nexthop_threshold_type": "percentage", 
+            "acl_group_low_threshold": "70", 
+            "acl_entry_low_threshold": "70", 
+            "nexthop_group_member_threshold_type": "percentage", 
+            "ipv4_nexthop_low_threshold": "70", 
+            "acl_counter_threshold_type": "percentage", 
+            "ipv6_neighbor_high_threshold": "85", 
+            "nexthop_group_member_high_threshold": "85", 
+            "acl_table_low_threshold": "70", 
+            "fdb_entry_threshold_type": "percentage", 
+            "ipv6_neighbor_threshold_type": "percentage", 
+            "acl_table_high_threshold": "85", 
+            "ipv6_nexthop_low_threshold": "70", 
+            "acl_counter_low_threshold": "70", 
+            "ipv4_neighbor_threshold_type": "percentage", 
+            "nexthop_group_high_threshold": "85", 
+            "ipv6_route_low_threshold": "70", 
+            "acl_entry_high_threshold": "85", 
+            "fdb_entry_low_threshold": "70", 
+            "ipv6_nexthop_high_threshold": "85"
+        }
+    }
+}

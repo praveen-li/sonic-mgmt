@@ -1,0 +1,20 @@
+
+-----------Matches found in file:'/var/log/syslog'-----------
+Oct  2 06:21:40.722320 falco-test-dut02 ERR snmp#snmp-subagent [sonic_ax_impl] ERROR: Invalid local mgmt IP 
+
+Matches:1
+
+-------------------------------------------------
+
+
+Expected and found matches:0
+
+-------------------------------------------------
+
+Total matches:1
+Total expected and found matches:0
+Total expected but not found matches: 0
+
+
+-------------------------------------------------
+

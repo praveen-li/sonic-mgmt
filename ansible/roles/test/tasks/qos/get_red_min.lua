@@ -7,6 +7,7 @@ local keys = redis.call("KEYS", "ASIC_STATE:SAI_OBJECT_TYPE_WRED*")
 local res=""
 for i, key in ipairs(keys) do
   local val = redis.call("HGET", key, "SAI_WRED_ATTR_RED_MIN_THRESHOLD")
+  io.write(val)
   if val == ARGV[1] then
     res = val
   end

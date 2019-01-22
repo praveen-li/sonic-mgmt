@@ -1,0 +1,21 @@
+- hosts: sonic
+  remote_user: admin
+  
+  tasks:
+  - name: echo command
+    async: 1000
+    poll: 0
+    register: async_cmd
+    shell: sleep 10 | ls yes
+ 
+  - name: wait for async to finish
+    async_status:
+      jid: "{{ async_cmd.ansible_job_id }}"
+    register: async_poll
+    until: async_poll.finished is defined and async_poll.finished
+    retries: 120
+    delay: 5
+
+  - debug: msg=" async_cmd {{async_cmd}}"
+  
+  - debug: msg=" async_poll {{async_poll}}"

@@ -1,0 +1,20 @@
+
+-----------Matches found in file:'/var/log/syslog'-----------
+Aug  2 18:34:39.923422 falco-test-dut02 ERR syncd: :- setPortCounterList: Port oid:0x10000004c does not has supported counters
+
+Matches:1
+
+-------------------------------------------------
+
+
+Expected and found matches:0
+
+-------------------------------------------------
+
+Total matches:1
+Total expected and found matches:0
+Total expected but not found matches: 0
+
+
+-------------------------------------------------
+

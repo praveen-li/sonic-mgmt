@@ -1,0 +1,1316 @@
+Running Test Suite lldp
+reading
+Found topology vms-celdx10-t1
+
+PLAY ***************************************************************************
+
+TASK [setup] *******************************************************************
+Friday 16 November 2018  23:04:18 +0000 (0:00:00.034)       0:00:00.034 ******* 
+ok: [falco-test-dut01]
+
+TASK [test : include] **********************************************************
+Friday 16 November 2018  23:04:22 +0000 (0:00:04.110)       0:00:04.144 ******* 
+included: /var/jenkins/sonic-mgmt/ansible/roles/test/tasks/sonic.yml for falco-test-dut01
+
+TASK [test : include_vars] *****************************************************
+Friday 16 November 2018  23:04:22 +0000 (0:00:00.142)       0:00:04.286 ******* 
+ok: [falco-test-dut01]
+
+TASK [test : Gathering minigraph facts about the device] ***********************
+Friday 16 November 2018  23:04:22 +0000 (0:00:00.181)       0:00:04.468 ******* 
+ok: [falco-test-dut01]
+
+TASK [test : Set sonic_hwsku fact] *********************************************
+Friday 16 November 2018  23:04:23 +0000 (0:00:00.560)       0:00:05.029 ******* 
+ok: [falco-test-dut01]
+
+TASK [test : Set sonic_asic_type fact] *****************************************
+Friday 16 November 2018  23:04:23 +0000 (0:00:00.105)       0:00:05.134 ******* 
+skipping: [falco-test-dut01]
+
+TASK [test : Set sonic_asic_type fact] *****************************************
+Friday 16 November 2018  23:04:23 +0000 (0:00:00.082)       0:00:05.217 ******* 
+skipping: [falco-test-dut01]
+
+TASK [test : fail] *************************************************************
+Friday 16 November 2018  23:04:23 +0000 (0:00:00.083)       0:00:05.301 ******* 
+skipping: [falco-test-dut01]
+
+TASK [test : include] **********************************************************
+Friday 16 November 2018  23:04:23 +0000 (0:00:00.079)       0:00:05.380 ******* 
+skipping: [falco-test-dut01]
+
+TASK [test : fail] *************************************************************
+Friday 16 November 2018  23:04:23 +0000 (0:00:00.083)       0:00:05.463 ******* 
+skipping: [falco-test-dut01]
+
+TASK [test : Gathering testbed information] ************************************
+Friday 16 November 2018  23:04:23 +0000 (0:00:00.085)       0:00:05.548 ******* 
+ok: [falco-test-dut01]
+
+TASK [test : fail] *************************************************************
+Friday 16 November 2018  23:04:24 +0000 (0:00:00.273)       0:00:05.822 ******* 
+skipping: [falco-test-dut01]
+
+TASK [test : set testbed_type] *************************************************
+Friday 16 November 2018  23:04:24 +0000 (0:00:00.083)       0:00:05.906 ******* 
+ok: [falco-test-dut01]
+
+TASK [test : set vm] ***********************************************************
+Friday 16 November 2018  23:04:24 +0000 (0:00:00.107)       0:00:06.014 ******* 
+ok: [falco-test-dut01]
+
+TASK [test : fail] *************************************************************
+Friday 16 November 2018  23:04:24 +0000 (0:00:00.108)       0:00:06.122 ******* 
+skipping: [falco-test-dut01]
+
+TASK [test : include] **********************************************************
+Friday 16 November 2018  23:04:24 +0000 (0:00:00.088)       0:00:06.211 ******* 
+included: /var/jenkins/sonic-mgmt/ansible/roles/test/tasks/test_sonic_by_testname.yml for falco-test-dut01
+
+TASK [test : debug] ************************************************************
+Friday 16 November 2018  23:04:24 +0000 (0:00:00.209)       0:00:06.421 ******* 
+ok: [falco-test-dut01] => {
+    "msg": "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+}
+
+TASK [test : debug] ************************************************************
+Friday 16 November 2018  23:04:24 +0000 (0:00:00.130)       0:00:06.552 ******* 
+ok: [falco-test-dut01] => {
+    "msg": "!!!!!!!!!!!!!!!!!!!! start to run test lldp !!!!!!!!!!!!!!!!!!!!"
+}
+
+TASK [test : debug] ************************************************************
+Friday 16 November 2018  23:04:25 +0000 (0:00:00.140)       0:00:06.693 ******* 
+ok: [falco-test-dut01] => {
+    "msg": "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+}
+
+TASK [test : set_fact] *********************************************************
+Friday 16 November 2018  23:04:25 +0000 (0:00:00.133)       0:00:06.826 ******* 
+ok: [falco-test-dut01]
+
+TASK [test : do basic sanity check before each test] ***************************
+Friday 16 November 2018  23:04:25 +0000 (0:00:00.139)       0:00:06.965 ******* 
+included: /var/jenkins/sonic-mgmt/ansible/roles/test/tasks/base_sanity.yml for falco-test-dut01
+
+TASK [test : Get process information in syncd docker] **************************
+Friday 16 November 2018  23:04:25 +0000 (0:00:00.456)       0:00:07.422 ******* 
+changed: [falco-test-dut01]
+
+TASK [test : debug] ************************************************************
+Friday 16 November 2018  23:04:26 +0000 (0:00:00.645)       0:00:08.067 ******* 
+ok: [falco-test-dut01] => {
+    "ps_out.stdout_lines": [
+        "root        19  0.0  0.0  41584  2572 ?        Sl   20:58   0:00 /usr/bin/dsserve /usr/bin/syncd --diag -p /etc/sai.d/sai.profile", 
+        "root        29 12.4  4.7 1065804 193968 ?      Sl   20:58  15:39 /usr/bin/syncd --diag -p /etc/sai.d/sai.profile", 
+        "root        50  0.0  5.0 759364 202364 ?       S    20:58   0:03 /usr/bin/syncd --diag -p /etc/sai.d/sai.profile"
+    ]
+}
+
+TASK [test : Get orchagent process information] ********************************
+Friday 16 November 2018  23:04:26 +0000 (0:00:00.175)       0:00:08.243 ******* 
+changed: [falco-test-dut01]
+
+TASK [test : debug] ************************************************************
+Friday 16 November 2018  23:04:27 +0000 (0:00:00.475)       0:00:08.718 ******* 
+ok: [falco-test-dut01] => {
+    "orch_out.stdout_lines": [
+        "25616 /usr/bin/orchagent -d /var/log/swss -b 8192 -m 00:e0:ec:5a:7c:ac"
+    ]
+}
+
+TASK [test : reboot] ***********************************************************
+Friday 16 November 2018  23:04:27 +0000 (0:00:00.167)       0:00:08.886 ******* 
+skipping: [falco-test-dut01]
+
+TASK [test : Get process information in syncd docker] **************************
+Friday 16 November 2018  23:04:27 +0000 (0:00:00.139)       0:00:09.025 ******* 
+skipping: [falco-test-dut01]
+
+TASK [test : debug] ************************************************************
+Friday 16 November 2018  23:04:27 +0000 (0:00:00.145)       0:00:09.171 ******* 
+skipping: [falco-test-dut01]
+
+TASK [test : Verify that syncd process is running] *****************************
+Friday 16 November 2018  23:04:27 +0000 (0:00:00.137)       0:00:09.309 ******* 
+skipping: [falco-test-dut01]
+
+TASK [test : Get orchagent process information] ********************************
+Friday 16 November 2018  23:04:27 +0000 (0:00:00.135)       0:00:09.444 ******* 
+skipping: [falco-test-dut01]
+
+TASK [test : debug] ************************************************************
+Friday 16 November 2018  23:04:27 +0000 (0:00:00.141)       0:00:09.586 ******* 
+skipping: [falco-test-dut01]
+
+TASK [test : Verify that orchagent process is running] *************************
+Friday 16 November 2018  23:04:28 +0000 (0:00:00.132)       0:00:09.719 ******* 
+skipping: [falco-test-dut01]
+
+TASK [test : Get syslog error information] *************************************
+Friday 16 November 2018  23:04:28 +0000 (0:00:00.127)       0:00:09.846 ******* 
+changed: [falco-test-dut01]
+
+TASK [test : debug] ************************************************************
+Friday 16 November 2018  23:04:28 +0000 (0:00:00.448)       0:00:10.294 ******* 
+ok: [falco-test-dut01] => {
+    "syslog_out.stdout_lines": [
+        "Nov 16 23:02:43.576484 falco-test-dut01 INFO ansible-command: Invoked with warn=True executable=None chdir=None _raw_params=cat /var/log/syslog |tail -n 5000 |grep -i error removes=None creates=None _uses_shell=True", 
+        "Nov 16 23:04:29.646997 falco-test-dut01 INFO ansible-command: Invoked with warn=True executable=None chdir=None _raw_params=cat /var/log/syslog |tail -n 5000 |grep -i error removes=None creates=None _uses_shell=True"
+    ]
+}
+
+TASK [test : validate all interfaces is up] ************************************
+Friday 16 November 2018  23:04:28 +0000 (0:00:00.173)       0:00:10.468 ******* 
+included: /var/jenkins/sonic-mgmt/ansible/roles/test/tasks/interface.yml for falco-test-dut01
+
+TASK [test : Gather minigraph facts about the device] **************************
+Friday 16 November 2018  23:04:29 +0000 (0:00:00.514)       0:00:10.982 ******* 
+ok: [falco-test-dut01]
+
+TASK [test : Get interface facts] **********************************************
+Friday 16 November 2018  23:04:29 +0000 (0:00:00.548)       0:00:11.531 ******* 
+ok: [falco-test-dut01]
+
+TASK [test : debug] ************************************************************
+Friday 16 November 2018  23:04:33 +0000 (0:00:03.963)       0:00:15.494 ******* 
+skipping: [falco-test-dut01]
+
+TASK [test : reboot] ***********************************************************
+Friday 16 November 2018  23:04:33 +0000 (0:00:00.104)       0:00:15.599 ******* 
+skipping: [falco-test-dut01]
+
+TASK [test : figure out fanout switch port in case it was down] ****************
+Friday 16 November 2018  23:04:34 +0000 (0:00:00.104)       0:00:15.703 ******* 
+skipping: [falco-test-dut01]
+
+TASK [test : set_fact] *********************************************************
+Friday 16 November 2018  23:04:34 +0000 (0:00:00.106)       0:00:15.809 ******* 
+skipping: [falco-test-dut01]
+
+TASK [test : include] **********************************************************
+Friday 16 November 2018  23:04:34 +0000 (0:00:00.106)       0:00:15.916 ******* 
+
+TASK [test : pause and wait interface to be up] ********************************
+Friday 16 November 2018  23:04:34 +0000 (0:00:00.101)       0:00:16.018 ******* 
+skipping: [falco-test-dut01]
+
+TASK [test : Get interface facts] **********************************************
+Friday 16 November 2018  23:04:34 +0000 (0:00:00.102)       0:00:16.120 ******* 
+skipping: [falco-test-dut01]
+
+TASK [test : debug] ************************************************************
+Friday 16 November 2018  23:04:34 +0000 (0:00:00.100)       0:00:16.220 ******* 
+skipping: [falco-test-dut01]
+
+TASK [test : Verify interfaces are up correctly] *******************************
+Friday 16 November 2018  23:04:34 +0000 (0:00:00.102)       0:00:16.323 ******* 
+ok: [falco-test-dut01]
+
+TASK [test : Verify port channel interfaces are up correctly] ******************
+Friday 16 November 2018  23:04:34 +0000 (0:00:00.129)       0:00:16.452 ******* 
+
+TASK [test : Verify VLAN interfaces are up correctly] **************************
+Friday 16 November 2018  23:04:34 +0000 (0:00:00.092)       0:00:16.545 ******* 
+
+TASK [test : debug] ************************************************************
+Friday 16 November 2018  23:04:35 +0000 (0:00:00.098)       0:00:16.644 ******* 
+skipping: [falco-test-dut01]
+
+TASK [test : gather system version information] ********************************
+Friday 16 November 2018  23:04:35 +0000 (0:00:00.078)       0:00:16.722 ******* 
+changed: [falco-test-dut01]
+
+TASK [test : print system versions] ********************************************
+Friday 16 November 2018  23:04:36 +0000 (0:00:01.179)       0:00:17.902 ******* 
+ok: [falco-test-dut01] => {
+    "versions.stdout_lines": [
+        "SONiC Software Version: SONiC.master.507-c698270", 
+        "Distribution: Debian 8.11", 
+        "Kernel: 3.16.0-5-amd64", 
+        "Build commit: c698270", 
+        "Build date: Fri Nov 16 12:00:22 UTC 2018", 
+        "Built by: svc-lnos-user@server10", 
+        "", 
+        "Docker images:", 
+        "REPOSITORY                 TAG                  IMAGE ID            SIZE", 
+        "docker-syncd-brcm          latest               3bb55118dd81        437.1 MB", 
+        "docker-syncd-brcm          master.507-c698270   3bb55118dd81        437.1 MB", 
+        "docker-orchagent-brcm      latest               70c066526d63        376.9 MB", 
+        "docker-orchagent-brcm      master.507-c698270   70c066526d63        376.9 MB", 
+        "docker-lldp-sv2            latest               4015f1ce3da3        355.4 MB", 
+        "docker-lldp-sv2            master.507-c698270   4015f1ce3da3        355.4 MB", 
+        "docker-dhcp-relay          latest               e137529acf97        325.4 MB", 
+        "docker-dhcp-relay          master.507-c698270   e137529acf97        325.4 MB", 
+        "docker-database            latest               92524ef8cb07        321.6 MB", 
+        "docker-database            master.507-c698270   92524ef8cb07        321.6 MB", 
+        "docker-teamd               latest               779cb5a30d9b        377.2 MB", 
+        "docker-teamd               master.507-c698270   779cb5a30d9b        377.2 MB", 
+        "docker-snmp-sv2            latest               1ece0a73656f        395.6 MB", 
+        "docker-snmp-sv2            master.507-c698270   1ece0a73656f        395.6 MB", 
+        "docker-sonic-telemetry     latest               c5580b9302c9        350 MB", 
+        "docker-sonic-telemetry     master.507-c698270   c5580b9302c9        350 MB", 
+        "docker-router-advertiser   latest               3a03c3594c83        319.3 MB", 
+        "docker-router-advertiser   master.507-c698270   3a03c3594c83        319.3 MB", 
+        "docker-platform-monitor    latest               daf6af260383        341.2 MB", 
+        "docker-platform-monitor    master.507-c698270   daf6af260383        341.2 MB", 
+        "docker-fpm-frr             latest               4618908b7df6        396.5 MB", 
+        "docker-fpm-frr             master.507-c698270   4618908b7df6        396.5 MB"
+    ]
+}
+
+TASK [test : debug] ************************************************************
+Friday 16 November 2018  23:04:36 +0000 (0:00:00.103)       0:00:18.005 ******* 
+ok: [falco-test-dut01] => {
+    "msg": "PC lldp"
+}
+
+TASK [test : debug] ************************************************************
+Friday 16 November 2018  23:04:36 +0000 (0:00:00.102)       0:00:18.108 ******* 
+ok: [falco-test-dut01] => {
+    "msg": "PC {u'arp': {u'topologies': [u'ptf32', u'ptf64', u't1'], u'required_vars': {u'ptf_host': None}, u'filename': u'arpall.yml'}, u'bgp_fact': {u'topologies': [u't0', u't0-64', u't0-64-32', u't0-116', u't1', u't1-lag', u't1-64-lag'], u'filename': u'bgp_fact.yml'}, u'qos': {u'topologies': [u'ptf32', u'ptf64'], u'filename': u'qos.yml'}, u'continuous_reboot': {u'topologies': [u't0', u't0-64', u't0-64-32', u't0-116', u't1', u't1-lag', u't1-64-lag'], u'filename': u'continuous_reboot.yml'}, u'everflow_testbed': {u'topologies': [u't1', u't1-lag', u't1-64-lag'], u'required_vars': {u'testbed_type': None, u'ptf_host': None}, u'filename': u'everflow_testbed.yml'}, u'pfc_wd': {u'topologies': [u't0', u't0-64', u't0-64-32', u't0-116', u't1', u't1-lag', u't1-64-lag', u'ptf32', u'ptf64'], u'filename': u'pfc_wd.yml'}, u'syslog': {u'topologies': [u't0', u't0-64', u't0-64-32', u't0-116', u't1', u't1-lag', u't1-64-lag', u'ptf32', u'ptf64'], u'filename': u'syslog.yml'}, u'bgp_speaker': {u'topologies': [u't0', u't0-64', u't0-64-32', u't0-116'], u'required_vars': {u'testbed_type': None, u'ptf_host': None}, u'filename': u'bgp_speaker.yml'}, u'mtu': {u'topologies': [u't1', u't1-lag', u't1-64-lag'], u'required_vars': {u'testbed_type': None, u'ptf_host': None}, u'filename': u'mtu.yml'}, u'bgp_multipath_relax': {u'topologies': [u't1', u't1-lag', u't1-64-lag'], u'required_vars': {u'testbed_type': None, u'ptf_host': None}, u'filename': u'bgp_multipath_relax.yml'}, u'ecn_wred': {u'topologies': [u't0', u't1', u't1-lag'], u'filename': u'ecn_wred.yml'}, u'snmp': {u'topologies': [u't0', u't0-64', u't0-64-32', u't0-116', u't1', u't1-lag', u't1-64-lag', u'ptf32', u'ptf64'], u'filename': u'snmp.yml'}, u'reboot': {u'topologies': [u't0', u't0-64', u't0-64-32', u't0-116', u't1', u't1-lag', u't1-64-lag', u'ptf32', u'ptf64'], u'filename': u'reboot.yml'}, u'decap': {u'topologies': [u't1', u't1-lag', u't1-64-lag', u't0', u't0-64', u't0-116'], u'required_vars': {u'testbed_type': None, u'dscp_mode': None, u'ptf_host': None}, u'filename': u'decap.yml'}, u'fib': {u'topologies': [u't0', u't0-64', u't0-64-32', u't0-116', u't1', u't1-lag', u't1-64-lag'], u'required_vars': {u'testbed_type': None, u'ptf_host': None}, u'filename': u'simple-fib.yml'}, u'service_acl': {u'topologies': [u't0', u't0-64', u't0-64-32', u't0-116', u't1', u't1-lag', u't1-64-lag', u'ptf32', u'ptf64'], u'filename': u'service_acl.yml'}, u'lldp': {u'topologies': [u't0', u't0-64', u't0-116', u't0-64-32', u't1', u't1-lag', u't1-64-lag'], u'filename': u'lldp.yml'}, u'port_toggle': {u'topologies': [u't0', u't0-64', u't0-64-32', u't0-116', u't1', u't1-lag', u't1-64-lag', u'ptf32', u'ptf64'], u'filename': u'port_toggle.yml'}, u'link_flap': {u'topologies': [u't0', u't0-64', u't0-64-32', u't0-116', u't1', u't1-lag', u't1-64-lag', u'ptf32', u'ptf64'], u'filename': u'link_flap.yml'}, u'restart_swss': {u'topologies': [u't0', u't0-64', u't0-64-32', u't0-116', u't1', u't1-lag', u't1-64-lag', u'ptf32', u'ptf64'], u'filename': u'run_config_cleanup.yml'}, u'ntp': {u'topologies': [u't0', u't0-64', u't0-64-32', u't0-116', u't1', u't1-lag', u't1-64-lag', u'ptf32', u'ptf64'], u'filename': u'ntp.yml'}, u'vlan': {u'topologies': [u't0', u't0-116'], u'required_vars': {u'testbed_type': None, u'ptf_host': None}, u'filename': u'vlantb.yml'}, u'neighbour': {u'topologies': [u'ptf32', u'ptf64'], u'required_vars': {u'ptf_host': None}, u'filename': u'neighbour-mac.yml'}, u'dhcp_relay': {u'topologies': [u't0', u't0-64', u't0-64-32', u't0-116'], u'required_vars': {u'ptf_host': None}, u'filename': u'dhcp_relay.yml'}, u'copp': {u'topologies': [u'ptf32', u'ptf64', u't1', u't1-lag'], u'required_vars': {u'ptf_host': None}, u'filename': u'copp.yml'}, u'sensors': {u'topologies': [u't0', u't0-64', u't0-64-32', u't0-116', u't1', u't1-lag', u't1-64-lag', u'ptf32', u'ptf64'], u'filename': u'sensors_check.yml'}, u'lag_2': {u'topologies': [u't0', u't0-64', u't0-64-32', u't0-116', u't1-lag', u't1-64-lag'], u'required_vars': {u'testbed_type': None, u'ptf_host': None}, u'filename': u'lag_2.yml'}, u'fdb': {u'topologies': [u't0', u't0-64', u't0-64-32', u't0-116'], u'required_vars': {u'testbed_type': None, u'ptf_host': None}, u'filename': u'fdb.yml'}, u'repeat_harness': {u'topologies': [u't0', u't0-64', u't0-64-32', u't0-116', u't1', u't1-lag', u't1-64-lag', u'ptf32', u'ptf64'], u'filename': u'repeat_harness.yml'}, u'restart_swss_service': {u'topologies': [u't0', u't0-64', u't0-64-32', u't0-116', u't1', u't1-lag', u't1-64-lag', u'ptf32', u'ptf64'], u'filename': u'restart_swss.yml'}, u'neighbour_mac_noptf': {u'topologies': [u't0', u't0-64', u't0-64-32', u't0-116', u't1', u't1-lag', u't1-64-lag', u'ptf32', u'ptf64'], u'filename': u'neighbour-mac-noptf.yml'}, u'acl': {u'topologies': [u't1', u't1-lag', u't1-64-lag'], u'required_vars': {u'testbed_type': None, u'ptf_host': None}, u'filename': u'acltb.yml'}, u'bgp_gr_helper': {u'topologies': [u't1', u't1-lag'], u'filename': u'bgp_gr_helper.yml'}, u'mem_check': {u'topologies': [u't0', u't0-64', u't0-64-32', u't0-116', u't1', u't1-lag', u't1-64-lag', u'ptf32', u'ptf64'], u'filename': u'mem_check.yml'}, u'warm-reboot-fib': {u'topologies': [u't0', u't0-64', u't0-64-32', u't0-116', u't1', u't1-lag', u't1-64-lag'], u'required_vars': {u'testbed_type': None, u'ptf_host': None}, u'filename': u'warm-reboot-fib.yml'}, u'crm': {u'topologies': [u't1', u't1-lag', u't0'], u'filename': u'crm.yml'}, u'dir_bcast': {u'topologies': [u't0', u't0-64', u't0-64-32', u't0-116'], u'required_vars': {u'testbed_type': None, u'ptf_host': None}, u'filename': u'dir_bcast.yml'}, u'fast-reboot': {u'topologies': [u't0', u't0-64', u't0-64-32', u't0-116'], u'required_vars': {u'vm_hosts': None, u'ptf_host': None}, u'filename': u'fast-reboot.yml'}}"
+}
+
+TASK [test : run test case lldp.yml file] **************************************
+Friday 16 November 2018  23:04:36 +0000 (0:00:00.129)       0:00:18.237 ******* 
+included: /var/jenkins/sonic-mgmt/ansible/roles/test/tasks/lldp.yml for falco-test-dut01
+
+TASK [test : Gathering minigraph facts about the device] ***********************
+Friday 16 November 2018  23:04:37 +0000 (0:00:00.684)       0:00:18.922 ******* 
+ok: [falco-test-dut01]
+
+TASK [test : Print neighbors in minigraph] *************************************
+Friday 16 November 2018  23:04:37 +0000 (0:00:00.555)       0:00:19.477 ******* 
+ok: [falco-test-dut01] => {
+    "msg": {
+        "Ethernet0": {
+            "name": "ARISTA01T2", 
+            "port": "Ethernet1"
+        }, 
+        "Ethernet100": {
+            "name": "ARISTA10T0", 
+            "port": "Ethernet1"
+        }, 
+        "Ethernet104": {
+            "name": "ARISTA11T0", 
+            "port": "Ethernet1"
+        }, 
+        "Ethernet108": {
+            "name": "ARISTA12T0", 
+            "port": "Ethernet1"
+        }, 
+        "Ethernet112": {
+            "name": "ARISTA13T0", 
+            "port": "Ethernet1"
+        }, 
+        "Ethernet116": {
+            "name": "ARISTA14T0", 
+            "port": "Ethernet1"
+        }, 
+        "Ethernet12": {
+            "name": "ARISTA04T2", 
+            "port": "Ethernet1"
+        }, 
+        "Ethernet120": {
+            "name": "ARISTA15T0", 
+            "port": "Ethernet1"
+        }, 
+        "Ethernet124": {
+            "name": "ARISTA16T0", 
+            "port": "Ethernet1"
+        }, 
+        "Ethernet16": {
+            "name": "ARISTA05T2", 
+            "port": "Ethernet1"
+        }, 
+        "Ethernet20": {
+            "name": "ARISTA06T2", 
+            "port": "Ethernet1"
+        }, 
+        "Ethernet24": {
+            "name": "ARISTA07T2", 
+            "port": "Ethernet1"
+        }, 
+        "Ethernet28": {
+            "name": "ARISTA08T2", 
+            "port": "Ethernet1"
+        }, 
+        "Ethernet32": {
+            "name": "ARISTA09T2", 
+            "port": "Ethernet1"
+        }, 
+        "Ethernet36": {
+            "name": "ARISTA10T2", 
+            "port": "Ethernet1"
+        }, 
+        "Ethernet4": {
+            "name": "ARISTA02T2", 
+            "port": "Ethernet1"
+        }, 
+        "Ethernet40": {
+            "name": "ARISTA11T2", 
+            "port": "Ethernet1"
+        }, 
+        "Ethernet44": {
+            "name": "ARISTA12T2", 
+            "port": "Ethernet1"
+        }, 
+        "Ethernet48": {
+            "name": "ARISTA13T2", 
+            "port": "Ethernet1"
+        }, 
+        "Ethernet52": {
+            "name": "ARISTA14T2", 
+            "port": "Ethernet1"
+        }, 
+        "Ethernet56": {
+            "name": "ARISTA15T2", 
+            "port": "Ethernet1"
+        }, 
+        "Ethernet60": {
+            "name": "ARISTA16T2", 
+            "port": "Ethernet1"
+        }, 
+        "Ethernet64": {
+            "name": "ARISTA01T0", 
+            "port": "Ethernet1"
+        }, 
+        "Ethernet68": {
+            "name": "ARISTA02T0", 
+            "port": "Ethernet1"
+        }, 
+        "Ethernet72": {
+            "name": "ARISTA03T0", 
+            "port": "Ethernet1"
+        }, 
+        "Ethernet76": {
+            "name": "ARISTA04T0", 
+            "port": "Ethernet1"
+        }, 
+        "Ethernet8": {
+            "name": "ARISTA03T2", 
+            "port": "Ethernet1"
+        }, 
+        "Ethernet80": {
+            "name": "ARISTA05T0", 
+            "port": "Ethernet1"
+        }, 
+        "Ethernet84": {
+            "name": "ARISTA06T0", 
+            "port": "Ethernet1"
+        }, 
+        "Ethernet88": {
+            "name": "ARISTA07T0", 
+            "port": "Ethernet1"
+        }, 
+        "Ethernet92": {
+            "name": "ARISTA08T0", 
+            "port": "Ethernet1"
+        }, 
+        "Ethernet96": {
+            "name": "ARISTA09T0", 
+            "port": "Ethernet1"
+        }
+    }
+}
+
+TASK [test : Gather information from LLDP] *************************************
+Friday 16 November 2018  23:04:37 +0000 (0:00:00.120)       0:00:19.598 ******* 
+ok: [falco-test-dut01]
+
+TASK [test : Print LLDP information] *******************************************
+Friday 16 November 2018  23:04:39 +0000 (0:00:01.112)       0:00:20.710 ******* 
+ok: [falco-test-dut01] => {
+    "msg": {
+        "Ethernet0": {
+            "age": "0 day, 02:05:21", 
+            "chassis": {
+                "Bridge": {
+                    "enabled": "on"
+                }, 
+                "Router": {
+                    "enabled": "on"
+                }, 
+                "descr": "Arista Networks EOS version 4.15.9M running on an Arista Networks vEOS", 
+                "mac": "52:54:00:e4:3a:41", 
+                "mgmt-ip": "172.25.11.191", 
+                "name": "ARISTA01T2", 
+                "ttl": "120"
+            }, 
+            "port": {
+                "ifname": "Ethernet1", 
+                "mfs": "9236"
+            }, 
+            "rid": "23", 
+            "via": "LLDP"
+        }, 
+        "Ethernet100": {
+            "age": "0 day, 02:05:17", 
+            "chassis": {
+                "Bridge": {
+                    "enabled": "on"
+                }, 
+                "Router": {
+                    "enabled": "on"
+                }, 
+                "descr": "Arista Networks EOS version 4.15.9M running on an Arista Networks vEOS", 
+                "mac": "52:54:00:41:62:53", 
+                "mgmt-ip": "172.25.11.216", 
+                "name": "ARISTA10T0", 
+                "ttl": "120"
+            }, 
+            "port": {
+                "ifname": "Ethernet1", 
+                "mfs": "9236"
+            }, 
+            "rid": "30", 
+            "via": "LLDP"
+        }, 
+        "Ethernet104": {
+            "age": "0 day, 02:05:19", 
+            "chassis": {
+                "Bridge": {
+                    "enabled": "on"
+                }, 
+                "Router": {
+                    "enabled": "on"
+                }, 
+                "descr": "Arista Networks EOS version 4.15.9M running on an Arista Networks vEOS", 
+                "mac": "52:54:00:4e:1e:31", 
+                "mgmt-ip": "172.25.11.217", 
+                "name": "ARISTA11T0", 
+                "ttl": "120"
+            }, 
+            "port": {
+                "ifname": "Ethernet1", 
+                "mfs": "9236"
+            }, 
+            "rid": "26", 
+            "via": "LLDP"
+        }, 
+        "Ethernet108": {
+            "age": "0 day, 02:05:20", 
+            "chassis": {
+                "Bridge": {
+                    "enabled": "on"
+                }, 
+                "Router": {
+                    "enabled": "on"
+                }, 
+                "descr": "Arista Networks EOS version 4.15.9M running on an Arista Networks vEOS", 
+                "mac": "52:54:00:1b:13:8d", 
+                "mgmt-ip": "172.25.11.218", 
+                "name": "ARISTA12T0", 
+                "ttl": "120"
+            }, 
+            "port": {
+                "ifname": "Ethernet1", 
+                "mfs": "9236"
+            }, 
+            "rid": "25", 
+            "via": "LLDP"
+        }, 
+        "Ethernet112": {
+            "age": "0 day, 02:05:42", 
+            "chassis": {
+                "Bridge": {
+                    "enabled": "on"
+                }, 
+                "Router": {
+                    "enabled": "on"
+                }, 
+                "descr": "Arista Networks EOS version 4.15.9M running on an Arista Networks vEOS", 
+                "mac": "52:54:00:b0:bc:7d", 
+                "mgmt-ip": "172.25.11.219", 
+                "name": "ARISTA13T0", 
+                "ttl": "120"
+            }, 
+            "port": {
+                "ifname": "Ethernet1", 
+                "mfs": "9236"
+            }, 
+            "rid": "1", 
+            "via": "LLDP"
+        }, 
+        "Ethernet116": {
+            "age": "0 day, 02:05:32", 
+            "chassis": {
+                "Bridge": {
+                    "enabled": "on"
+                }, 
+                "Router": {
+                    "enabled": "on"
+                }, 
+                "descr": "Arista Networks EOS version 4.15.9M running on an Arista Networks vEOS", 
+                "mac": "52:54:00:a7:65:2c", 
+                "mgmt-ip": "172.25.11.220", 
+                "name": "ARISTA14T0", 
+                "ttl": "120"
+            }, 
+            "port": {
+                "ifname": "Ethernet1", 
+                "mfs": "9236"
+            }, 
+            "rid": "9", 
+            "via": "LLDP"
+        }, 
+        "Ethernet12": {
+            "age": "0 day, 02:05:35", 
+            "chassis": {
+                "Bridge": {
+                    "enabled": "on"
+                }, 
+                "Router": {
+                    "enabled": "on"
+                }, 
+                "descr": "Arista Networks EOS version 4.15.9M running on an Arista Networks vEOS", 
+                "mac": "52:54:00:dc:b1:e5", 
+                "mgmt-ip": "172.25.11.194", 
+                "name": "ARISTA04T2", 
+                "ttl": "120"
+            }, 
+            "port": {
+                "ifname": "Ethernet1", 
+                "mfs": "9236"
+            }, 
+            "rid": "6", 
+            "via": "LLDP"
+        }, 
+        "Ethernet120": {
+            "age": "0 day, 02:05:25", 
+            "chassis": {
+                "Bridge": {
+                    "enabled": "on"
+                }, 
+                "Router": {
+                    "enabled": "on"
+                }, 
+                "descr": "Arista Networks EOS version 4.15.9M running on an Arista Networks vEOS", 
+                "mac": "52:54:00:20:3d:4e", 
+                "mgmt-ip": "172.25.11.221", 
+                "name": "ARISTA15T0", 
+                "ttl": "120"
+            }, 
+            "port": {
+                "ifname": "Ethernet1", 
+                "mfs": "9236"
+            }, 
+            "rid": "20", 
+            "via": "LLDP"
+        }, 
+        "Ethernet124": {
+            "age": "0 day, 02:05:26", 
+            "chassis": {
+                "Bridge": {
+                    "enabled": "on"
+                }, 
+                "Router": {
+                    "enabled": "on"
+                }, 
+                "descr": "Arista Networks EOS version 4.15.9M running on an Arista Networks vEOS", 
+                "mac": "52:54:00:92:6c:c0", 
+                "mgmt-ip": "172.25.11.222", 
+                "name": "ARISTA16T0", 
+                "ttl": "120"
+            }, 
+            "port": {
+                "ifname": "Ethernet1", 
+                "mfs": "9236\n"
+            }, 
+            "rid": "18", 
+            "via": "LLDP"
+        }, 
+        "Ethernet16": {
+            "age": "0 day, 02:05:26", 
+            "chassis": {
+                "Bridge": {
+                    "enabled": "on"
+                }, 
+                "Router": {
+                    "enabled": "on"
+                }, 
+                "descr": "Arista Networks EOS version 4.15.9M running on an Arista Networks vEOS", 
+                "mac": "52:54:00:e5:47:1a", 
+                "mgmt-ip": "172.25.11.195", 
+                "name": "ARISTA05T2", 
+                "ttl": "120"
+            }, 
+            "port": {
+                "ifname": "Ethernet1", 
+                "mfs": "9236"
+            }, 
+            "rid": "19", 
+            "via": "LLDP"
+        }, 
+        "Ethernet20": {
+            "age": "0 day, 02:05:32", 
+            "chassis": {
+                "Bridge": {
+                    "enabled": "on"
+                }, 
+                "Router": {
+                    "enabled": "on"
+                }, 
+                "descr": "Arista Networks EOS version 4.15.9M running on an Arista Networks vEOS", 
+                "mac": "52:54:00:d6:50:33", 
+                "mgmt-ip": "172.25.11.196", 
+                "name": "ARISTA06T2", 
+                "ttl": "120"
+            }, 
+            "port": {
+                "ifname": "Ethernet1", 
+                "mfs": "9236"
+            }, 
+            "rid": "10", 
+            "via": "LLDP"
+        }, 
+        "Ethernet24": {
+            "age": "0 day, 02:05:28", 
+            "chassis": {
+                "Bridge": {
+                    "enabled": "on"
+                }, 
+                "Router": {
+                    "enabled": "on"
+                }, 
+                "descr": "Arista Networks EOS version 4.15.9M running on an Arista Networks vEOS", 
+                "mac": "52:54:00:45:e7:5c", 
+                "mgmt-ip": "172.25.11.197", 
+                "name": "ARISTA07T2", 
+                "ttl": "120"
+            }, 
+            "port": {
+                "ifname": "Ethernet1", 
+                "mfs": "9236"
+            }, 
+            "rid": "15", 
+            "via": "LLDP"
+        }, 
+        "Ethernet28": {
+            "age": "0 day, 02:05:31", 
+            "chassis": {
+                "Bridge": {
+                    "enabled": "on"
+                }, 
+                "Router": {
+                    "enabled": "on"
+                }, 
+                "descr": "Arista Networks EOS version 4.15.9M running on an Arista Networks vEOS", 
+                "mac": "52:54:00:9f:0a:d4", 
+                "mgmt-ip": "172.25.11.198", 
+                "name": "ARISTA08T2", 
+                "ttl": "120"
+            }, 
+            "port": {
+                "ifname": "Ethernet1", 
+                "mfs": "9236"
+            }, 
+            "rid": "12", 
+            "via": "LLDP"
+        }, 
+        "Ethernet32": {
+            "age": "0 day, 02:05:22", 
+            "chassis": {
+                "Bridge": {
+                    "enabled": "on"
+                }, 
+                "Router": {
+                    "enabled": "on"
+                }, 
+                "descr": "Arista Networks EOS version 4.15.9M running on an Arista Networks vEOS", 
+                "mac": "52:54:00:b0:c2:ca", 
+                "mgmt-ip": "172.25.11.199", 
+                "name": "ARISTA09T2", 
+                "ttl": "120"
+            }, 
+            "port": {
+                "ifname": "Ethernet1", 
+                "mfs": "9236"
+            }, 
+            "rid": "21", 
+            "via": "LLDP"
+        }, 
+        "Ethernet36": {
+            "age": "0 day, 02:05:41", 
+            "chassis": {
+                "Bridge": {
+                    "enabled": "on"
+                }, 
+                "Router": {
+                    "enabled": "on"
+                }, 
+                "descr": "Arista Networks EOS version 4.15.9M running on an Arista Networks vEOS", 
+                "mac": "52:54:00:d7:17:30", 
+                "mgmt-ip": "172.25.11.200", 
+                "name": "ARISTA10T2", 
+                "ttl": "120"
+            }, 
+            "port": {
+                "ifname": "Ethernet1", 
+                "mfs": "9236"
+            }, 
+            "rid": "2", 
+            "via": "LLDP"
+        }, 
+        "Ethernet4": {
+            "age": "0 day, 02:05:39", 
+            "chassis": {
+                "Bridge": {
+                    "enabled": "on"
+                }, 
+                "Router": {
+                    "enabled": "on"
+                }, 
+                "descr": "Arista Networks EOS version 4.15.9M running on an Arista Networks vEOS", 
+                "mac": "52:54:00:ba:5a:35", 
+                "mgmt-ip": "172.25.11.192", 
+                "name": "ARISTA02T2", 
+                "ttl": "120"
+            }, 
+            "port": {
+                "ifname": "Ethernet1", 
+                "mfs": "9236"
+            }, 
+            "rid": "4", 
+            "via": "LLDP"
+        }, 
+        "Ethernet40": {
+            "age": "0 day, 02:05:32", 
+            "chassis": {
+                "Bridge": {
+                    "enabled": "on"
+                }, 
+                "Router": {
+                    "enabled": "on"
+                }, 
+                "descr": "Arista Networks EOS version 4.15.9M running on an Arista Networks vEOS", 
+                "mac": "52:54:00:b3:e1:34", 
+                "mgmt-ip": "172.25.11.201", 
+                "name": "ARISTA11T2", 
+                "ttl": "120"
+            }, 
+            "port": {
+                "ifname": "Ethernet1", 
+                "mfs": "9236"
+            }, 
+            "rid": "8", 
+            "via": "LLDP"
+        }, 
+        "Ethernet44": {
+            "age": "0 day, 02:05:27", 
+            "chassis": {
+                "Bridge": {
+                    "enabled": "on"
+                }, 
+                "Router": {
+                    "enabled": "on"
+                }, 
+                "descr": "Arista Networks EOS version 4.15.9M running on an Arista Networks vEOS", 
+                "mac": "52:54:00:c8:d3:fd", 
+                "mgmt-ip": "172.25.11.202", 
+                "name": "ARISTA12T2", 
+                "ttl": "120"
+            }, 
+            "port": {
+                "ifname": "Ethernet1", 
+                "mfs": "9236"
+            }, 
+            "rid": "17", 
+            "via": "LLDP"
+        }, 
+        "Ethernet48": {
+            "age": "0 day, 02:05:18", 
+            "chassis": {
+                "Bridge": {
+                    "enabled": "on"
+                }, 
+                "Router": {
+                    "enabled": "on"
+                }, 
+                "descr": "Arista Networks EOS version 4.15.9M running on an Arista Networks vEOS", 
+                "mac": "52:54:00:6b:9b:26", 
+                "mgmt-ip": "172.25.11.203", 
+                "name": "ARISTA13T2", 
+                "ttl": "120"
+            }, 
+            "port": {
+                "ifname": "Ethernet1", 
+                "mfs": "9236"
+            }, 
+            "rid": "29", 
+            "via": "LLDP"
+        }, 
+        "Ethernet52": {
+            "age": "0 day, 02:05:40", 
+            "chassis": {
+                "Bridge": {
+                    "enabled": "on"
+                }, 
+                "Router": {
+                    "enabled": "on"
+                }, 
+                "descr": "Arista Networks EOS version 4.15.9M running on an Arista Networks vEOS", 
+                "mac": "52:54:00:ce:6d:96", 
+                "mgmt-ip": "172.25.11.204", 
+                "name": "ARISTA14T2", 
+                "ttl": "120"
+            }, 
+            "port": {
+                "ifname": "Ethernet1", 
+                "mfs": "9236"
+            }, 
+            "rid": "3", 
+            "via": "LLDP"
+        }, 
+        "Ethernet56": {
+            "age": "0 day, 02:05:15", 
+            "chassis": {
+                "Bridge": {
+                    "enabled": "on"
+                }, 
+                "Router": {
+                    "enabled": "on"
+                }, 
+                "descr": "Arista Networks EOS version 4.15.9M running on an Arista Networks vEOS", 
+                "mac": "52:54:00:09:f7:4f", 
+                "mgmt-ip": "172.25.11.205", 
+                "name": "ARISTA15T2", 
+                "ttl": "120"
+            }, 
+            "port": {
+                "ifname": "Ethernet1", 
+                "mfs": "9236"
+            }, 
+            "rid": "31", 
+            "via": "LLDP"
+        }, 
+        "Ethernet60": {
+            "age": "0 day, 02:05:22", 
+            "chassis": {
+                "Bridge": {
+                    "enabled": "on"
+                }, 
+                "Router": {
+                    "enabled": "on"
+                }, 
+                "descr": "Arista Networks EOS version 4.15.9M running on an Arista Networks vEOS", 
+                "mac": "52:54:00:1f:d6:42", 
+                "mgmt-ip": "172.25.11.206", 
+                "name": "ARISTA16T2", 
+                "ttl": "120"
+            }, 
+            "port": {
+                "ifname": "Ethernet1", 
+                "mfs": "9236"
+            }, 
+            "rid": "22", 
+            "via": "LLDP"
+        }, 
+        "Ethernet64": {
+            "age": "0 day, 02:05:29", 
+            "chassis": {
+                "Bridge": {
+                    "enabled": "on"
+                }, 
+                "Router": {
+                    "enabled": "on"
+                }, 
+                "descr": "Arista Networks EOS version 4.15.9M running on an Arista Networks vEOS", 
+                "mac": "52:54:00:69:5a:29", 
+                "mgmt-ip": "172.25.11.207", 
+                "name": "ARISTA01T0", 
+                "ttl": "120"
+            }, 
+            "port": {
+                "ifname": "Ethernet1", 
+                "mfs": "9236"
+            }, 
+            "rid": "13", 
+            "via": "LLDP"
+        }, 
+        "Ethernet68": {
+            "age": "0 day, 02:05:31", 
+            "chassis": {
+                "Bridge": {
+                    "enabled": "on"
+                }, 
+                "Router": {
+                    "enabled": "on"
+                }, 
+                "descr": "Arista Networks EOS version 4.15.9M running on an Arista Networks vEOS", 
+                "mac": "52:54:00:0b:80:d5", 
+                "mgmt-ip": "172.25.11.208", 
+                "name": "ARISTA02T0", 
+                "ttl": "120"
+            }, 
+            "port": {
+                "ifname": "Ethernet1", 
+                "mfs": "9236"
+            }, 
+            "rid": "11", 
+            "via": "LLDP"
+        }, 
+        "Ethernet72": {
+            "age": "0 day, 02:05:37", 
+            "chassis": {
+                "Bridge": {
+                    "enabled": "on"
+                }, 
+                "Router": {
+                    "enabled": "on"
+                }, 
+                "descr": "Arista Networks EOS version 4.15.9M running on an Arista Networks vEOS", 
+                "mac": "52:54:00:cb:fb:cc", 
+                "mgmt-ip": "172.25.11.209", 
+                "name": "ARISTA03T0", 
+                "ttl": "120"
+            }, 
+            "port": {
+                "ifname": "Ethernet1", 
+                "mfs": "9236"
+            }, 
+            "rid": "5", 
+            "via": "LLDP"
+        }, 
+        "Ethernet76": {
+            "age": "0 day, 02:05:35", 
+            "chassis": {
+                "Bridge": {
+                    "enabled": "on"
+                }, 
+                "Router": {
+                    "enabled": "on"
+                }, 
+                "descr": "Arista Networks EOS version 4.15.9M running on an Arista Networks vEOS", 
+                "mac": "52:54:00:a5:a3:45", 
+                "mgmt-ip": "172.25.11.210", 
+                "name": "ARISTA04T0", 
+                "ttl": "120"
+            }, 
+            "port": {
+                "ifname": "Ethernet1", 
+                "mfs": "9236"
+            }, 
+            "rid": "7", 
+            "via": "LLDP"
+        }, 
+        "Ethernet8": {
+            "age": "0 day, 02:05:29", 
+            "chassis": {
+                "Bridge": {
+                    "enabled": "on"
+                }, 
+                "Router": {
+                    "enabled": "on"
+                }, 
+                "descr": "Arista Networks EOS version 4.15.9M running on an Arista Networks vEOS", 
+                "mac": "52:54:00:5e:ad:59", 
+                "mgmt-ip": "172.25.11.193", 
+                "name": "ARISTA03T2", 
+                "ttl": "120"
+            }, 
+            "port": {
+                "ifname": "Ethernet1", 
+                "mfs": "9236"
+            }, 
+            "rid": "14", 
+            "via": "LLDP"
+        }, 
+        "Ethernet80": {
+            "age": "0 day, 02:05:27", 
+            "chassis": {
+                "Bridge": {
+                    "enabled": "on"
+                }, 
+                "Router": {
+                    "enabled": "on"
+                }, 
+                "descr": "Arista Networks EOS version 4.15.9M running on an Arista Networks vEOS", 
+                "mac": "52:54:00:97:fc:e9", 
+                "mgmt-ip": "172.25.11.211", 
+                "name": "ARISTA05T0", 
+                "ttl": "120"
+            }, 
+            "port": {
+                "ifname": "Ethernet1", 
+                "mfs": "9236"
+            }, 
+            "rid": "16", 
+            "via": "LLDP"
+        }, 
+        "Ethernet84": {
+            "age": "0 day, 02:05:12", 
+            "chassis": {
+                "Bridge": {
+                    "enabled": "on"
+                }, 
+                "Router": {
+                    "enabled": "on"
+                }, 
+                "descr": "Arista Networks EOS version 4.15.9M running on an Arista Networks vEOS", 
+                "mac": "52:54:00:57:6f:12", 
+                "mgmt-ip": "172.25.11.212", 
+                "name": "ARISTA06T0", 
+                "ttl": "120"
+            }, 
+            "port": {
+                "ifname": "Ethernet1", 
+                "mfs": "9236"
+            }, 
+            "rid": "32", 
+            "via": "LLDP"
+        }, 
+        "Ethernet88": {
+            "age": "0 day, 02:05:18", 
+            "chassis": {
+                "Bridge": {
+                    "enabled": "on"
+                }, 
+                "Router": {
+                    "enabled": "on"
+                }, 
+                "descr": "Arista Networks EOS version 4.15.9M running on an Arista Networks vEOS", 
+                "mac": "52:54:00:e4:e2:09", 
+                "mgmt-ip": "172.25.11.213", 
+                "name": "ARISTA07T0", 
+                "ttl": "120"
+            }, 
+            "port": {
+                "ifname": "Ethernet1", 
+                "mfs": "9236"
+            }, 
+            "rid": "28", 
+            "via": "LLDP"
+        }, 
+        "Ethernet92": {
+            "age": "0 day, 02:05:18", 
+            "chassis": {
+                "Bridge": {
+                    "enabled": "on"
+                }, 
+                "Router": {
+                    "enabled": "on"
+                }, 
+                "descr": "Arista Networks EOS version 4.15.9M running on an Arista Networks vEOS", 
+                "mac": "52:54:00:8b:32:4b", 
+                "mgmt-ip": "172.25.11.214", 
+                "name": "ARISTA08T0", 
+                "ttl": "120"
+            }, 
+            "port": {
+                "ifname": "Ethernet1", 
+                "mfs": "9236"
+            }, 
+            "rid": "27", 
+            "via": "LLDP"
+        }, 
+        "Ethernet96": {
+            "age": "0 day, 02:05:21", 
+            "chassis": {
+                "Bridge": {
+                    "enabled": "on"
+                }, 
+                "Router": {
+                    "enabled": "on"
+                }, 
+                "descr": "Arista Networks EOS version 4.15.9M running on an Arista Networks vEOS", 
+                "mac": "52:54:00:d0:8d:f5", 
+                "mgmt-ip": "172.25.11.215", 
+                "name": "ARISTA09T0", 
+                "ttl": "120"
+            }, 
+            "port": {
+                "ifname": "Ethernet1", 
+                "mfs": "9236"
+            }, 
+            "rid": "24", 
+            "via": "LLDP"
+        }
+    }
+}
+
+TASK [test : Verify LLDP information is available on most interfaces] **********
+Friday 16 November 2018  23:04:39 +0000 (0:00:00.141)       0:00:20.852 ******* 
+ok: [falco-test-dut01]
+
+TASK [test : Compare the LLDP neighbor name with minigraph neigbhor name (exclude the management port)] ***
+Friday 16 November 2018  23:04:39 +0000 (0:00:00.117)       0:00:20.969 ******* 
+ok: [falco-test-dut01] => (item=Ethernet8)
+ok: [falco-test-dut01] => (item=Ethernet0)
+ok: [falco-test-dut01] => (item=Ethernet4)
+ok: [falco-test-dut01] => (item=Ethernet108)
+ok: [falco-test-dut01] => (item=Ethernet100)
+ok: [falco-test-dut01] => (item=Ethernet104)
+ok: [falco-test-dut01] => (item=Ethernet96)
+ok: [falco-test-dut01] => (item=Ethernet124)
+ok: [falco-test-dut01] => (item=Ethernet92)
+ok: [falco-test-dut01] => (item=Ethernet120)
+ok: [falco-test-dut01] => (item=Ethernet52)
+ok: [falco-test-dut01] => (item=Ethernet56)
+ok: [falco-test-dut01] => (item=Ethernet76)
+ok: [falco-test-dut01] => (item=Ethernet72)
+ok: [falco-test-dut01] => (item=Ethernet32)
+ok: [falco-test-dut01] => (item=Ethernet16)
+ok: [falco-test-dut01] => (item=Ethernet36)
+ok: [falco-test-dut01] => (item=Ethernet12)
+ok: [falco-test-dut01] => (item=Ethernet28)
+ok: [falco-test-dut01] => (item=Ethernet88)
+ok: [falco-test-dut01] => (item=Ethernet24)
+ok: [falco-test-dut01] => (item=Ethernet116)
+ok: [falco-test-dut01] => (item=Ethernet80)
+ok: [falco-test-dut01] => (item=Ethernet112)
+ok: [falco-test-dut01] => (item=Ethernet84)
+ok: [falco-test-dut01] => (item=Ethernet48)
+ok: [falco-test-dut01] => (item=Ethernet44)
+ok: [falco-test-dut01] => (item=Ethernet40)
+ok: [falco-test-dut01] => (item=Ethernet64)
+ok: [falco-test-dut01] => (item=Ethernet60)
+ok: [falco-test-dut01] => (item=Ethernet20)
+ok: [falco-test-dut01] => (item=Ethernet68)
+
+TASK [test : Compare the LLDP neighbor interface with minigraph neigbhor interface (exclude the management port)] ***
+Friday 16 November 2018  23:04:48 +0000 (0:00:09.004)       0:00:29.973 ******* 
+ok: [falco-test-dut01] => (item=Ethernet8)
+ok: [falco-test-dut01] => (item=Ethernet0)
+ok: [falco-test-dut01] => (item=Ethernet4)
+ok: [falco-test-dut01] => (item=Ethernet108)
+ok: [falco-test-dut01] => (item=Ethernet100)
+ok: [falco-test-dut01] => (item=Ethernet104)
+ok: [falco-test-dut01] => (item=Ethernet96)
+ok: [falco-test-dut01] => (item=Ethernet124)
+ok: [falco-test-dut01] => (item=Ethernet92)
+ok: [falco-test-dut01] => (item=Ethernet120)
+ok: [falco-test-dut01] => (item=Ethernet52)
+ok: [falco-test-dut01] => (item=Ethernet56)
+ok: [falco-test-dut01] => (item=Ethernet76)
+ok: [falco-test-dut01] => (item=Ethernet72)
+ok: [falco-test-dut01] => (item=Ethernet32)
+ok: [falco-test-dut01] => (item=Ethernet16)
+ok: [falco-test-dut01] => (item=Ethernet36)
+ok: [falco-test-dut01] => (item=Ethernet12)
+ok: [falco-test-dut01] => (item=Ethernet28)
+ok: [falco-test-dut01] => (item=Ethernet88)
+ok: [falco-test-dut01] => (item=Ethernet24)
+ok: [falco-test-dut01] => (item=Ethernet116)
+ok: [falco-test-dut01] => (item=Ethernet80)
+ok: [falco-test-dut01] => (item=Ethernet112)
+ok: [falco-test-dut01] => (item=Ethernet84)
+ok: [falco-test-dut01] => (item=Ethernet48)
+ok: [falco-test-dut01] => (item=Ethernet44)
+ok: [falco-test-dut01] => (item=Ethernet40)
+ok: [falco-test-dut01] => (item=Ethernet64)
+ok: [falco-test-dut01] => (item=Ethernet60)
+ok: [falco-test-dut01] => (item=Ethernet20)
+ok: [falco-test-dut01] => (item=Ethernet68)
+
+TASK [test : Obtain the system description of the DUT chassis] *****************
+Friday 16 November 2018  23:04:57 +0000 (0:00:09.017)       0:00:38.991 ******* 
+changed: [falco-test-dut01]
+
+TASK [test : Store system description of the DUT chassis as a fact] ************
+Friday 16 November 2018  23:04:57 +0000 (0:00:00.564)       0:00:39.555 ******* 
+ok: [falco-test-dut01]
+
+TASK [test : Iterate through each LLDP neighbor and verify the information received by neighbor is correct] ***
+Friday 16 November 2018  23:04:58 +0000 (0:00:00.114)       0:00:39.670 ******* 
+changed: [falco-test-dut01] => (item=Ethernet8)
+changed: [falco-test-dut01] => (item=Ethernet0)
+changed: [falco-test-dut01] => (item=Ethernet4)
+changed: [falco-test-dut01] => (item=Ethernet108)
+changed: [falco-test-dut01] => (item=Ethernet100)
+changed: [falco-test-dut01] => (item=Ethernet104)
+changed: [falco-test-dut01] => (item=Ethernet96)
+changed: [falco-test-dut01] => (item=Ethernet124)
+changed: [falco-test-dut01] => (item=Ethernet92)
+changed: [falco-test-dut01] => (item=Ethernet120)
+changed: [falco-test-dut01] => (item=Ethernet52)
+changed: [falco-test-dut01] => (item=Ethernet56)
+changed: [falco-test-dut01] => (item=Ethernet76)
+changed: [falco-test-dut01] => (item=Ethernet72)
+changed: [falco-test-dut01] => (item=Ethernet32)
+changed: [falco-test-dut01] => (item=Ethernet16)
+changed: [falco-test-dut01] => (item=Ethernet36)
+changed: [falco-test-dut01] => (item=Ethernet12)
+changed: [falco-test-dut01] => (item=Ethernet28)
+changed: [falco-test-dut01] => (item=Ethernet88)
+changed: [falco-test-dut01] => (item=Ethernet24)
+changed: [falco-test-dut01] => (item=Ethernet116)
+changed: [falco-test-dut01] => (item=Ethernet80)
+changed: [falco-test-dut01] => (item=Ethernet112)
+changed: [falco-test-dut01] => (item=Ethernet84)
+changed: [falco-test-dut01] => (item=Ethernet48)
+changed: [falco-test-dut01] => (item=Ethernet44)
+changed: [falco-test-dut01] => (item=Ethernet40)
+changed: [falco-test-dut01] => (item=Ethernet64)
+changed: [falco-test-dut01] => (item=Ethernet60)
+changed: [falco-test-dut01] => (item=Ethernet20)
+changed: [falco-test-dut01] => (item=Ethernet68)
+
+TASK [test : debug] ************************************************************
+Friday 16 November 2018  23:05:06 +0000 (0:00:08.908)       0:00:48.578 ******* 
+ok: [falco-test-dut01] => {
+    "msg": "Deployment Specific Test Cases, Test LLDP timing/buffer issue."
+}
+
+TASK [test : collect SONiC current configuration info (to find macaddress)] ****
+Friday 16 November 2018  23:05:07 +0000 (0:00:00.105)       0:00:48.684 ******* 
+ok: [falco-test-dut01]
+
+TASK [test : saved original config_db.json in SONiC DUT (ignore errors when file does not exist)] ***
+Friday 16 November 2018  23:05:11 +0000 (0:00:04.343)       0:00:53.028 ******* 
+changed: [falco-test-dut01]
+
+TASK [test : copy test specific lldp_config_db.json to Sonic DUT] **************
+Friday 16 November 2018  23:05:11 +0000 (0:00:00.414)       0:00:53.442 ******* 
+changed: [falco-test-dut01]
+
+TASK [test : update mac hostname and speed in config_db.json] ******************
+Friday 16 November 2018  23:05:12 +0000 (0:00:00.528)       0:00:53.970 ******* 
+ok: [falco-test-dut01] => (item={u'regexp': u'"mac": ".*"', u'line': u'"mac": "00:e0:ec:5a:7c:ac"'})
+ok: [falco-test-dut01] => (item={u'regexp': u'"hostname": ".*"', u'line': u'"hostname": "falco-test-dut01"'})
+changed: [falco-test-dut01] => (item={u'regexp': u'"speed": ".*"', u'line': u'"speed": "40000"'})
+
+TASK [test : execute cli "config reload -y" to apply modified config_db.json] **
+Friday 16 November 2018  23:05:13 +0000 (0:00:01.659)       0:00:55.629 ******* 
+changed: [falco-test-dut01]
+
+TASK [test : Ensure LLDP Daemon is ruunning and Enabled] ***********************
+Friday 16 November 2018  23:06:24 +0000 (0:01:10.211)       0:02:05.841 ******* 
+ok: [falco-test-dut01]
+
+TASK [test : None] *************************************************************
+Friday 16 November 2018  23:06:27 +0000 (0:00:02.988)       0:02:08.829 ******* 
+changed: [falco-test-dut01]
+
+TASK [test : Run lldpcli show statistics] **************************************
+Friday 16 November 2018  23:06:28 +0000 (0:00:00.812)       0:02:09.642 ******* 
+
+PLAY ***************************************************************************
+
+PLAY RECAP *********************************************************************
+falco-test-dut01           : ok=47   changed=11   unreachable=0    failed=0   
+
+Friday 16 November 2018  23:58:21 +0000 (0:51:53.135)       0:54:02.777 ******* 
+=============================================================================== 
+TASK: test : Run lldpcli show statistics ----------------------------- 3113.14s
+TASK: test : execute cli "config reload -y" to apply modified config_db.json -- 70.21s
+TASK: test : Compare the LLDP neighbor interface with minigraph neigbhor interface (exclude the management port) --- 9.02s
+TASK: test : Compare the LLDP neighbor name with minigraph neigbhor name (exclude the management port) --- 9.00s
+TASK: test : Iterate through each LLDP neighbor and verify the information received by neighbor is correct --- 8.91s
+TASK: test : collect SONiC current configuration info (to find macaddress) --- 4.34s
+TASK: setup ------------------------------------------------------------- 4.11s
+TASK: test : Get interface facts ---------------------------------------- 3.96s
+TASK: test : Ensure LLDP Daemon is ruunning and Enabled ----------------- 2.99s
+TASK: test : update mac hostname and speed in config_db.json ------------ 1.66s
+TASK: test : gather system version information -------------------------- 1.18s
+TASK: test : Gather information from LLDP ------------------------------- 1.11s
+TASK: test : command ---------------------------------------------------- 0.81s
+TASK: test : run test case {{ testcases[testcase_name]['filename'] }} file --- 0.69s
+TASK: test : Get process information in syncd docker -------------------- 0.65s
+TASK: test : Obtain the system description of the DUT chassis ----------- 0.56s
+TASK: test : Gathering minigraph facts about the device ----------------- 0.56s
+TASK: test : Gathering minigraph facts about the device ----------------- 0.56s
+TASK: test : Gather minigraph facts about the device -------------------- 0.55s
+TASK: test : copy test specific lldp_config_db.json to Sonic DUT -------- 0.53s
+Done

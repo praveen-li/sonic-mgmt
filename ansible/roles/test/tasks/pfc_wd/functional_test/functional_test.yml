@@ -1,3 +1,5 @@
+- debug: msg="PC {{item}}"
+
 - name: Set fact for item values
   set_fact:
    peer_device: "{{item.value.peer_device}}"
@@ -59,6 +61,8 @@
 - set_fact:
     class_enable: "{{(1).__lshift__(pfc_queue_index)}}"
 
+- debug: msg="PC {{switch_login}}"
+
 - set_fact:
       peer_login: "{{switch_login[hwsku_map[peer_hwsku]]}}"
 
@@ -87,8 +91,9 @@
 - set_fact:
       pfc_gen_file: pfc_gen.py
 
-- name: Deploy pfc packet generater file to fanout switch
-  include: roles/test/tasks/pfc_wd/functional_test/deploy_pfc_pktgen.yml
+# Copied it manually as of now
+#- name: Deploy pfc packet generater file to fanout switch
+#  include: roles/test/tasks/pfc_wd/functional_test/deploy_pfc_pktgen.yml
 
 - name: copy the test to ptf container
   copy: src=roles/test/files/ptftests dest=/root
@@ -102,6 +107,8 @@
 - block:
     - set_fact:
         pfc_frames_number: 100000000
+
+    - debug: msg="PC {{(1).__lshift__(pfc_queue_index)}}, {{pfc_frames_number}}, {{pfc_fanout_interface}}, {{ansible_eth0_ipv4_addr}} "
 
     - name: Generate PFC storm on fanout switch
       action: apswitch template="{{pfc_wd_storm_template}}"
@@ -244,6 +251,10 @@
 
     - set_fact:
         test_expect_file: "expect_pfc_wd_restore"
+
+    - name: pause for user input
+      pause:
+        prompt: "Enter:"
 
     - name: Initialize loganalyzer
       include: roles/test/files/tools/loganalyzer/loganalyzer_init.yml

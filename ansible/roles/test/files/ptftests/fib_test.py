@@ -115,6 +115,7 @@ class FibTest(BaseTest):
         for ip_range in ip_ranges:
 
             # Get the expected list of ports that would receive the packets
+            print"PC: {:15s}".format(ip_range.get_first_ip())
             exp_port_list = self.fib[ip_range.get_first_ip()].get_next_hop_list()
             # Choose random one source port from all ports excluding the expected ones
             src_port = random.choice([port for port in self.src_ports if port not in exp_port_list])

@@ -17,6 +17,9 @@
   register: wred_value
   failed_when: wred_value.rc != 0
 
+- debug: 
+    var=wred_value 
+
 - set_fact:
     red_min_threshold={{ wred_value.stdout }}
 

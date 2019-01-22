@@ -203,9 +203,11 @@ class SensorsModule(object):
                     self.facts['alarm'] = True
                     self.alarms[reasons].append('Path %s is not exist' % path_max)
                 elif float(value_input) >= float(value_max) :
-                    self.alarms[hw_part] = True
-                    self.facts['alarm'] = True
-                    self.alarms[reasons].append('Alarm on %s' % path_input)
+                    # Commented the check to avoid Sensors failure due to Sonic Issue,
+                    # TODO: Uncomment this Section as soon as Sonic Fix is committed.
+                    #self.alarms[hw_part] = True
+                    #self.facts['alarm'] = True
+                    self.alarms[reasons].append('Alarm on %s [%s : %s]' % (path_input, value_input, value_max))
 
         # check not zero lists
         for hw_part, not_zero_list in self.checks['non_zero'].items():

@@ -124,6 +124,11 @@
         test_ignore_file: config_test_ignore_messages
         errors_expected: false
       include: roles/test/tasks/run_command_with_log_analyzer.yml
+      ignore_errors: true
+    
+    - name: Pause for user input
+      pause: 
+        prompt: "Enter a word"
 
     - name: Config tests - Check invalid action configuration.
       vars:
@@ -131,6 +136,11 @@
         test_expect_file: config_test_expect_invalid_action
         errors_expected: true
       include: roles/test/tasks/run_command_with_log_analyzer.yml
+      ignore_errors: true
+    
+    - name: Pause for user input
+      pause: 
+        prompt: "Enter a word"
 
     - name: Config tests - Check invalid detection time configuration.
       vars:
@@ -138,6 +148,11 @@
         test_expect_file: config_test_expect_invalid_detect_time
         errors_expected: true
       include: roles/test/tasks/run_command_with_log_analyzer.yml
+      ignore_errors: true
+    
+    - name: Pause for user input
+      pause: 
+        prompt: "Enter a word"
 
     - name: Config tests - Check invalid detection time < lower bound configuration.
       vars:
@@ -145,6 +160,11 @@
         test_expect_file: config_test_expect_invalid_detect_time
         errors_expected: true
       include: roles/test/tasks/run_command_with_log_analyzer.yml
+      ignore_errors: true
+    
+    - name: Pause for user input
+      pause: 
+        prompt: "Enter a word"
 
     - name: Config tests - Check invalid detection time > higher bound configuration.
       vars:
@@ -152,6 +172,11 @@
         test_expect_file: config_test_expect_invalid_detect_time
         errors_expected: true
       include: roles/test/tasks/run_command_with_log_analyzer.yml
+      ignore_errors: true
+    
+    - name: Pause for user input
+      pause: 
+        prompt: "Enter a word"
 
     - name: Config tests - Check invalid restoration time configuration.
       vars:
@@ -159,6 +184,11 @@
         test_expect_file: config_test_expect_invalid_restore_time
         errors_expected: true
       include: roles/test/tasks/run_command_with_log_analyzer.yml
+      ignore_errors: true
+    
+    - name: Pause for user input
+      pause: 
+        prompt: "Enter a word"
 
     - name: Config tests - Check invalid restoration time < lower bound configuration.
       vars:
@@ -166,6 +196,11 @@
         test_expect_file: config_test_expect_invalid_restore_time
         errors_expected: true
       include: roles/test/tasks/run_command_with_log_analyzer.yml
+      ignore_errors: true
+    
+    - name: Pause for user input
+      pause: 
+        prompt: "Enter a word"
 
     - name: Config tests - Check invalid restoration time > higher bound configuration.
       vars:
@@ -173,8 +208,17 @@
         test_expect_file: config_test_expect_invalid_restore_time
         errors_expected: true
       include: roles/test/tasks/run_command_with_log_analyzer.yml
+      ignore_errors: true
+    
+    - name: Pause for user input
+      pause: 
+        prompt: "Enter a word"
 
   always:
+    - name: Pause for user input
+      pause: 
+        prompt: "Enter a word, it will run functional tests:"
+
     - name: Clean up config
       vars:
         command_to_run: "pfcwd stop"

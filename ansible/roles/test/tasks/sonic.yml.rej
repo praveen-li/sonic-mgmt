@@ -1,0 +1,10 @@
+diff a/ansible/roles/test/tasks/sonic.yml b/ansible/roles/test/tasks/sonic.yml	(rejected hunks)
+@@ -37,7 +37,7 @@
+   when:
+     - testbed_name is defined
+     - testcase_name is not defined
+-
++- debug: msg="testcase_name is {{ testcase_name }} !!"
+ ###############################################
+ ############# test by test case name  #########
+ ###############################################

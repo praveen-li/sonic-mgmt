@@ -30,6 +30,12 @@
 - name: print system versions
   debug: var=versions.stdout_lines
 
+- debug: msg="PC {{testcase_name}}"
+
+- debug: msg="PC {{testcases}}"
+
+
+
 - name: run test case {{ testcases[testcase_name]['filename'] }} file
   include: "{{ testcases[testcase_name]['filename'] }}"
 
