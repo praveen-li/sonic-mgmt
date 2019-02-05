@@ -11,4 +11,4 @@
     neighbors: "{{device_conn}}"
 
 - include: link_flap/link_flap_helper_working.yml interface="Ethernet0"
-  with_sequence: start=1 end=100 stride=1
+  with_sequence: start=1 end=150 stride=1
