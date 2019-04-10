@@ -133,37 +133,9 @@
             line: 'enabled=false'
         become: true
 
-      - name: Set load_minigraph_problem to T
-        set_fact: 
-            load_minigraph_problem: True
-
       - name: execute cli "config load_minigraph -y" to apply new minigraph
         become: true
         shell: config load_minigraph -y
-        when: load_minigraph_problem|bool == false
-
-      # load minigraph fails on latest sonic image, so handle it by loading default
-      # config_db.json 
-      - block:
-          - name: select config to load
-            set_fact: 
-              config_file: linkedin/config_db.json_{{topo}}
-
-          - debug: msg="{{config_file}}"
-            
-          - name: Load config_db.json for topology, if load_minigraph fails
-            copy:
-                src: "{{config_file}}"
-                dest: /etc/sonic/config_db.json
-                owner: root
-                group: root
-                mode: 0731
-            become: true
-              
-          - name: execute cli "config reload -y" to apply config_db.json
-            become: true
-            shell: config reload -y
-        when: load_minigraph_problem|bool == true
 
       - name: execute cli "config bgp startup all" to bring up all bgp sessions for test
         become: true

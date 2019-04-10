@@ -152,9 +152,7 @@ function deploy_minigraph
 
   read_file $1
 
-  ansible-playbook -i "$2" config_sonic_basedon_testbed.yml --vault-password-file="$3" -l "$dut" -e testbed_name="$1" -e deploy=true -e save=true -e update_config=False
-  #update_config = False is set due to load_minigraph bug. (This is to support nightly test)
-  #ansible-playbook -i "$2" config_sonic_basedon_testbed.yml --vault-password-file="$3" -l "$dut" -e testbed_name="$1" -e deploy=true -e save=true -e update_config=true
+  ansible-playbook -i "$2" config_sonic_basedon_testbed.yml --vault-password-file="$3" -l "$dut" -e testbed_name="$1" -e deploy=true -e save=true -e update_config=true
 
   echo Done
 }
