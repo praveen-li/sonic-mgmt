@@ -197,7 +197,7 @@ function run_tests
   if [[ "$3" == "fdb_working_pc" ]]; then
     ANSIBLE_KEEP_REMOTE_FILES=1 ansible-playbook -i "$2" test_sonic.yml -e testbed_name="$1" -e testcase_name="$3" -e inventory_hostname="$dut" -e run_fdb="False" -e run_fdb_mac_expire="True"
   else
-    ANSIBLE_KEEP_REMOTE_FILES=1 ansible-playbook -i "$2" test_sonic.yml -e testbed_name="$1" -e testcase_name="$3" -e inventory_hostname="$dut"
+    ansible-playbook -i "$2" test_sonic.yml -e testbed_name="$1" -e testcase_name="$3" -e inventory_hostname="$dut"
   fi
   echo Done
 }
