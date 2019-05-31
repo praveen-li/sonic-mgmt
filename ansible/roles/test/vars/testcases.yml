@@ -8,7 +8,7 @@ testcases:
     
     arp:
       filename: arpall.yml
-      topologies: [ptf32, ptf64, t1]
+      topologies: [ptf32, ptf64, t1, t1-16, t1-lag, t1-64-lag]
       required_vars:
           ptf_host: 
 
@@ -24,9 +24,8 @@ testcases:
 
     bgp_fact:
       filename: bgp_fact.yml
-      topologies: [t0, t0-16, t0-64, t0-64-32, t0-116, t1, t1-16, t1-lag, t1-64-lag]
- 
-    
+      topologies: [t0, t0-16, t0-56, t0-64, t0-64-32, t0-116, t1, t1-16, t1-lag, t1-64-lag]
+
     bgp_multipath_relax:
       filename: bgp_multipath_relax.yml
       topologies: [t1, t1-16, t1-lag, t1-64-lag]
@@ -114,7 +113,7 @@ testcases:
     lldp:
       filename: lldp.yml
       topologies: [t0, t0-16, t0-64, t0-116, t0-64-32, t1, t1-16, t1-lag, t1-64-lag]
-    
+
     link_flap:
       filename: link_flap.yml
       topologies: [t0, t0-16, t0-64, t0-64-32, t0-116, t1, t1-16, t1-lag, t1-64-lag, ptf32, ptf64]
@@ -176,6 +175,10 @@ testcases:
       filename: restart_swss.yml
       topologies: [t0, t0-16, t0-64, t0-64-32, t0-116, t1, t1-16, t1-lag, t1-64-lag, ptf32, ptf64]
 
+    restart_syncd:
+      filename: restart_syncd.yml
+      topologies: [t0, t0-16, t0-64, t0-64-32, t0-116, t1, t1-16, t1-lag, t1-64-lag, ptf32, ptf64]
+
     sensors:
       filename: sensors_check.yml
       topologies: [t0, t0-16, t0-64, t0-64-32, t0-116, t1, t1-16, t1-lag, t1-64-lag, ptf32, ptf64]
@@ -187,7 +190,7 @@ testcases:
     snmp:
       filename: snmp.yml
       topologies: [t0, t0-16, t0-64, t0-64-32, t0-116, t1, t1-16, t1-lag, t1-64-lag, ptf32, ptf64]
-     
+
     syslog:
       filename: syslog.yml
       topologies: [t0, t0-16, t0-64, t0-64-32, t0-116, t1, t1-16, t1-lag, t1-64-lag, ptf32, ptf64]
@@ -201,4 +204,11 @@ testcases:
 
     crm:
       filename: crm.yml
-      topologies: [t1, t1-16, t1-lag, t0]
+      topologies: [t1, t1-16, t1-lag, t0, t0-16, t0-56, t0-64, t0-116]
+
+    dip_sip:
+      filename: dip_sip.yml
+      topologies: [t0, t0-16, t0-56, t0-64, t0-64-32, t0-116, t1, t1-16, t1-lag, t1-64-lag]
+      required_vars:
+          ptf_host:
+          testbed_type:
