@@ -4,11 +4,7 @@
       <Device Hostname="str-acs-serv-01" HwSku="TestServ" Type="Server"/>
       <Device Hostname="falco-test-fout00" HwSku="Arista-7250QX-64" Type="FanoutRoot"/>
       <Device Hostname="falco-test-fout01" HwSku="Arista-7250QX-64" Type="FanoutLeaf"/>
-      <Device Hostname="falco-test-fout02" HwSku="Arista-7250QX-64" Type="FanoutLeaf"/>
-      <Device Hostname="falco-test-fout03" HwSku="Arista-7250QX-64" Type="FanoutLeaf"/>
       <Device Hostname="falco-test-dut01" HwSku="Seastone-DX010" Type="DevSonic"/>
-      <Device Hostname="falco-test-dut01" HwSku="Seastone-DX010" Type="DevSonic"/>
-      <Device Hostname="falco-test-dut03" HwSku="Seastone-DX010" Type="DevSonic"/>
     </Devices>
     <DeviceInterfaceLinks>
       <DeviceInterfaceLink BandWidth="40000" EndDevice="falco-test-fout01" EndPort="Ethernet1/1" StartDevice="falco-test-dut01" StartPort="Ethernet0"/>
@@ -49,14 +45,14 @@
   </PhysicalNetworkGraphDeclaration>
   <DataPlaneGraph>
     <DevicesL3Info Hostname="falco-test-fout00">
-      <ManagementIPInterface Name="ManagementIp" Prefix="172.25.11.84/24"/>
+      <ManagementIPInterface Name="ManagementIp" Prefix="172.21.47.52/24"/>
     </DevicesL3Info>
     <DevicesL2Info Hostname="falco-test-fout00">
       <InterfaceVlan mode="Trunk" portname="Ethernet1/1" vlanids="1681-1712"/>
       <InterfaceVlan mode="Trunk" portname="Ethernet64/1" vlanids="1681-1712"/>
     </DevicesL2Info>
     <DevicesL3Info Hostname="falco-test-fout01">
-      <ManagementIPInterface Name="ManagementIp" Prefix="172.25.11.53/24"/>
+      <ManagementIPInterface Name="ManagementIp" Prefix="172.21.47.53/24"/>
     </DevicesL3Info>
     <DevicesL2Info Hostname="falco-test-fout01">
       <InterfaceVlan mode="Access" portname="Ethernet1/1" vlanids="1681"/>
@@ -93,13 +89,5 @@
       <InterfaceVlan mode="Access" portname="Ethernet32/1" vlanids="1712"/>
       <InterfaceVlan mode="Trunk" portname="Ethernet64/1" vlanids="1681-1712"/>
     </DevicesL2Info>
-    <DevicesL3Info Hostname="falco-test-fout02">
-      <ManagementIPInterface Name="ManagementIp" Prefix="172.25.11.55/24"/>
-    </DevicesL3Info>
-    <DevicesL2Info Hostname="falco-test-fout02"/>
-    <DevicesL3Info Hostname="falco-test-fout03">
-      <ManagementIPInterface Name="ManagementIp" Prefix="172.25.11.57/24"/>
-    </DevicesL3Info>
-    <DevicesL2Info Hostname="falco-test-fout03"/>
   </DataPlaneGraph>
 </LabConnectionGraph>

@@ -1,5 +1,5 @@
 [falco-test-dut01]
-falco-test-dut01    ansible_host=172.25.11.56
+falco-test-dut01    ansible_host=172.21.47.56
 
 [falco-test-dut01:vars]
 hwsku="Seastone-DX010"
@@ -9,8 +9,8 @@ iface_speed='40000'
 falco-test-dut01
 
 [ptf]
-ptf_ptf1    ansible_host=172.25.11.190 ansible_ssh_user=root ansible_ssh_pass=root
-ptf_vms1-1  ansible_host=172.25.11.190 ansible_ssh_user=root ansible_ssh_pass=root
+ptf_ptf1    ansible_host=172.21.47.190 ansible_ssh_user=root ansible_ssh_pass=root
+ptf_vms1-1  ansible_host=172.21.47.190 ansible_ssh_user=root ansible_ssh_pass=root
 
 [lab:children]
 sonic
@@ -20,7 +20,5 @@ fanout
 mgmt_subnet_mask_length="24"
 
 [fanout]
-falco-test-fout00 ansible_host=172.25.11.84
-falco-test-fout01 ansible_host=172.25.11.53
-falco-test-fout02 ansible_host=172.25.11.55
-falco-test-fout03 ansible_host=172.25.11.57
+falco-test-fout00 ansible_host=172.21.47.52
+falco-test-fout01 ansible_host=172.21.47.53
