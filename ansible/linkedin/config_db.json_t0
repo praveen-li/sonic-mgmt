@@ -91,25 +91,25 @@
     "DEVICE_NEIGHBOR_METADATA": {
         "ARISTA01T1": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.191", 
+            "mgmt_addr": "172.21.47.191", 
             "hwsku": "Arista-VM", 
             "type": "LeafRouter"
         }, 
         "ARISTA02T1": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.192", 
+            "mgmt_addr": "172.21.47.192", 
             "hwsku": "Arista-VM", 
             "type": "LeafRouter"
         }, 
         "ARISTA03T1": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.193", 
+            "mgmt_addr": "172.21.47.193", 
             "hwsku": "Arista-VM", 
             "type": "LeafRouter"
         }, 
         "ARISTA04T1": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.194", 
+            "mgmt_addr": "172.21.47.194", 
             "hwsku": "Arista-VM", 
             "type": "LeafRouter"
         }
@@ -271,13 +271,13 @@
         }
     }, 
     "MGMT_INTERFACE": {
-        "eth0|172.25.11.56/24": {
+        "eth0|172.21.47.56/24": {
             "forced_mgmt_routes": [
                 "10.0.0.100/31", 
                 "10.250.0.8", 
                 "10.255.0.0/28"
             ], 
-            "gwaddr": "172.25.11.1"
+            "gwaddr": "172.21.47.1"
         }, 
         "eth0|FC00:2::32/64": {
             "gwaddr": "fc00:2::1"

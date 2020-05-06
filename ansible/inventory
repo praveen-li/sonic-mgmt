@@ -1,14 +1,8 @@
 [sonic_latest]
-switch1  ansible_host=10.0.0.100  sonic_version=v2  sonic_hwsku=Force10-S6000
-switch5  ansible_host=10.0.0.104  sonic_version=v2  sonic_hwsku=ACS-MSN2700 # LAG topo: 8 LAGs x 2 members/lag to spines; 16 ports to Tors
-falco_test_dut04 ansible_host=172.25.11.65 sonic_version=v2  sonic_hwsku=Seastone-DX010
+falco_test_dut04 ansible_host=172.21.47.65 sonic_version=v2  sonic_hwsku=Seastone-DX010
 
 [sonic:children]
 sonic_latest
 
-[leaf_topo_1]
-switch1
-switch5
-
 [ptf]
-ptf-1 ansible_host=172.25.11.189 ansible_ssh_user=root ansible_ssh_pass=password
+ptf-1 ansible_host=172.21.47.189 ansible_ssh_user=root ansible_ssh_pass=password

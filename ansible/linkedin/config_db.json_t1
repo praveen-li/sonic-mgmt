@@ -644,193 +644,193 @@
     "DEVICE_NEIGHBOR_METADATA": {
         "ARISTA01T0": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.207", 
+            "mgmt_addr": "172.21.47.207", 
             "hwsku": "Arista-VM", 
             "type": "ToRRouter"
         }, 
         "ARISTA01T2": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.191", 
+            "mgmt_addr": "172.21.47.191", 
             "hwsku": "Arista-VM", 
             "type": "SpineRouter"
         }, 
         "ARISTA02T0": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.208", 
+            "mgmt_addr": "172.21.47.208", 
             "hwsku": "Arista-VM", 
             "type": "ToRRouter"
         }, 
         "ARISTA02T2": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.192", 
+            "mgmt_addr": "172.21.47.192", 
             "hwsku": "Arista-VM", 
             "type": "SpineRouter"
         }, 
         "ARISTA03T0": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.209", 
+            "mgmt_addr": "172.21.47.209", 
             "hwsku": "Arista-VM", 
             "type": "ToRRouter"
         }, 
         "ARISTA03T2": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.193", 
+            "mgmt_addr": "172.21.47.193", 
             "hwsku": "Arista-VM", 
             "type": "SpineRouter"
         }, 
         "ARISTA04T0": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.210", 
+            "mgmt_addr": "172.21.47.210", 
             "hwsku": "Arista-VM", 
             "type": "ToRRouter"
         }, 
         "ARISTA04T2": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.194", 
+            "mgmt_addr": "172.21.47.194", 
             "hwsku": "Arista-VM", 
             "type": "SpineRouter"
         }, 
         "ARISTA05T0": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.211", 
+            "mgmt_addr": "172.21.47.211", 
             "hwsku": "Arista-VM", 
             "type": "ToRRouter"
         }, 
         "ARISTA05T2": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.195", 
+            "mgmt_addr": "172.21.47.195", 
             "hwsku": "Arista-VM", 
             "type": "SpineRouter"
         }, 
         "ARISTA06T0": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.212", 
+            "mgmt_addr": "172.21.47.212", 
             "hwsku": "Arista-VM", 
             "type": "ToRRouter"
         }, 
         "ARISTA06T2": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.196", 
+            "mgmt_addr": "172.21.47.196", 
             "hwsku": "Arista-VM", 
             "type": "SpineRouter"
         }, 
         "ARISTA07T0": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.213", 
+            "mgmt_addr": "172.21.47.213", 
             "hwsku": "Arista-VM", 
             "type": "ToRRouter"
         }, 
         "ARISTA07T2": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.197", 
+            "mgmt_addr": "172.21.47.197", 
             "hwsku": "Arista-VM", 
             "type": "SpineRouter"
         }, 
         "ARISTA08T0": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.214", 
+            "mgmt_addr": "172.21.47.214", 
             "hwsku": "Arista-VM", 
             "type": "ToRRouter"
         }, 
         "ARISTA08T2": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.198", 
+            "mgmt_addr": "172.21.47.198", 
             "hwsku": "Arista-VM", 
             "type": "SpineRouter"
         }, 
         "ARISTA09T0": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.215", 
+            "mgmt_addr": "172.21.47.215", 
             "hwsku": "Arista-VM", 
             "type": "ToRRouter"
         }, 
         "ARISTA09T2": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.199", 
+            "mgmt_addr": "172.21.47.199", 
             "hwsku": "Arista-VM", 
             "type": "SpineRouter"
         }, 
         "ARISTA10T0": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.216", 
+            "mgmt_addr": "172.21.47.216", 
             "hwsku": "Arista-VM", 
             "type": "ToRRouter"
         }, 
         "ARISTA10T2": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.200", 
+            "mgmt_addr": "172.21.47.200", 
             "hwsku": "Arista-VM", 
             "type": "SpineRouter"
         }, 
         "ARISTA11T0": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.217", 
+            "mgmt_addr": "172.21.47.217", 
             "hwsku": "Arista-VM", 
             "type": "ToRRouter"
         }, 
         "ARISTA11T2": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.201", 
+            "mgmt_addr": "172.21.47.201", 
             "hwsku": "Arista-VM", 
             "type": "SpineRouter"
         }, 
         "ARISTA12T0": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.218", 
+            "mgmt_addr": "172.21.47.218", 
             "hwsku": "Arista-VM", 
             "type": "ToRRouter"
         }, 
         "ARISTA12T2": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.202", 
+            "mgmt_addr": "172.21.47.202", 
             "hwsku": "Arista-VM", 
             "type": "SpineRouter"
         }, 
         "ARISTA13T0": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.219", 
+            "mgmt_addr": "172.21.47.219", 
             "hwsku": "Arista-VM", 
             "type": "ToRRouter"
         }, 
         "ARISTA13T2": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.203", 
+            "mgmt_addr": "172.21.47.203", 
             "hwsku": "Arista-VM", 
             "type": "SpineRouter"
         }, 
         "ARISTA14T0": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.220", 
+            "mgmt_addr": "172.21.47.220", 
             "hwsku": "Arista-VM", 
             "type": "ToRRouter"
         }, 
         "ARISTA14T2": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.204", 
+            "mgmt_addr": "172.21.47.204", 
             "hwsku": "Arista-VM", 
             "type": "SpineRouter"
         }, 
         "ARISTA15T0": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.221", 
+            "mgmt_addr": "172.21.47.221", 
             "hwsku": "Arista-VM", 
             "type": "ToRRouter"
         }, 
         "ARISTA15T2": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.205", 
+            "mgmt_addr": "172.21.47.205", 
             "hwsku": "Arista-VM", 
             "type": "SpineRouter"
         }, 
         "ARISTA16T0": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.222", 
+            "mgmt_addr": "172.21.47.222", 
             "hwsku": "Arista-VM", 
             "type": "ToRRouter"
         }, 
         "ARISTA16T2": {
             "lo_addr": "None", 
-            "mgmt_addr": "172.25.11.206", 
+            "mgmt_addr": "172.21.47.206", 
             "hwsku": "Arista-VM", 
             "type": "SpineRouter"
         }
@@ -1359,13 +1359,13 @@
         "10.0.0.2": {}
     }, 
     "MGMT_INTERFACE": {
-        "eth0|172.25.11.56/24": {
+        "eth0|172.21.47.56/24": {
             "forced_mgmt_routes": [
                 "10.0.0.100/31", 
                 "10.250.0.8", 
                 "10.255.0.0/28"
             ], 
-            "gwaddr": "172.25.11.1"
+            "gwaddr": "172.21.47.1"
         }, 
         "eth0|FC00:2::32/64": {
             "gwaddr": "fc00:2::1"
