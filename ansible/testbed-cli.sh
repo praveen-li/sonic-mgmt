@@ -65,14 +65,14 @@ function start_vms
 {
   echo "Starting VMs on server '$1'"
 
-  ANSIBLE_SCP_IF_SSH=y ansible-playbook -i veos testbed_start_VMs.yml --vault-password-file="$2" -l "$1"
+  ANSIBLE_KEEP_REMOTE_FILES=1 ANSIBLE_SCP_IF_SSH=y ansible-playbook -i veos testbed_start_VMs.yml --vault-password-file="$2" -l "$1"
 }
 
 function stop_vms
 {
   echo "Stopping VMs on server '$1'"
 
-  ANSIBLE_SCP_IF_SSH=y ansible-playbook -i veos testbed_stop_VMs.yml --vault-password-file="$2" -l "$1"
+  ANSIBLE_KEEP_REMOTE_FILES=1 ANSIBLE_SCP_IF_SSH=y ansible-playbook -i veos testbed_stop_VMs.yml --vault-password-file="$2" -l "$1"
 }
 
 function add_topo
@@ -195,7 +195,7 @@ function run_tests
   read_file $1
 
   if [[ "$3" == "fdb_working_pc" ]]; then
-    ANSIBLE_KEEP_REMOTE_FILES=1 ansible-playbook -i "$2" test_sonic.yml -e testbed_name="$1" -e testcase_name="$3" -e inventory_hostname="$dut" -e run_fdb="False" -e run_fdb_mac_expire="True"
+    ansible-playbook -i "$2" test_sonic.yml -e testbed_name="$1" -e testcase_name="$3" -e inventory_hostname="$dut" -e run_fdb="False" -e run_fdb_mac_expire="True"
   else
     ANSIBLE_KEEP_REMOTE_FILES=1 ansible-playbook -i "$2" test_sonic.yml -e testbed_name="$1" -e testcase_name="$3" -e inventory_hostname="$dut"
   fi
