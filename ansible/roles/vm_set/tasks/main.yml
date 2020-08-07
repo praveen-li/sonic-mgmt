@@ -70,7 +70,7 @@
     - ca-certificates
     - curl
     - software-properties-common
-    - libvirt-clients
+    #- libvirt-clients
 
 - name:
   apt:
