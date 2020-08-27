@@ -1,0 +1,21 @@
+#--------------------------------------------------
+# Set BGP as docker to warm-restart, set timer value.# Set eoiu if needed
+# Run FIB Warm Reboot test and Perform log analysis. #--------------------------------------------------
+
+- debug: msg="Start BGP docker Warm Restart with Traffic"
+
+- set_fact:
+    warm_restart_docker: bgp
+
+- name: set warm-restart bgp_timer 120
+  shell: config warm-restart bgp_timer 120
+  become: true
+
+- name: set warm-restart bgp_eoiu enable
+  shell: config warm-restart bgp_eoiu enable
+  become: true
+  when: bgp_eoiu is defined
+
+- debug: msg="Include warm-reboot-fib for config and traffic"
+
+- include_tasks: warm-reboot-fib.yml
