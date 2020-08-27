@@ -35,8 +35,8 @@
   delegate_to: "{{ ptf_host }}"
   failed_when: False
 
-- name: set config warm_restart enable {{ warm_restart_docker }}
-  shell: config warm_restart enable {{ warm_restart_docker }}
+- name: set config warm-restart enable {{ warm_restart_docker }}
+  shell: config warm-restart enable {{ warm_restart_docker }}
   become: true
   when: warm_restart_docker is defined
 
@@ -71,3 +71,8 @@
 
 - fail: msg="Failed Test '{{ ptf_test_name }}'"
   when: async_poll.rc != 0
+
+- name: set config warm-restart disable {{ warm_restart_docker }}
+  shell: config warm-restart enable {{ warm_restart_docker }}
+  become: true
+  when: warm_restart_docker is defined

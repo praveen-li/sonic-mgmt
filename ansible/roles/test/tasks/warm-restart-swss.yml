@@ -1,0 +1,13 @@
+#--------------------------------------------------
+# Set SWSS as docker to warm-restart.
+# Run FIB Warm Reboot test and Perform log analysis.
+#--------------------------------------------------
+
+- debug: msg="Start SWSS docker Warm Restart with Traffic"
+
+- set_fact:
+    warm_restart_docker: swss
+
+- debug: msg="Include warm-reboot-fib for config and traffic"
+
+- include_tasks: warm-reboot-fib.yml

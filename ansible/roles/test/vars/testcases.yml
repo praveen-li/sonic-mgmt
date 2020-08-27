@@ -176,6 +176,24 @@ testcases:
       vtestbed_compatible: no
       topologies: [t0, t0-8, t0-16, t0-64, t0-64-32, t0-116, t1, t1-8, t1-16, t1-lag, t1-64-lag, t1-64-lag-clet]
       required_vars:
+          warm_restart_docker:
+          ptf_host:
+          testbed_type:
+
+    warm-restart-bgp:
+      filename: warm-restart-bgp.yml
+      vtestbed_compatible: no
+      topologies: [t0, t0-8, t0-16, t0-64, t0-64-32, t0-116, t1, t1-8, t1-16, t1-lag, t1-64-lag, t1-64-lag-clet]
+      required_vars:
+          bgp_eoiu:
+          ptf_host:
+          testbed_type:
+
+    warm-restart-swss:
+      filename: warm-restart-swss.yml
+      vtestbed_compatible: no
+      topologies: [t0, t0-8, t0-16, t0-64, t0-64-32, t0-116, t1, t1-8, t1-16, t1-lag, t1-64-lag, t1-64-lag-clet]
+      required_vars:
           ptf_host:
           testbed_type:
 
