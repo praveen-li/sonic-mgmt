@@ -1,0 +1,8 @@
+- hosts: localhost
+  remote_user: pchaudha
+
+  tasks:
+  - name: call test action sync
+    test_action_sync: action={{ action }} topo={{ topo_name }} dut={{ dut }} server={{ server }}
+    connection: local
+    register: test_action_sync_result
