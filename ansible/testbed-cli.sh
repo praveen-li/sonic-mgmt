@@ -84,6 +84,8 @@ function read_file
 
   IFS=, read -r -a line_arr <<< $line
 
+
+  topo_name=${line_arr[0]}
   testbed_name=${line_arr[1]}
   topo=${line_arr[2]}
   ptf_imagename=${line_arr[3]}
@@ -104,8 +106,8 @@ function start_vms
   shift
   echo "Starting VMs on server '${server}'"
 
-  ANSIBLE_SCP_IF_SSH=y ansible-playbook -i $vmfile -e VM_num="$vm_num" testbed_start_VMs.yml \
-      --vault-password-file="${passwd}" -l "${server}" $@
+  ANSIBLE_KEEP_REMOTE_FILES=1 ANSIBLE_SCP_IF_SSH=y ansible-playbook -i $vmfile -e VM_num="$vm_num" testbed_start_VMs.yml \
+      --vault-password-file="${passwd}" -l "${server}" $@ -v
 }
 
 function stop_vms
