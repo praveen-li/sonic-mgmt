@@ -1,0 +1,20 @@
+- hosts: localhost
+  remote_user: pchaudha
+
+  tasks:
+
+  - debug: msg="action {{action}}"
+
+  - name: call test action sync
+    test_action_sync: action={{ action }} topo={{ topo_name }} dut={{ dut }} server={{ server }}
+    connection: local
+    register: test_action_sync_result
+    when: test_name is not defined
+
+  - name: call test action sync with {{ test_name }}
+    test_action_sync: action={{ action }} topo={{ topo_name }} dut={{ dut }} server={{ server }} test_name={{ test_name }}
+    connection: local
+    register: test_action_sync_result
+    when: test_name is defined
+
+  - debug: msg="{{test_action_sync_result}}"

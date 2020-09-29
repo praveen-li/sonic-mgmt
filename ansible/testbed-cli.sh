@@ -157,7 +157,7 @@ function add_topo
 
   read_file ${topology}
 
-  ANSIBLE_SCP_IF_SSH=y ansible-playbook -i $vmfile testbed_add_vm_topology.yml --vault-password-file="${passwd}" -l "$server" -e topo_name="$topo_name" -e dut_name="$duts" -e VM_base="$vm_base" -e ptf_ip="$ptf_ip" -e topo="$topo" -e vm_set_name="$testbed_name" -e ptf_imagename="$ptf_imagename" -e vm_type="$vm_type" -e ptf_ipv6="$ptf_ipv6" $@
+  ANSIBLE_SCP_IF_SSH=y ansible-playbook -i $vmfile testbed_add_vm_topology.yml --vault-password-file="${passwd}" -l "$server" -e topo_name="$topo_name" -e dut_name="$duts" -e VM_base="$vm_base" -e ptf_ip="$ptf_ip" -e topo="$topo" -e vm_set_name="$testbed_name" -e ptf_imagename="$ptf_imagename" -e vm_type="$vm_type" -e ptf_ipv6="$ptf_ipv6" -e server=$server $@
 
   ansible-playbook fanout_connect.yml -i $vmfile --limit "$server" --vault-password-file="${passwd}" -e "dut=$duts" $@
 
@@ -177,7 +177,7 @@ function remove_topo
 
   read_file ${topology}
 
-  ANSIBLE_SCP_IF_SSH=y ansible-playbook -i $vmfile testbed_remove_vm_topology.yml --vault-password-file="${passwd}" -l "$server" -e topo_name="$topo_name" -e dut_name="$duts" -e VM_base="$vm_base" -e ptf_ip="$ptf_ip" -e topo="$topo" -e vm_set_name="$testbed_name" -e ptf_imagename="$ptf_imagename" -e vm_type="$vm_type" -e ptf_ipv6="$ptf_ipv6" $@
+  ANSIBLE_SCP_IF_SSH=y ansible-playbook -i $vmfile testbed_remove_vm_topology.yml --vault-password-file="${passwd}" -l "$server" -e topo_name="$topo_name" -e dut_name="$duts" -e VM_base="$vm_base" -e ptf_ip="$ptf_ip" -e topo="$topo" -e vm_set_name="$testbed_name" -e ptf_imagename="$ptf_imagename" -e vm_type="$vm_type" -e ptf_ipv6="$ptf_ipv6" -e server=$server $@
 
   echo Done
 }
@@ -290,7 +290,7 @@ function deploy_minigraph
 
   read_file $topology
 
-  ansible-playbook -i "$inventory" config_sonic_basedon_testbed.yml --vault-password-file="$passfile" -l "$duts" -e testbed_name="$topology" -e testbed_file=$tbfile -e vm_file=$vmfile -e deploy=true -e save=true -e update_config=true $@
+  ansible-playbook -i "$inventory" config_sonic_basedon_testbed.yml --vault-password-file="$passfile" -l "$duts" -e testbed_name="$topology" -e testbed_file=$tbfile -e vm_file=$vmfile -e deploy=true -e save=true -e update_config=true -e dut=$dut -e server=$server $@
 
   echo Done
 }
@@ -324,7 +324,7 @@ function config_vm
   echo Done
 }
 
-function run_tests
+function run_tests_old
 {
   topology=$1
   inventory=$2
@@ -336,8 +336,7 @@ function run_tests
   echo "Running Test Suite ${testcase}"
   read_file ${topology}
 
-  ANSIBLE_KEEP_REMOTE_FILES=1 ansible-playbook -i "${inventory}" test_sonic.yml -e testbed_name="${topology}" -e testcase_name="${testcase}" -e inventory_hostname="$dut"
-
+  ANSIBLE_KEEP_REMOTE_FILES=1 ansible-playbook -i "${inventory}" test_sonic.yml -e testbed_name="${topology}" -e testcase_name="${testcase}" -e inventory_hostname=$dut
   echo Done
 }
 
@@ -372,7 +371,7 @@ function run_tests
 
   read_file $1
 
-  ANSIBLE_KEEP_REMOTE_FILES=1 ansible-playbook -i "$2" test_sonic.yml -e testbed_name="$1" -e testcase_name="$3" -e inventory_hostname="$dut"
+  ANSIBLE_KEEP_REMOTE_FILES=1 ansible-playbook -i "$2" test_sonic.yml -e testbed_name="$1" -e testcase_name="$3" -e inventory_hostname="$dut" -e server=$server
 
   echo Done
 }
