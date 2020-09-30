@@ -6,7 +6,7 @@ all:
       children:
         sonic:
           children:
-            falco_test_dut04:
+            sonic_seastone_dx010:
         fanout:
           hosts:
             falco-test-froot02:
@@ -26,7 +26,7 @@ all:
           ansible_ssh_user: root
           ansible_ssh_pass: root
 
-falco_test_dut04:
+sonic_seastone_dx010:
   vars:
     hwsku: Seastone-DX010
     iface_speed: 40000
