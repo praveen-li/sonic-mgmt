@@ -1,23 +1,35 @@
-[falco-test-dut04]
-falco-test-dut04    ansible_host=172.21.47.65
+all:
+  children:
+    lab:
+      vars:
+        mgmt_subnet_mask_length: 24
+      children:
+        sonic:
+          children:
+            sonic_seastone_dx010:
+        fanout:
+          hosts:
+            falco-test-froot02:
+              ansible_host: 172.21.47.54
+              os: icos
+            falco-test-fleaf02:
+              ansible_host: 172.21.47.64
+              os: icos
+    ptf:
+      hosts:
+        ptf_ptf1:
+          ansible_host: 172.21.47.189
+          ansible_ssh_user: root
+          ansible_ssh_pass: root
+        ptf_vms1-1:
+          ansible_host: 172.21.47.189
+          ansible_ssh_user: root
+          ansible_ssh_pass: root
 
-[falco-test-dut04:vars]
-hwsku="Seastone-DX010"
-iface_speed='100000'
-
-[sonic:children]
-falco-test-dut04
-
-[ptf]
-ptf_vms1-1  ansible_host=172.21.47.189 ansible_ssh_user=root ansible_ssh_pass=root
-
-[lab:children]
-sonic
-fanout
-
-[lab:vars]
-mgmt_subnet_mask_length="24"
-
-[fanout]
-falco-test-froot02 ansible_host=172.21.47.52
-falco-test-fleaf02 ansible_host=172.21.47.64
+sonic_seastone_dx010:
+  vars:
+    hwsku: Seastone-DX010
+    iface_speed: 40000
+  hosts:
+    falco-test-dut04:
+      ansible_host: 172.21.47.65
