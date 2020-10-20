@@ -122,6 +122,12 @@
     delegate_to: localhost
     when: local_minigraph is defined and local_minigraph|bool == true
 
+  - name: call action sync
+    action_sync: action="deploy-mg" topo={{ testbed_name }} dut={{ dut }} server={{ server }}
+    connection: local
+    register: action_sync_result
+    when: mark_deploy_mg is defined and mark_deploy_mg|bool == true
+
   - block:
     - name: Init telemetry keys
       set_fact:
@@ -163,7 +169,7 @@
         mode: '0755'
       become: true
 
-    # {{ server_cer }}/ streamingtelemetryserver.cer need to be copied on PTFDocker and renamed as dsmsroot.cer    
+    # {{ server_cer }}/ streamingtelemetryserver.cer need to be copied on PTFDocker and renamed as dsmsroot.cer
     - name: Generate server cert using openssl.
       command: openssl req \
           -x509 \
@@ -172,7 +178,7 @@
           -newkey rsa:2048 \
           -keyout "{{ server_key }}"
           -subj "/CN=ndastreamingservertest"
-          -out "{{ server_cer }}" 
+          -out "{{ server_cer }}"
       become: true
 
     # {{ dsmsroot_cer }}/ dsmsroot.cer need to be copied on PTFDocker and renamed as streamingtelemetryclient.cer

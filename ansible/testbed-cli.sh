@@ -272,8 +272,11 @@ function generate_minigraph
 
   read_file $topology
 
-  ansible-playbook -i "$inventory" config_sonic_basedon_testbed.yml --vault-password-file="$passfile" -l "$duts" -e testbed_name="$topology" -e testbed_file=$tbfile -e vm_file=$vmfile -e local_minigraph=true $@
-
+  ansible-playbook -i "$inventory" config_sonic_basedon_testbed.yml --vault-password-file="$passfile" -l "$duts" -e testbed_name="$topology" -e testbed_file=$tbfile -e vm_file=$vmfile -e local_minigraph=true -e dut=$dut -e server=$server $@
+  # We can pass -e mark_deploy_mg=true with gen-mg command, to avoid re-deploying
+  # config on DUT. This is useful in cases, where we want to add-topo\remove-topo,
+  # as part of some development, but do not want to deploy-mg again since DUT may
+  # already have same config.
   echo Done
 }
 
