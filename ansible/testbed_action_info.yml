@@ -1,0 +1,29 @@
+# This playbook gets inormation about test bed, i.e which topology is loaded for which DUT, server etc.
+- hosts: localhost
+  gather_facts: no
+  tasks:
+
+  - block:
+    - name: call action sync
+      action_sync: action=get topo='unknown' dut='unknown' server='unknown'
+      connection: local
+      register: action_sync_result
+      ignore_errors: true
+
+    - name: set testbed info
+      set_fact:
+        testbed_info: "{{ action_sync_result.ansible_facts.action_sync }}"
+
+    - debug: msg="{{ testbed_info }}"
+
+    - block:
+        - name: set topo
+          set_fact:
+            topo_info: "{{ action_sync_result.ansible_facts.action_sync.current_topo }}"
+            topo_name: "{{ action_sync_result.ansible_facts.action_sync.current_topo.topo_name }}"
+
+        - debug: msg="topo={{ topo_name }} pwd={{ pwd }}"
+
+        - name: run remove topo {{ topo_name }}
+          shell: "./testbed-cli.sh remove-topo {{ topo_name }} {{ pwd }}"
+      when: remove_topo is defined and remove_topo|bool == true

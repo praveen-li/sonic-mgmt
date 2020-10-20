@@ -182,6 +182,23 @@ function remove_topo
   echo Done
 }
 
+function remove_topo_force
+{
+  passwd=$1
+
+  ANSIBLE_SCP_IF_SSH=y ansible-playbook testbed_action_info.yml -e pwd="${passwd}" -e remove_topo=true $@
+
+  echo Done
+}
+
+function get_testbed_action_info
+{
+
+  ANSIBLE_SCP_IF_SSH=y ansible-playbook testbed_action_info.yml $@
+
+  echo Done
+}
+
 function connect_topo
 {
   topology=$1
@@ -379,7 +396,7 @@ function run_tests
   echo Done
 }
 
-if [ $# -lt 3 ]
+if [ $# -lt 3 ] && [ $1 != "remove-topo-force" ] && [ $1 != "get-testbed-action-info" ]
 then
   usage
 fi
@@ -398,6 +415,10 @@ case "${subcmd}" in
   add-topo)    add_topo $@
                ;;
   remove-topo) remove_topo $@
+               ;;
+  remove-topo-force) remove_topo_force $@
+               ;;
+  get-testbed-action-info) get_testbed_action_info $@
                ;;
   renumber-topo) renumber_topo $@
                ;;
