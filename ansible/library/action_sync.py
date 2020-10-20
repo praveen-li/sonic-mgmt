@@ -141,7 +141,7 @@ class ActionSync(object):
             self.db['current_topo'] = d
             self.logSuccess()
         else:
-            self.logFailure()
+            self.logAll()
             raise Exception("{} failed".format(self.action))
         return
 
@@ -155,7 +155,7 @@ class ActionSync(object):
         if d is None or d['topo_name'] != self.topo or d['dut'] != self.dut or \
             d['server'] != self.server:
 
-            self.logFailure()
+            self.logAll()
             raise Exception("{} failed".format(self.action))
         else:
             d['deploy-mg'] = True
@@ -174,7 +174,7 @@ class ActionSync(object):
         if d is None or d['topo_name'] != self.topo or d['dut'] != self.dut or \
             d['server'] != self.server:
 
-            self.logFailure()
+            self.logAll()
             raise Exception("{} failed".format(self.action))
         else:
             self.db['current_topo'] = None
@@ -187,14 +187,14 @@ class ActionSync(object):
         d = self.db['current_topo']
 
         if self.test_name is None:
-            self.logFailure()
+            self.logAll()
             raise Exception("No test_name Provided")
 
         # if None add this topo
         if d is None or d['topo_name'] != self.topo or d['dut'] != self.dut or \
-            d['server'] != self.server:
+            d['server'] != self.server or d['deploy-mg'] != True:
 
-            self.logFailure()
+            self.logAll()
             raise Exception("{} failed".format(self.action))
         else:
             self.logSuccess()
@@ -214,10 +214,10 @@ class ActionSync(object):
         d['success'].append(log)
         self.db['actions'] = d
 
-        self.logFailure(logAs='SUCC')
+        self.logAll(logAs='SUCC')
         return
 
-    def logFailure(self, logAs='FAIL'):
+    def logAll(self, logAs='FAIL'):
 
         log = "{}: -{}- {} topo={} dut={} server={}".format(datetime.now(), \
             logAs, self.action, self.topo, self.dut, self.server)
